@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TituloApiController;
+use App\Http\Controllers\MercadoApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,26 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Route::post('/login',[AuthController::class,'login']);
+// Route::post('/register',[AuthController::class,'register']);
+// Route::post('/registerAddress',[CustomerController::class,'storeAddress']);
+// Route::post('/address/index',[CustomerController::class,'allAddress']);
+// Route::any('/order',[OrderController::class,'store']);
+// Route::any('/order2',[OrderController::class,'store']);
+
+
+//titulos
+Route::get('/titulos/listar', [TituloApiController::class, 'index'])->name('listarTitulos');
+Route::get('/titulos/{id}', [TituloApiController::class, 'show'])->name('obterTitulo');
+Route::post('/titulos', [TituloApiController::class, 'store'])->name('cadastrarTitulo');
+Route::put('/titulos/{id}', [TituloApiController::class, 'update'])->name('cadastrarTitulo');
+Route::delete('/titulos/{id}', [TituloApiController::class, 'delete'])->name('excluirTitulo');
+
+//mercado
+Route::get('/mercado/index', [MercadoApiController::class, 'index'])->name('indexOperacao');
+Route::get('/mercado/{id}', [MercadoApiController::class, 'show'])->name('showOperacao');
+Route::post('/mercado/registrar', [MercadoApiController::class, 'store'])->name('storeOperacao');
+Route::put('/mercado/atualizar/{id}', [MercadoApiController::class, 'update'])->name('updateOperacao');
+Route::delete('/mercado/excluir/{id}', [MercadoApiController::class, 'delete'])->name('deleteOperacao');
+Route::get('/grafico-mercados/{id}', [MercadoApiController::class, 'graficoMercados'])->name('graficoMercados');
