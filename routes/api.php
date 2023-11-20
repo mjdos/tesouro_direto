@@ -27,13 +27,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::any('/order',[OrderController::class,'store']);
 // Route::any('/order2',[OrderController::class,'store']);
 
+Route::get('/apiteste', function () {
+    $teste = 'teste';
+    return $teste;
+ });
 
 //titulos
 Route::get('/titulos/listar', [TituloApiController::class, 'index'])->name('listarTitulos');
-Route::get('/titulos/{id}', [TituloApiController::class, 'show'])->name('obterTitulo');
+Route::get('/titulos/show/{id}', [TituloApiController::class, 'show'])->name('obterTitulo');
 Route::post('/titulos', [TituloApiController::class, 'store'])->name('cadastrarTitulo');
-Route::put('/titulos/{id}', [TituloApiController::class, 'update'])->name('cadastrarTitulo');
-Route::delete('/titulos/{id}', [TituloApiController::class, 'delete'])->name('excluirTitulo');
+Route::put('/titulos/update/{id}', [TituloApiController::class, 'update'])->name('atualizarTitulo');
+Route::delete('/titulos/delete{id}', [TituloApiController::class, 'delete'])->name('excluirTitulo');
 
 //mercado
 Route::get('/mercado/index', [MercadoApiController::class, 'index'])->name('indexOperacao');
@@ -42,3 +46,4 @@ Route::post('/mercado/registrar', [MercadoApiController::class, 'store'])->name(
 Route::put('/mercado/atualizar/{id}', [MercadoApiController::class, 'update'])->name('updateOperacao');
 Route::delete('/mercado/excluir/{id}', [MercadoApiController::class, 'delete'])->name('deleteOperacao');
 Route::get('/grafico-mercados/{id}', [MercadoApiController::class, 'graficoMercados'])->name('graficoMercados');
+

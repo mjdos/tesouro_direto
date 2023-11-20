@@ -16,6 +16,7 @@
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 		<script src="{{ url('assets/dist/js/bootstrap.bundle.min.js') }}"></script>
+		<br><br><br>
 	</body>
 	<!--end::Body-->
 </html>

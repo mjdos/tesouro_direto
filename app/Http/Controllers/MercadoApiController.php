@@ -101,13 +101,16 @@ class MercadoApiController extends Controller
     function graficoMercados(Request $request, $id)
     {
         $query = Mercado::query();
-    
+
         if ($id) {
             $query->where('titulo_id', $id);
         }
-    
-        $mercados = $query->get(['titulo_id', 'data_hora', 'valor_operacao']);
-    
+        
+        $mercados = $query->join('tbl_titulo', 'tbl_mercado.titulo_id', '=', 'tbl_titulo.id')
+            ->get(['tbl_titulo.titulo', 'tbl_mercado.data_hora', 'tbl_mercado.valor_operacao']);
+        
         return response()->json(['mercados' => $mercados]);
+        
     }
+    
 }

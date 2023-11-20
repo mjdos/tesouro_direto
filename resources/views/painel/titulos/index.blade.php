@@ -1,5 +1,5 @@
 @include('../layouts.header')
-<br>
+
 <div id="kt_content_container" class="container-xxl">
     <!--begin::Card-->
     <div class="card">
@@ -13,7 +13,7 @@
                     <thead>
                         <!--begin::Table row-->
                         <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                            <th class="min-w-125px">Customer Name</th>
+                            <th class="min-w-125px">Título Nome</th>
                             <th class="min-w-125px">Email</th>
                             <th class="min-w-125px">Company</th>
                             <th class="min-w-125px">Payment Method</th>
@@ -24,11 +24,15 @@
                     </thead>
                     <!--end::Table head-->
                     <!--begin::Table body-->
+                    @if(isset($error))
+                    <p>{{ $error }}</p>
+                    @else
                     <tbody class="fw-bold text-gray-600">
+                        @foreach($titulos as $titulo)
                         <tr>
                             <!--begin::Name=-->
                             <td>
-                                <a href="../../demo6/dist/apps/customers/view.html" class="text-gray-800 text-hover-primary mb-1">Emma Smith</a>
+                                <a href="../../demo6/dist/apps/customers/view.html" class="text-gray-800 text-hover-primary mb-1">{{$titulo->titulo}}</a>
                             </td>
                             <!--end::Name=-->
                             <!--begin::Email=-->
@@ -73,7 +77,10 @@
                             </td>
                             <!--end::Action=-->
                         </tr>
+                        @endforeach
+
                     </tbody>
+                    @endif
                     <!--end::Table body-->
                 </table>
                 <!--end::Table-->
@@ -82,5 +89,5 @@
         </div>
     </div>
 </div>
-<br>
+
 @include('../layouts.footer')
