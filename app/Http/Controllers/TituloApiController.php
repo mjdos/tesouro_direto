@@ -31,7 +31,6 @@ class TituloApiController extends Controller
     {
         try {
             $titulo = Titulo::find($id);
-
             if (!$titulo) {
                 return $this->error("Título não encontrado", 404);
             }
@@ -40,6 +39,7 @@ class TituloApiController extends Controller
                 'success' => true,
                 'message' => "Título obtido com sucesso.",
                 'data' => $titulo
+                
             ], 200);
         } catch (\Exception $e) {
             return $this->error("Erro ao obter título: " . $e->getMessage(), 500);
