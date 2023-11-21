@@ -12,7 +12,7 @@
 #Solidity
 
 ## Contrato Inteligente
-
+O contrato em Solidity está na pasta "contrato-solidity".
 
 ## Licença
 
