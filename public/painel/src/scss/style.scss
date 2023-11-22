@@ -1,0 +1,69 @@
+// --------------------------------------------------------------------
+// Author Name   : Nirav Joshi 
+// --------------------------------------------------------------------
+// For more info : https://www.wrappixel.com/
+// --------------------------------------------------------------------
+// Product Name  : Xtreme Admin
+// --------------------------------------------------------------------
+
+// 
+// All the extended and custom variables(Required file)
+// 
+@import "variables/variable";
+@import "variables/custom-variable";
+
+// 
+// Dark Theme Settings
+// 
+@import "dark/_dark-theme";
+
+// 
+// Import Bootstrap source files (Required file)
+// 
+@import "bootstrap/bootstrap";
+
+// 
+//This is for the layouts (Required file)
+// 
+//Theme colors
+@import 'theme-colors/_theme-colors';
+// core
+@import 'core/core';
+// rtl
+@import 'rtl/rtl'; 
+
+// 
+//This is for the pages (if you are not using some pages you can remove that style from pages folder)
+// 
+@import "pages/pages";
+
+// 
+//This is for the widgets (Required file)
+// 
+@import "widgets/widgets";
+
+// 
+//This is for the horizontal version if you are not using horizontal version you can remove this
+// 
+@import "horizontal/horizontal";
+
+// 
+//This is for the responsive (Required file)
+// 
+@import "responsive/responsive";
+
+// 
+//In This scss you can write your scss
+// 
+@import "custom";
+
+// 
+//This is for the icons (Required file)
+// 
+@import "icons/font-awesome/css/fontawesome-all.css";
+@import "icons/simple-line-icons/css/simple-line-icons.css";
+@import "icons/weather-icons/css/weather-icons.min.css";
+@import "icons/themify-icons/themify-icons.css";
+@import "icons/flag-icon-css/flag-icon.min.css";
+@import "icons/material-design-iconic-font/css/materialdesignicons.min.css";
+@import "icons/crypto-icons/cryptocoins.css";

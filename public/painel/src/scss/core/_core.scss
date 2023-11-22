@@ -1,0 +1,35 @@
+@import 'layout/layout';
+
+// Header
+@import 'loader/spinner';
+@import 'topbar/header';
+
+//table pages
+@import 'tables/table-pages';
+
+// sidebar
+@import 'sidebar/sidebar';
+
+// wave effects
+@import 'wave-effects/wave-effects';
+
+// Bootstrap Components
+@import 'bootstrap-components/alert';
+@import 'bootstrap-components/breadcrumb';
+@import 'bootstrap-components/buttons';
+@import 'bootstrap-components/checkbox';
+@import 'bootstrap-components/modal';
+
+@import 'scafholdings/scafholding';
+
+//wave effects
+@import 'customizer/customizer';
+
+//Animation effects
+@import 'animation/animation';
+
+//perfect-scrollbar
+@import 'perfect-scrollbar/perfect-scrollbar';
+
+//extra
+@import 'extra/extra';
