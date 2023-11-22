@@ -1,0 +1,387 @@
+// ----------------------------------------------------
+// All th internal Styles here
+// ----------------------------------------------------
+body {
+	position: relative;
+}
+// ----------------------------------------------
+// Tooltip for the sparkline charts
+// ----------------------------------------------
+html body {
+	.jqstooltip,
+	.flotTip {
+		width: auto !important;
+		height: auto !important;
+		background: $gray-900;
+		color: $white;
+		padding: 5px 10px;
+	}
+}
+
+body .jqstooltip {
+	border-color: transparent;
+	border-radius: 60px;
+}
+
+// ----------------------------------------------
+// Tooltip for the chartist chart charts
+// ----------------------------------------------
+.chartist-tooltip {
+	position: absolute;
+	display: inline-block;
+	opacity: 0;
+	border-radius: $border-radius;
+	padding: 10px 20px;
+	background: $info;
+	color: $white;
+	ext-align: center;
+	pointer-events: none;
+	z-index: 1;
+	-webkit-transition: opacity 0.2s linear;
+	-moz-transition: opacity 0.2s linear;
+	-o-transition: opacity 0.2s linear;
+	transition: opacity 0.2s linear;
+}
+
+.chartist-tooltip:before {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	margin-left: -5px;
+	border: 5px solid transparent;
+	border-top-color: $info;
+}
+
+.chartist-tooltip.tooltip-show {
+	opacity: 1;
+}
+
+.ct-area,
+.ct-line {
+	pointer-events: none;
+}
+
+.c3-chart-arcs-title {
+	fill: $text-muted;
+}
+
+.c3 line,
+.c3 path {
+	stroke: rgba(0, 0, 0, 0.2);
+}
+.c3-chart-arc path {
+	stroke: transparent;
+}
+.popover-item {
+	margin-left: -15px;
+	&:hover {
+		z-index: 10;
+		position: relative;
+	}
+}
+
+.morris-hover.morris-default-style {
+	background: rgba(0,0,0,0.8);
+	border: rgba(0,0,0,0.8);
+}
+
+
+// ----------------------------------------------
+// select2
+// ----------------------------------------------
+
+.select2-container--classic .select2-selection--single,
+.select2-container--default .select2-selection--single,
+.select2-container--default
+	.select2-selection--single
+	.select2-selection__rendered,
+.select2-container--default
+	.select2-selection--single
+	.select2-selection__arrow,
+.select2-container--default .select2-selection--multiple {
+	border-color: $border-color;
+	height: 40px;
+	color: $body-color;
+	line-height: 40px;
+}
+
+.select2-container--default .select2-selection--multiple {
+	line-height: 27px;
+}
+
+.select2-container--classic
+	.select2-selection--multiple
+	.select2-selection__choice,
+.select2-container--default
+	.select2-selection--multiple
+	.select2-selection__choice,
+.select2-container--default
+	.select2-selection--multiple
+	.select2-selection__choice__remove {
+	background-color: $info;
+	border-color: $info;
+	color: $white;
+}
+
+// ----------------------------------------------
+// Icon page
+// ----------------------------------------------
+.icon-hover {
+	cursor: pointer;
+	i {
+		font-size: 20px;
+		margin-right: 8px;
+	}
+	&:hover {
+		background-color: $gray-100;
+		color: $info
+	}
+}
+
+// ----------------------------------------------
+// This is for the datatable
+// ----------------------------------------------
+.table.dataTable {
+	border-collapse: collapse !important;
+}
+
+.dataTables_wrapper {
+	padding: 0px;
+}
+
+.note-editor.note-frame,
+.dropzone {
+	border-color: $border-color;
+}
+
+.note-toolbar-wrapper {
+	height: 33px !important;
+}
+
+.dropzone {
+	border-style: dotted;
+}
+
+.note-toolbar {
+	z-index: 1;
+}
+
+label {
+	font-weight: $font-weight-medium;
+}
+
+// ----------------------------------------------
+// Custom validation Classes
+// ----------------------------------------------
+
+.error {
+	.form-control {
+		border-color: $danger;
+	}
+	.help-block {
+		color: $danger;
+	}
+}
+
+.validate {
+	.form-control {
+		border-color: $success;
+	}
+	.help-block {
+		color: $success;
+	}
+}
+
+@media (min-height: 33.875em) {
+	.picker--opened .picker__frame {
+		top: 30%;
+		bottom: auto;
+	}
+}
+
+.dtp > .dtp-content > .dtp-date-view > header.dtp-header {
+	background: #1d50de;
+}
+
+.dtp div.dtp-date,
+.dtp div.dtp-time,
+.dtp table.dtp-picker-days tr > td > a.selected {
+	background: $info;
+}
+
+.dtp .p10 > a {
+	color: $white;
+}
+
+.datepicker .day,
+.datepicker .dow {
+	padding: 5px 10px;
+}
+
+.docs-buttons .btn,
+.docs-data .input-group {
+	margin-bottom: 5px;
+}
+
+// ----------------------------------------------
+// scrollbar
+// ----------------------------------------------
+.scrollable {
+	position: relative;
+}
+
+
+// ----------------------------------------------
+// Error Page
+// ----------------------------------------------
+.error-box {
+	height: 100%;
+	position: fixed;
+	background: url(../../assets/images/background/error-bg.jpg) no-repeat
+		bottom -250px center #fff;
+	width: 100%;
+	.error-body {
+		padding-top: 5%;
+	}
+	.error-title {
+		font-size: 210px;
+		font-weight: 900;
+		text-shadow: 4px 4px 0 #fff, 6px 6px 0 $dark;
+		line-height: 210px;
+	}
+}
+
+// ----------------------------------------------
+// Pricing Page
+// ----------------------------------------------
+.price-label {
+	position: absolute;
+	top: -10px;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	width: 100px;
+	padding: 5px 10px;
+}
+
+.price-sign {
+	position: absolute;
+	font-size: 15px;
+	top: 5px;
+	margin-left: -10px;
+}
+
+// ----------------------------------------------
+// Guage Chart
+// ----------------------------------------------
+.gaugejs-box {
+	position: relative;
+	margin: 0 auto;
+}
+
+.gaugejs-box canvas.gaugejs {
+	width: 100% !important;
+	height: auto !important;
+}
+
+// ----------------------------------------------
+// Footable table
+// ----------------------------------------------
+
+#demo-foo-accordion .open > .dropdown-menu {
+	display: block;
+}
+
+#demo-foo-accordion2 .open > .dropdown-menu {
+	display: block;
+}
+
+#footable-addrow .open > .dropdown-menu {
+	display: block;
+}
+
+table.footable {
+	thead {
+		tr.footable-filtering {
+			th {
+				ul.dropdown-menu {
+					li {
+						a.checkbox {
+							padding-left: 0;
+						}
+						a.checkbox input[type="checkbox"] {
+							position: relative;
+							margin-right: 10px;
+							margin-left: -20px;
+							left: 0;
+							opacity: 1;
+						}
+						.checkbox label::before {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.footable .pagination {
+	li {
+		a {
+			position: relative;
+			display: block;
+			padding: 0.5rem 0.75rem;
+			margin-left: -1px;
+			line-height: 1.25;
+			color: #0275d8;
+			background-color: $white;
+			border: 1px solid #ddd;
+		}
+		&.active a {
+			z-index: 2;
+			color: $white;
+			background-color: $info !important;
+			border-color: $info !important;
+		}
+	}
+	li.disabled {
+		a {
+			color: $gray-200;
+			pointer-events: none;
+			cursor: not-allowed;
+			background-color: $white;
+			border-color: $gray-100;
+		}
+	}
+	li:first-child {
+		a {
+			margin-left: 0;
+			border-bottom-left-radius: 0.25rem;
+			border-top-left-radius: 0.25rem;
+		}
+	}
+}
+
+//
+// common card header
+//
+.title-part-padding {
+	padding: 15px 20px;
+}
+
+
+//
+// apexchart
+//
+.apexcharts-canvas {
+	.apexcharts-yaxis,
+	.apexcharts-xaxis {
+		line {
+			stroke: #a1aab2;
+		}
+	}
+}

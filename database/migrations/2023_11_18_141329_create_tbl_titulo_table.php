@@ -13,11 +13,7 @@ return new class extends Migration
     {
         Schema::create('tbl_titulo', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
-            $table->string('sigla');
-            $table->decimal('price', 12, 2);
-            $table->longText('image');
-            $table->text('descricao');
+            $table->string('dados');
             $table->timestamps();
         });
     }

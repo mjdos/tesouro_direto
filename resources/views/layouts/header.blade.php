@@ -3,7 +3,7 @@
 <!--begin::Head-->
 <head>
     <base href="">
-    <title>Sistema Mutua</title>
+    <title>Tesouro Direto</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,7 +13,7 @@
     <link href="{{ url('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ url('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ url('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!--end::Global Stylesheets Bundle-->
 </head>

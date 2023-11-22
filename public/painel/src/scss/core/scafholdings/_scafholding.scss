@@ -1,0 +1,288 @@
+// ----------------------------------------------
+// Scafholding
+// ----------------------------------------------
+
+* {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: $body-color;
+  background: $main-body-bg;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+a {
+  color: $themecolor;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a.link {
+  color: $body-color;
+  &:hover,
+  &:focus {
+    color: $themecolor;
+  }
+}
+
+.box {
+  border-radius: $border-radius;
+  padding: 10px;
+}
+
+.no-wrap {
+  td,
+  th {
+    white-space: nowrap;
+  }
+}
+
+ol li {
+  margin: 5px 0;
+}
+
+.hide {
+  display: none;
+}
+
+
+// ----------------------------------------------
+// Opacity
+// ----------------------------------------------
+
+.op-5 {
+  opacity: 0.5;
+}
+
+.op-3 {
+  opacity: 0.3;
+}
+
+// ----------------------------------------------
+// Extra font weight
+// ----------------------------------------------
+
+html body {
+  .font-medium {
+    font-weight: $font-weight-medium;
+  }
+}
+
+// ----------------------------------------------
+// Custom Backgrounds
+// ----------------------------------------------
+
+html body {
+  .bg-inverse {
+    background-color: $gray-900;
+  }
+  .bg-purple {
+    background-color: $purple;
+  }
+}
+
+// ----------------------------------------------
+// Rounds
+// ----------------------------------------------
+
+.round {
+  line-height: 48px;
+  color: $white;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  border-radius: 100%;
+  background: $blue;
+  line-height: 52px;
+  img {
+    border-radius: 100%;
+  }
+  &.round-info {
+    background: $blue;
+  }
+
+  &.round-warning {
+    background: $warning;
+  }
+
+  &.round-danger {
+    background: $danger;
+  }
+
+  &.round-success {
+    background: $success;
+  }
+
+  &.round-primary {
+    background: $primary;
+  }
+}
+
+.round-lg {
+  line-height: 65px;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+}
+
+
+// ----------------------------------------------
+// List style none
+// ----------------------------------------------
+
+ul.list-style-none {
+  margin: 0px;
+  padding: 0px;
+  li {
+    list-style: none;
+    a {
+      color: $body-color;
+      padding: 8px 0px;
+      display: block;
+      text-decoration: none;
+      &:hover {
+        color: $themecolor;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------
+// Cards
+// ----------------------------------------------
+
+.card {
+  margin-bottom: 20px;
+  .card-subtitle {
+    font-weight: $font-weight-light;
+    margin-bottom: 10px;
+    color: $text-muted;
+  }
+  .card-title {
+    position: relative;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .card-actions {
+    a {
+      padding: 0 5px;
+      cursor: pointer;
+    }
+  }
+  .card-header .card-title {
+    margin-bottom: 0px;
+  }
+}
+
+.card-alt {
+  margin: 0 -20px;
+  background: $card-alt;
+}
+
+.card-group {
+  margin-bottom: 20px;
+  .card {
+    border-right: 1px solid $border-color;
+  }
+}
+
+.card-fullscreen {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  overflow: auto;
+}
+
+.card-hover {
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  &:hover {
+    webkit-transform: translateY(-4px) scale(1.01);
+    -moz-transform: translateY(-4px) scale(1.01);
+    -ms-transform: translateY(-4px) scale(1.01);
+    -o-transform: translateY(-4px) scale(1.01);
+    transform: translateY(-4px) scale(1.01);
+    -webkit-box-shadow: 0 14px 24px rgba(62, 57, 107, 0.1);
+    box-shadow: 0 14px 24px rgba(62, 57, 107, 0.1);
+  }
+}
+
+// ----------------------------------------------
+// Draggable Card
+// ----------------------------------------------
+
+.draggable-cards .card-header {
+  cursor: move;
+}
+.card-moved .card {
+  background: $info;
+  color: $white;
+}
+
+
+// ----------------------------------------------
+// Feather Custom style (Common)
+// ----------------------------------------------
+.fill-white {
+  fill: rgba(255,255,255,.1);
+}
+
+.feather-sm {
+  width: 18px;
+  height: 18px;
+}
+
+.feather-lg {
+  width: 28px;
+  height: 28px;
+}
+
+.feather-xl {
+  width: 35px;
+  height: 35px;
+}
+
+// ----------------------------------------------
+// Custom Pills
+// ----------------------------------------------
+.nav-pills.custom-pills {
+  .nav-link {
+    border-radius: 0;
+    opacity: 0.7;
+    &.active {
+      color: $themecolor;
+      opacity: 1;
+      background-color: transparent;
+      border-bottom: 2px solid $themecolor;
+    }
+  }
+}
+
+
+.c3 text {
+  font-family: $font-family-sans-serif;
+}
+
+.form-select {
+  background-image: url(../../assets/images/custom-select.png);
+  background-size: auto;
+  background-position: right 0.55rem center;
+}

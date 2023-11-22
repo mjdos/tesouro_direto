@@ -12,8 +12,8 @@ class Titulo extends Model
     protected $table = 'tbl_titulo';
 
     protected $fillable = [
-        'titulo',
-        'descricao',
+        'nome',
+        'dados',
     ];
 
 }
