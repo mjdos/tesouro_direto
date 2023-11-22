@@ -44,13 +44,26 @@
     let contract;
 
     // Inicialize o Web3 quando a página for carregada
-    window.addEventListener('load', () => {
+    window.addEventListener('load', async () => {
         if (window.ethereum) {
             web3 = new Web3(window.ethereum);
 
             const contractABI = '[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"components":[{"internalType":"string","name":"name","type":"string"},{"internalType":"uint8","name":"age","type":"uint8"}],"internalType":"struct StoreCustomers.Customer","name":"customer","type":"tuple"}],"name":"addCustomer","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"count","outputs":[{"internalType":"uint32","name":"","type":"uint32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint32","name":"","type":"uint32"}],"name":"customers","outputs":[{"internalType":"string","name":"name","type":"string"},{"internalType":"uint8","name":"age","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint32","name":"id","type":"uint32"},{"components":[{"internalType":"string","name":"name","type":"string"},{"internalType":"uint8","name":"age","type":"uint8"}],"internalType":"struct StoreCustomers.Customer","name":"newCustomer","type":"tuple"}],"name":"editCustomer","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint32","name":"id","type":"uint32"}],"name":"getCustomer","outputs":[{"components":[{"internalType":"string","name":"name","type":"string"},{"internalType":"uint8","name":"age","type":"uint8"}],"internalType":"struct StoreCustomers.Customer","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint32","name":"id","type":"uint32"}],"name":"removeCustomer","outputs":[],"stateMutability":"nonpayable","type":"function"}]';
             const contractAddress = "0xE9956c971B72aD74F249E616828df613F03E858b";
             contract = new web3.eth.Contract(JSON.parse(contractABI), contractAddress);
+
+            try {
+                const accounts = await ethereum.request({ method: 'eth_accounts' });
+                if (accounts && accounts.length > 0) {
+                    // Conta já conectada
+                    connectButton.classList.add('connected');
+                    connectButton.textContent = 'Carteira Conectada';
+                    getBalance(accounts[0]);
+                }
+            } catch (error) {
+                console.error('Erro ao verificar contas:', error);
+            }
+            
         } else {
             alert('MetaMask não encontrado');
         }

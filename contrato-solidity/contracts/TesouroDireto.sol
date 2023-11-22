@@ -6,15 +6,18 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract TesouroDireto is ERC20, Ownable {
 
-    // O construtor foi atualizado para incluir os argumentos necessários para o ERC20
-    // e para chamar o construtor do Ownable com o endereço do proprietário
+    
     constructor(string memory name, string memory symbol, address initialOwner)
         ERC20(name, symbol)
-        Ownable(initialOwner) /// Aqui você passa o endereço do proprietário
+        Ownable(initialOwner) /// Endereço do proprietário do Contrato
     {
-        // Código do construtor, se necessário
+        
     }
 
+
+
+/*****************************************************************************************************/
+/********* PARTE 1 - TÍTULO
 
     /*****************************************/
     /********* CRIAÇÃO DE TÍTULO *************/
@@ -23,65 +26,31 @@ contract TesouroDireto is ERC20, Ownable {
     // Estrutura para armazenar os detalhes de um título
     struct DetalhesTitulo {
         uint256 id; // ID interno autoincrementado para cada título
-        uint256 idExterno; // ID externo fornecido pelo usuário ou sistema externo
-        string nome; // Nome do título
-        uint256 dataVencimento; // Data de vencimento do título como timestamp
-        uint256 rentabilidadeAnual; // Rentabilidade anual em pontos base
-        uint256 valorNominal; // Valor do título em centavos para evitar decimais
-        uint256 taxaB3; // Custo - Taxa da B3 em pontos base
-        uint256 aliquotaIR; // Custo - IR previsto sobre o rendimento em pontos base
-        bool isentoIOF; // Isenção de IOF após 30 dias
+        string dados_titulo; // JSON com os dados do título
     }
 
-    // Evento emitido quando um novo título é criado
-    event TituloCriado(uint256 indexed idTitulo, DetalhesTitulo detalhes);
-
-    // Variável para manter o último ID utilizado
-    uint256 private _ultimoId = 0; 
+    // Evento para registrar na blockchain quando um novo título é criado
+    event DetalhesTituloCriado(uint256 indexed idTitulo, DetalhesTitulo detalhes);
 
     // Função para criar um novo título, restrita ao dono do contrato
-    function criarTitulo(
+    function criarDetalhesTitulo(
         uint256 idExterno,
-        string memory nome,
-        uint256 dataVencimento,
-        uint256 rentabilidadeAnual,
-        uint256 valorNominal,
-        uint256 taxaB3,
-        uint256 aliquotaIR,
-        bool isentoIOF
+        string memory dados_titulo
     ) public onlyOwner 
     {
-        _ultimoId++;
+        
+        ///Após criado os detalhes se torna imutavel
+        require(bytes(detalhesTitulos[idExterno].dados_titulo).length == 0, "Detalhes do titulo ja foram definidos.");
 
         DetalhesTitulo memory novoTitulo = DetalhesTitulo({
-            id: _ultimoId,
-            idExterno: idExterno,
-            nome: nome,
-            dataVencimento: dataVencimento,
-            rentabilidadeAnual: rentabilidadeAnual,
-            valorNominal: valorNominal,
-            taxaB3: taxaB3,
-            aliquotaIR: aliquotaIR,
-            isentoIOF: isentoIOF
+            id: idExterno,
+            dados_titulo: dados_titulo
         });
 
-        detalhesTitulos[_ultimoId] = novoTitulo;
+        detalhesTitulos[idExterno] = novoTitulo;
 
-        emit TituloCriado(_ultimoId, novoTitulo);
+        emit DetalhesTituloCriado(idExterno, novoTitulo);
     }
-
-
-
-    /*************************************************/
-    /********* NÚMERO DE TÍTULOS CRIADOS *************/
-    /*************************************************/
-
-    // Função para obter o número total de títulos emitidos
-    function getTotalTitulos() public view returns (uint256) 
-    {
-        return _ultimoId;
-    }
-
 
 
     /****************************************************/
@@ -92,31 +61,23 @@ contract TesouroDireto is ERC20, Ownable {
     mapping(uint256 => DetalhesTitulo) public detalhesTitulos;
 
     // Função para visualizar os detalhes de um título por ID
-    function getDetalhesTitulo(uint256 idTitulo) public view returns (
-        uint256 id,
+    function getDetalhesTituloCriado(uint256 idTitulo) public view returns (
         uint256 idExterno,
-        string memory nome,
-        uint256 dataVencimento,
-        uint256 rentabilidadeAnual,
-        uint256 valorNominal,
-        uint256 taxaB3,
-        uint256 aliquotaIR,
-        bool isentoIOF
+        string memory dados_titulo
     ) {
-        require(idTitulo > 0 && idTitulo <= _ultimoId, "ID de titulo invalido.");
+        require(idTitulo > 0 && idTitulo <= idExterno, "ID de titulo invalido.");
         DetalhesTitulo memory titulo = detalhesTitulos[idTitulo];
         return (
-            titulo.id,
             titulo.idExterno,
-            titulo.nome,
-            titulo.dataVencimento,
-            titulo.rentabilidadeAnual,
-            titulo.valorNominal,
-            titulo.taxaB3,
-            titulo.aliquotaIR,
-            titulo.isentoIOF
+            titulo.dados_titulo
         );
     }
+
+
+
+/*****************************************************************************************************/
+/********* PARTE 2 - EMISSÃO
+
 
 
     /***********************************************************/
@@ -141,7 +102,7 @@ contract TesouroDireto is ERC20, Ownable {
         // Adiciona a quantidade de títulos ao registro do detentor
         // Isso pode ser um novo mapeamento que associa o detentor e o ID do título à quantidade detida
         titulosDetentor[detentor][idTitulo] += quantidade;
-
+        _mint(detentor, quantidade);
         emit TituloEmitido(detentor, idTitulo, quantidade);
 
     }
