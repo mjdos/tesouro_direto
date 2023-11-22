@@ -17,11 +17,11 @@ class TitulosController extends Controller
 
     public function show($id)
     {
-        $titulos =  Http::timeout(60)->get('http://localhost:8000/api/titulos/show/'.$id);
-        $response = Http::timeout(60)->get('http://localhost:8000/api/grafico-mercados/'.$id);
+        $titulos =  Http::timeout(60)->get('http://localhost:8000/api/titulos/show/' . $id);
+        $response = Http::timeout(60)->get('http://localhost:8000/api/grafico-mercados/' . $id);
         $minutes = [];
         $prices = [];
-       
+
 
         if ($response->successful()) {
             $data = $response->json();
@@ -33,7 +33,12 @@ class TitulosController extends Controller
             $errorDetails = $response->json();
             dd($errorDetails);
         }
-        
+
         return view('painel.titulos.show', compact('titulos', 'minutes', 'prices', 'names'));
+    }
+
+    public function comprar()
+    {
+        return view('painel.vendas.index');
     }
 }

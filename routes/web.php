@@ -7,13 +7,15 @@ use App\Http\Controllers\{
     TitulosController
 };
 
-Route::get('/teste', function () {
+Route::get('/login', function () {
     return view('painel.vendas.index');
 });
 
-Route::get('/tesouro_direto', [TesouroDiretoController::class, 'index'])->name('tesouro_direto.index');
-Route::get('/titulosLista', [TitulosController::class, 'index'])->name('tituloa.index');
-Route::get('/titulosDetalhes/{id}', [TitulosController::class, 'show'])->name('tituloa.show');
 
+Route::get('/', [TitulosController::class, 'index'])->name('tituloa.index');
+Route::get('/titulosDetalhes/{id}', [TitulosController::class, 'show'])->name('tituloa.show');
+Route::get('/titulosLista', [TitulosController::class, 'index'])->name('tituloa.index');
+Route::get('/titulosComprar', [TitulosController::class, 'comprar'])->name('tituloa.comprar');
+//Route::get('/tesouro_direto', [TesouroDiretoController::class, 'index'])->name('tesouro_direto.index');
 
 Route::get('/mp', [MarketPlaceController::class, 'index'])->name('mp.index');
