@@ -10,14 +10,14 @@
 							<div class="card-header border-0 py-3">
 								<h3 class="card-title align-items-start flex-column">
 									<span class="card-label fw-bolder fs-3 mb-1">Criar Títulos</span>
-									<span class="text-muted fw-bold fs-7">####</span>
+									<span class="text-muted fw-bold fs-7">Tela para Criação de Títulos</span>
 								</h3>
 							</div>
 							<div class="card-body d-flex flex-column">
 								<div class="pt-0" align="center">
 									<img src="{{ url('assets/imagens/beneficio.png') }}" class="h-70px mb-2">
 									<p class="text-center fs-6 pb-5 mb-2">
-										Acesse todos os seu benefícios contratados.
+										Acesse todos os títulos cadastrados.
 									</p>
 									<a href="{{route('criarTitulos.index')}}" class="btn btn-primary w-100 py-3">Titulos</a>
 								</div>
