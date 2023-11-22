@@ -1,35 +1,37 @@
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var ctx = document.getElementById('myChart').getContext('2d');
+        document.addEventListener('DOMContentLoaded', function() {
+            var options = {
+                series: [{
+                    name: {!! json_encode($names) !!},
+                    data: {!! json_encode($prices) !!},
+                }],
+                chart: {
+                    type: 'line',
+                    height: 200,
+                },
+                xaxis: {
+                    categories: {!! json_encode($minutes) !!},
+                },
+                colors: ['#5d78ff'],
+                stroke: {
+                    curve: 'smooth',
+                },
+                markers: {
+                    size: 4,
+                },
+                grid: {
+                    borderColor: '#f1f3fa',
+                },
+                tooltip: {
+                    enabled: true,
+                    theme: 'light',
+                },
+                legend: {
+                    show: false,
+                },
+            };
 
-        // Dados passados pelo controlador
-        var data = {
-            labels: {
-                !!json_encode($minutes) !!
-            }, // Rótulos dos minutos
-            datasets: [{
-                label: 'Preço do Bitcoin'
-                , data: {
-                    !!json_encode($prices) !!
-                }, // Valores dos minutos
-                borderColor: 'rgba(75, 192, 192, 1)'
-                , borderWidth: 1
-                , fill: false
-            }]
-        };
-
-        var myChart = new Chart(ctx, {
-            type: 'line'
-            , data: data
-            , options: {
-                scales: {
-                    x: [{
-                        type: 'linear'
-                        , position: 'bottom'
-                    }]
-                }
-            }
+            var chart = new ApexCharts(document.getElementById('kt_chart_order_statistics_chart'), options);
+            chart.render();
         });
-    });
-
-</script>
+    </script>

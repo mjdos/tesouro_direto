@@ -17,7 +17,9 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome');});
+Route::get('/teste', function () {
+    return view('painel.vendas.index');
 });
 
 Route::middleware('auth')->group(function () {

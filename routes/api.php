@@ -20,13 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::post('/login',[AuthController::class,'login']);
-// Route::post('/register',[AuthController::class,'register']);
-// Route::post('/registerAddress',[CustomerController::class,'storeAddress']);
-// Route::post('/address/index',[CustomerController::class,'allAddress']);
-// Route::any('/order',[OrderController::class,'store']);
-// Route::any('/order2',[OrderController::class,'store']);
-
 Route::get('/apiteste', function () {
     $teste = 'teste';
     return $teste;
