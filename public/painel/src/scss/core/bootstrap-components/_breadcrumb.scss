@@ -1,0 +1,72 @@
+// ------------------------------------------
+// Theme Breadcrumb
+// ------------------------------------------
+
+.page-breadcrumb {
+    padding: 20px 20px 0 20px;  
+    .page-title{
+        margin-bottom: 0px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .breadcrumb {
+        padding: 0px;
+        margin: 0px;
+        background: transparent;
+        font-size: 12px;
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: "\e649";
+            font-family: themify;
+            color: $gray-400;
+            font-size: 11px;
+            margin-top: 2px;
+        }
+    }
+}
+
+
+.breadcrumb {
+    &.bg-light-info,
+    &.border-info {
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: $info;
+        }
+    }
+}
+
+.breadcrumb {
+    &.bg-light-primary,
+    &.border-primary {
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: $primary;
+        }
+    }
+}
+
+.breadcrumb {
+    &.bg-light-warning,
+    &.border-warning {
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: $warning;
+        }
+    }
+}
+
+.breadcrumb {
+    &.bg-light-danger,
+    &.border-danger {
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: $danger;
+        }
+    }
+}
+
+.breadcrumb {
+    &.bg-light-success,
+    &.border-success {
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: $success;
+        }
+    }
+}

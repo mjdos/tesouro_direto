@@ -1,0 +1,153 @@
+// ----------------------------------------------
+// input with backgrounds
+// ----------------------------------------------
+.form-control.form-input-bg {
+	background-color: rgba(0,0,0,0.03);
+	border: 0;
+	&:focus {
+		background-color: rgba(0,0,0,0.09);
+	}
+}
+
+
+
+// ----------------------------------------------
+// Form Typehead
+// ----------------------------------------------
+.twitter-typeahead {
+	width: 100%
+}
+
+.twitter-typeahead .tt-menu {
+	width: 100%;
+	background: $theme-light;
+	border: 1px solid $gray-100;
+	border-radius: 5px;
+	padding: .75rem 0
+}
+
+.twitter-typeahead .tt-menu .tt-suggestion {
+		padding: .25rem .75rem;
+		cursor: pointer
+}
+
+.twitter-typeahead .tt-menu .tt-suggestion:hover {
+		background-color: $primary;
+		color: $white
+}
+
+.twitter-typeahead .empty-message {
+		padding: 5px 10px;
+		text-align: center
+}
+
+.twitter-typeahead .rtl-typeahead .tt-menu {
+		text-align: right
+}
+
+.twitter-typeahead .league-name {
+		margin: 0 10px 5px;
+		padding: 7px 5px 10px;
+		border-bottom: 1px solid $gray-200
+}
+
+.scrollable-dropdown .twitter-typeahead .tt-menu {
+		max-height: 80px;
+		overflow-y: auto
+}
+
+.bootstrap-maxlength {
+		margin-top: .5rem
+}
+
+// ----------------------------------------------
+// Bootstrap switch
+// ----------------------------------------------
+
+.bootstrap-switch {
+		margin-bottom: 10px;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary, .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
+		background: $info;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info, .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info {
+		background: $cyan;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success, .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success {
+		background: $success;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning, .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning {
+		background: $warning;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger, .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger {
+		background: $danger;
+}
+
+// ----------------------------------------------
+// Bootstrap Dual Listbox
+// ----------------------------------------------
+.btn  {
+		&.move,
+		&.remove,
+		&.removeall,
+		&.moveall {
+	color: $white;
+		}
+}
+
+// ----------------------------------------------
+// Form Wizard
+// ----------------------------------------------
+
+
+.wizard-content .wizard>.actions>ul>li>a,
+.wizard > .actions a, .wizard > .actions a:hover, .wizard > .actions a:active {
+		padding: 7px 20px;
+		border-radius: 17px;
+}
+
+.wizard > .actions a:hover, .wizard-content .wizard > .actions a, .wizard-content .wizard > .actions a:hover {
+		background: $info;
+
+}
+
+// ----------------------------------------------
+// Form row Separator
+// ----------------------------------------------
+.r-separator .form-group {
+	border-bottom: 1px solid $border-color;
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+.striped-rows .row:nth-child(odd) {
+	background-color: $gray-100;
+}
+
+.b-form .row {
+	border-bottom: 1px solid $border-color;
+	margin-bottom: 0;
+	padding: 15px 0;
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+.b-label {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+// Form Wizard
+
+.wizard > .steps .disabled a, .wizard > .steps .disabled a:hover, .wizard > .steps .disabled a:active,
+.wizard > .content {
+	background: $light;
+}
