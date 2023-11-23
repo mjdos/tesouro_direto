@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@chainlink/contracts": "^0.8.0",
     "@openzeppelin/contracts": "^5.0.0",
     "@truffle/hdwallet-provider": "^2.1.15",
     "dotenv": "^16.3.1"

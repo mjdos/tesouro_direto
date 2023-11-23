@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.7;
+pragma solidity ^0.8.17;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -7,20 +7,27 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract TesouroDireto is ERC20, Ownable {
 
     
-    constructor(string memory name, string memory symbol, address initialOwner)
+    constructor(
+        string memory name, 
+        string memory symbol, 
+        address initialOwner
+        )
         ERC20(name, symbol)
         Ownable(initialOwner) /// Endereço do proprietário do Contrato
     {
         
     }
 
+/*****************************************************************************************************/
+/********* PARTE 1 - CHAINLINK
+
 
 /*****************************************************************************************************/
-/********* PARTE 1 - TÍTULO
+/********* PARTE 2 - TÍTULO
 
-    /*****************************************/
-    /********* CRIAÇÃO DE TÍTULO *************/
-    /*****************************************/
+    /***************************************************/
+    /********* CRIAÇÃO DOS DETALHES TÍTULO *************/
+    /***************************************************/
 
     // Estrutura para armazenar os detalhes de um título
     struct DetalhesTitulo {
@@ -79,14 +86,60 @@ contract TesouroDireto is ERC20, Ownable {
 
 
 /*****************************************************************************************************/
-/********* PARTE 2 - EMISSÃO
+/********* PARTE 3 - EMISSÃO
 
+
+    /**********************************************************************/
+    /********* LISTA DE CARTEIRAS AUTORIZADAS A EMITIR TÍTULO *************/
+    /**********************************************************************/
+
+    // Mapeamento que armazena se uma carteira está autorizada
+    mapping(address => bool) public carteirasAutorizadas;
+
+    // Modificador para usar lista de carteiras autorizadas
+    modifier onlyAuthorized() {
+        require(carteirasAutorizadas[msg.sender], "Apenas carteiras autorizadas podem executar esta funcao");
+        _; // Isso indica que o código da função chamada será executado após a verificação do modificador
+    }
+
+    // Estrutura para lista
+    struct CarteiraAutorizada {
+        address carteira;
+        bool autorizada;
+    }
+
+    // Array de structs para armazenar as carteiras autorizadas
+    CarteiraAutorizada[] public carteirasAutorizadasList;
+
+    // Evento para notificar quando uma carteira é adicionada à lista de autorizações
+    event CarteiraAutorizadaAdicionada(address carteira, bool autorizada);
+
+    // Função para adicionar ou remover endereços autorizados
+    function setCarteiraAutorizada(address carteira, bool autorizada) public onlyOwner {
+        carteirasAutorizadas[carteira] = autorizada;
+        carteirasAutorizadasList.push(CarteiraAutorizada(carteira, autorizada));
+        emit CarteiraAutorizadaAdicionada(carteira, autorizada);
+    }
+
+    // Função para obter todas as carteiras autorizadas
+    function getEnderecosAutorizados() public view returns (address[] memory) {
+
+        uint256 length = carteirasAutorizadasList.length;
+        address[] memory enderecosAutorizados = new address[](length);
+
+        for (uint256 i = 0; i < length; i++) {
+            enderecosAutorizados[i] = carteirasAutorizadasList[i].carteira;
+        }
+
+        return enderecosAutorizados;
+
+    }
 
 
     /***********************************************************/
     /********* EMISSÃO DE TÍTULO PARA UM COMPRADOR *************/
     /***********************************************************/
-    /*
+    
     // Evento emitido quando um título é emitido para um detentor
     event TituloEmitido(address indexed detentor, uint256 idTitulo, uint256 quantidade);
 
@@ -98,30 +151,96 @@ contract TesouroDireto is ERC20, Ownable {
         uint256 idTitulo,
         address detentor,
         uint256 quantidade
-    ) public onlyOwner {
-        require(detalhesTitulos[idTitulo].id != 0, "Titulo nao existe.");
+    ) public onlyAuthorized {
+
+        require(detalhesTitulos[idTitulo].idExterno != 0, "Titulo nao existe.");
         require(quantidade > 0, "Quantidade deve ser maior que 0.");
+        require(carteirasAutorizadas[msg.sender], "Carteira nao autorizada a emitir titulos.");
 
         // Adiciona a quantidade de títulos ao registro do detentor
         // Isso pode ser um novo mapeamento que associa o detentor e o ID do título à quantidade detida
         titulosDetentor[detentor][idTitulo] += quantidade;
+
+        //Enviar a quantidade para o detentor
         _mint(detentor, quantidade);
+
         emit TituloEmitido(detentor, idTitulo, quantidade);
 
     }
-    */
+    
+
     /******************************************************/
     /********* QTD DE TÍTULOS DE UM DETENTOR **************/
     /******************************************************/
-    /*
-    function getQuantidadeTitulos(address detentor, uint256 idTitulo) public view returns (uint256) {
+    
+    function getQtdTitulosDetentor(address detentor, uint256 idTitulo) public view returns (uint256) {
         return titulosDetentor[detentor][idTitulo];
+    }
+
+
+/*****************************************************************************************************/
+/********* PARTE 4 - COMPRA MERCADO SECUNDÁRIO
+
+    /******************************************/
+    /********* DEPÓSITO ANTECIPADO ************/
+    /******************************************/
+    
+    // Mapeamento para rastrear depósitos de BNB
+    mapping(address => uint256) public depositos;
+
+    // Função para o detentor de destino depositar BNB
+    function depositarParaCompra() public payable {
+        require(msg.value > 0, "Nenhum valor de BNB enviado.");
+        depositos[msg.sender] += msg.value;
     }
 
 
     /******************************************/
     /********* TRANSFERIR TÍTULO **************/
     /******************************************/
+    
+
+    function compraSecundaria(
+    address detentorOrigem,
+    address detentorDestino,
+    uint256 idTitulo,
+    uint256 quantidade,
+    uint256 valor
+    ) public payable {
+        
+        // Verifica se o remetente da mensagem é o proprietário do contrato
+        require(msg.sender == owner(), "Remetente nao tem permissao executar transacoes no titulo.");
+
+        // Verifica se o detentor de origem possui quantidade suficiente do título
+        require(titulosDetentor[detentorOrigem][idTitulo] >= quantidade, "Detentor de origem nao possui quantidade suficiente do titulo.");
+
+        // Verifica se o detentor de destino depositou BNB suficiente
+        require(depositos[detentorDestino] >= valor, "Saldo de deposito insuficiente.");
+
+        // Atualiza o saldo de depósito do detentor de destino
+        depositos[detentorDestino] -= valor;
+
+        // Transferir BNB para o detentor de origem
+        payable(detentorOrigem).transfer(valor);
+
+        // Verificar se o detentor de destino tem CPF no gov.br
+        // API CHECAR GOV.BR
+
+        // Liquidez, como resolver?
+
+        // Atualiza o saldo de títulos dos detentores
+        titulosDetentor[detentorOrigem][idTitulo] -= quantidade;
+        titulosDetentor[detentorDestino][idTitulo] += quantidade;
+
+        // Emitir evento de transferência
+        emit TituloTransferido(detentorOrigem, detentorDestino, idTitulo, quantidade);
+    }
+
+    // Evento para registrar a transferência de títulos
+    event TituloTransferido(address indexed detentorOrigem, address indexed detentorDestino, uint256 idTitulo, uint256 quantidade);
+
+
+
     /*
     function transferirTitulo(
     address detentorOrigem,
@@ -132,6 +251,7 @@ contract TesouroDireto is ERC20, Ownable {
         
         require(msg.sender == detentorOrigem || msg.sender == owner(), "Remetente nao tem permissao para transferir o titulo.");
 
+        ///Colocar API para checar CPF.
         titulosDetentor[detentorOrigem][idTitulo] -= quantidade;
         titulosDetentor[detentorDestino][idTitulo] += quantidade;
 
@@ -141,8 +261,8 @@ contract TesouroDireto is ERC20, Ownable {
 
     // Evento para registrar a transferência de títulos
     event TituloTransferido(address indexed detentorOrigem, address indexed detentorDestino, uint256 idTitulo, uint256 quantidade);
-    */
-
+    
+*/
     
 
     /******************************************/

@@ -3,9 +3,11 @@ const TesouroDireto = artifacts.require("TesouroDireto");
 contract("TesouroDireto", accounts => {
 
     let instanciaContrato;
-    const owner = accounts[0]; // Proprietário do contrato (geralmente quem faz o deploy)
-    const detentor = accounts[1]; // Endereço do detentor que receberá os títulos
-    const detentorDestino = accounts[2];
+    const owner             = accounts[0]; // Proprietário do contrato (geralmente quem faz o deploy)
+    const detentor          = accounts[1]; // Endereço do detentor que receberá os títulos
+    const detentorDestino   = accounts[2];
+    const carteira_b3       = accounts[3];
+    const carteira_bacem    = accounts[4];
 
     // Dados para o titulo
     const idExterno = 1;
@@ -48,27 +50,50 @@ contract("TesouroDireto", accounts => {
         assert.equal(detalhesTitulo.idExterno, idExterno, "O ID do título deve corresponder ao solicitado.");
 
     });
- /*   
+  
+
+    it("TESTE 2 => deve adicionar carteira de owner, b3 e bacem à lista de autorizações", async () => {
+
+        const owner             = accounts[0];
+        const carteira_b3       = accounts[3];
+        const carteira_bacem    = accounts[4];
+
+        await instanciaContrato.setCarteiraAutorizada(owner, true, { from: owner });
+        await instanciaContrato.setCarteiraAutorizada(carteira_b3, true, { from: owner });
+        await instanciaContrato.setCarteiraAutorizada(carteira_bacem, true, { from: owner });
+
+        const enderecosAutorizados = await instanciaContrato.getEnderecosAutorizados();
+
+        assert.equal(enderecosAutorizados.length, 3, "Deveria haver 3 endereços autorizados.");
+        assert.equal(enderecosAutorizados[0], owner, "A primeira carteira autorizada não corresponde.");
+        assert.equal(enderecosAutorizados[1], carteira_b3, "A segunda carteira autorizada não corresponde.");
+        assert.equal(enderecosAutorizados[2], carteira_bacem, "A terceira carteira autorizada não corresponde.");
+        
+        console.log(" ");
+        console.log("    #######################");
+        console.log("    ####### TESTE 2 #######");
+        console.log("    #######################");
+        console.log("    Carteira Owner Autorizada: " + enderecosAutorizados[0]);
+        console.log("    Carteira B3 Autorizada: " + enderecosAutorizados[1]);
+        console.log("    Carteira Bacem Autorizada: " + enderecosAutorizados[2]);
+
+    });
+
+    
     it("TESTE 3 => deve emitir um título para um detentor específico", async () => {
 
-        const totalTitulos = await instanciaContrato.getTotalTitulos();
-        assert.equal(totalTitulos.toString(), '1', "Deveria existir um título");
-    
         // Dados para a emissão do título
-        const idTitulo = 1; // Assumindo que este é o ID do título criado no gancho before
-        const quantidade = new BigNumber(10).mul(new BigNumber(10).pow(new BigNumber(18))); // 10 tokens // Quantidade de títulos a serem emitidos
+        const owner         = accounts[0];
+        const detentor      = accounts[1];
+        const idTitulo      = 1;
+        const quantidade    = new BigNumber(10).mul(new BigNumber(10).pow(new BigNumber(18))); // 10 tokens
     
         // Chamar a função emitirTitulo
         await instanciaContrato.emitirTitulo(idTitulo, detentor, quantidade, { from: owner });
         
         // Verificar se a quantidade de títulos foi adicionada ao registro do detentor
-        const quantidadeRegistrada = await instanciaContrato.titulosDetentor(detentor, idTitulo);
-        assert(quantidadeRegistrada.toString() === quantidade.toString(), "A quantidade de títulos do detentor deve ser atualizada corretamente");
-
-        //console.log('>>>>>>>>>>>> '+quantidade);
-        //console.log('>>>>>>>>>>>> '+quantidadeRegistrada);
-
-        assert(quantidadeRegistrada.toString() === quantidade.toString(), "A quantidade de títulos do detentor deve ser atualizada corretamente");
+        const quantidadeRegistrada = await instanciaContrato.getQtdTitulosDetentor(detentor, idTitulo);
+        assert(quantidadeRegistrada.toString() === quantidade.toString(), "A quantidade de titulos do detentor deve ser atualizada corretamente");
 
         // Verificar se o evento TituloEmitido foi emitido corretamente
         const log = await instanciaContrato.getPastEvents('TituloEmitido', {
@@ -81,6 +106,7 @@ contract("TesouroDireto", accounts => {
         console.log("    ####### TESTE 3 #######");
         console.log("    #######################");
         console.log("    Id do Titulo: " + log[0].args.idTitulo.toString());
+        console.log("    Carteira do Owner: " + owner.toString());
         console.log("    Carteira do Detentor: " + log[0].args.detentor.toString());
         console.log("    Quantidade: " + log[0].args.quantidade.toString());
 
@@ -88,8 +114,63 @@ contract("TesouroDireto", accounts => {
         assert.equal(log[0].args.detentor, detentor, "O evento deve ter o detentor correto");
         assert.equal(log[0].args.idTitulo, idTitulo, "O evento deve ter o ID do título correto");
         assert(log[0].args.quantidade.toString() === quantidade.toString(), "O evento deve ter a quantidade correta");
+
     });
 
+
+    it("TESTE 4 => deve permitir que o detentor de destino deposite BNB", async () => {
+        
+        const detentorDestino   = accounts[2];
+
+        const valorDeposito = web3.utils.toWei("1", "ether"); // 1 ETH em wei
+        await instanciaContrato.depositarParaCompra({ from: detentorDestino, value: valorDeposito });
+        
+        const saldoDepositado = await instanciaContrato.depositos(detentorDestino);
+        assert.equal(saldoDepositado.toString(), valorDeposito, "O valor depositado não corresponde ao esperado.");
+    
+        console.log(" ");
+        console.log("    #######################");
+        console.log("    ####### TESTE 4 #######");
+        console.log("    #######################");
+        console.log("    Saldo depositado por Detentor de Destino: " + saldoDepositado.toString());
+
+    });
+
+    it("TESTE 5 => deve permitir a transferência de título com condições adequadas", async () => {
+
+        const detentor          = accounts[1];
+        const detentorDestino   = accounts[2];
+
+        const valorTransferencia = web3.utils.toWei("1", "ether"); // 1 ETH em wei
+        const idTitulo = 1;
+        const quantidade = new BigNumber(5).mul(new BigNumber(10).pow(new BigNumber(18))); // 5 tokens
+
+        // Certifique-se de que o detentor de destino tenha depositado BNB suficiente
+        await instanciaContrato.depositarParaCompra({ from: detentorDestino, value: valorTransferencia });
+
+        // Realizar a transferência de título
+        await instanciaContrato.compraSecundaria(detentor, detentorDestino, idTitulo, quantidade, valorTransferencia, { from: owner });
+
+        // Verificar os saldos de títulos e BNB após a transação
+        const saldoDetentorOrigem = await instanciaContrato.titulosDetentor(detentor, idTitulo);
+        const saldoDetentorDestino = await instanciaContrato.titulosDetentor(detentorDestino, idTitulo);
+
+        //assert(saldoDetentorOrigem.toString() === "0", "O detentor de origem deve ter transferido todos os seus títulos");
+        assert(saldoDetentorDestino.toString() === quantidade.toString(), "O detentor de destino deve ter recebido a quantidade correta de títulos");
+
+        console.log(" ");
+        console.log("    #######################");
+        console.log("    ####### TESTE 5 #######");
+        console.log("    #######################");
+        console.log("    Detentor de Origem: " + detentor.toString());
+        console.log("    Saldo do Detentor de Origem: " + saldoDetentorOrigem.toString());
+        console.log(" ");
+        console.log("    Detentor de Destino: " + detentorDestino.toString());
+        console.log("    Saldo do Detentor de Destino: " + saldoDetentorDestino.toString());
+    });
+
+
+/*
     it("TESTE 4 => deve verificar se a função getQuantidadeTitulos retorna a quantidade correta", async () => {
 
         // Supondo que o título com id 1 foi criado e emitido previamente...
