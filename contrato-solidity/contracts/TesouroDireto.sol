@@ -15,7 +15,6 @@ contract TesouroDireto is ERC20, Ownable {
     }
 
 
-
 /*****************************************************************************************************/
 /********* PARTE 1 - TÍTULO
 
@@ -25,7 +24,7 @@ contract TesouroDireto is ERC20, Ownable {
 
     // Estrutura para armazenar os detalhes de um título
     struct DetalhesTitulo {
-        uint256 id; // ID interno autoincrementado para cada título
+        uint256 idExterno; // ID interno autoincrementado para cada título
         string dados_titulo; // JSON com os dados do título
     }
 
@@ -43,7 +42,7 @@ contract TesouroDireto is ERC20, Ownable {
         require(bytes(detalhesTitulos[idExterno].dados_titulo).length == 0, "Detalhes do titulo ja foram definidos.");
 
         DetalhesTitulo memory novoTitulo = DetalhesTitulo({
-            id: idExterno,
+            idExterno: idExterno,
             dados_titulo: dados_titulo
         });
 
@@ -51,6 +50,7 @@ contract TesouroDireto is ERC20, Ownable {
 
         emit DetalhesTituloCriado(idExterno, novoTitulo);
     }
+
 
 
     /****************************************************/
@@ -65,8 +65,11 @@ contract TesouroDireto is ERC20, Ownable {
         uint256 idExterno,
         string memory dados_titulo
     ) {
-        require(idTitulo > 0 && idTitulo <= idExterno, "ID de titulo invalido.");
+        
         DetalhesTitulo memory titulo = detalhesTitulos[idTitulo];
+
+        require(titulo.idExterno > 0, "Detalhes nao encontrados para o ID de titulo fornecido.");
+
         return (
             titulo.idExterno,
             titulo.dados_titulo
@@ -83,7 +86,7 @@ contract TesouroDireto is ERC20, Ownable {
     /***********************************************************/
     /********* EMISSÃO DE TÍTULO PARA UM COMPRADOR *************/
     /***********************************************************/
-
+    /*
     // Evento emitido quando um título é emitido para um detentor
     event TituloEmitido(address indexed detentor, uint256 idTitulo, uint256 quantidade);
 
@@ -106,11 +109,11 @@ contract TesouroDireto is ERC20, Ownable {
         emit TituloEmitido(detentor, idTitulo, quantidade);
 
     }
-
+    */
     /******************************************************/
     /********* QTD DE TÍTULOS DE UM DETENTOR **************/
     /******************************************************/
-
+    /*
     function getQuantidadeTitulos(address detentor, uint256 idTitulo) public view returns (uint256) {
         return titulosDetentor[detentor][idTitulo];
     }
@@ -119,7 +122,7 @@ contract TesouroDireto is ERC20, Ownable {
     /******************************************/
     /********* TRANSFERIR TÍTULO **************/
     /******************************************/
-
+    /*
     function transferirTitulo(
     address detentorOrigem,
     address detentorDestino,
@@ -138,14 +141,14 @@ contract TesouroDireto is ERC20, Ownable {
 
     // Evento para registrar a transferência de títulos
     event TituloTransferido(address indexed detentorOrigem, address indexed detentorDestino, uint256 idTitulo, uint256 quantidade);
-
+    */
 
     
 
     /******************************************/
     /********* RESGATAR TÍTULO **************/
     /******************************************/
-
+    /*
     function resgatarTitulo(uint256 idTitulo) public {
 
         DetalhesTitulo storage titulo = detalhesTitulos[idTitulo];
@@ -177,5 +180,5 @@ contract TesouroDireto is ERC20, Ownable {
 
     // Evento emitido quando um título é resgatado e o pagamento é feito
     event TituloResgatado(uint256 indexed idTitulo, address indexed detentor, uint256 quantidade, uint256 valorPago);
-
+    */
 }
