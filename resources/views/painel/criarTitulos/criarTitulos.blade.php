@@ -20,22 +20,26 @@
                     <form action="{{route('criarTitulos.store')}}" method="post">
                         @csrf
                         <div class="form-row p-3">
-                            <div class="row">
+                            <div class="row pb-3">
                                 <div class="col-sm">
-                                    <span class="text-dark fs-4">Título</span>
+                                    <span class="text-dark fs-4">id Externo do Título</span>
+                                    <input class="form-control form-control-solid" type="text" name="idExterno" >
+                                </div>
+                                <div class="col-sm">
+                                    <span class="text-dark fs-4">Nome do Título</span>
                                     <input class="form-control form-control-solid" type="text" name="nome" >
                                 </div>
                                 <div class="col-sm">
                                     <span class="text-dark fs-4">Data de Vencimento</span>
                                     <input class="form-control form-control-solid" type="date" name="dataVencimento">
                                 </div>
+                                
+                            </div>
+                            <div class="row pt-3 pb-3">
                                 <div class="col-sm">
                                     <span class="text-dark fs-4">Rentabilidade Anual</span>
                                     <input class="form-control form-control-solid" type="text" name="rentabilidadeAnual">
                                 </div>
-                                
-                            </div>
-                            <div class="row">
                                 <div class="col-sm">
                                     <span class="text-dark fs-4">Valor Nominal</span>
                                     <input class="form-control form-control-solid" type="text" name="valorNominal">
@@ -44,9 +48,13 @@
                                     <span class="text-dark fs-4">Alíquota IR</span>
                                     <input class="form-control form-control-solid" type="text" name="aliquotaIR">
                                 </div>
+                            </div>
+                            <div class="row pt-3">
                                 <div class="col-sm">
-                                    <span class="text-dark fs-4">Isenção IOF</span>
-                                    <input class="form-control form-control-solid" type="text" name="isencaoIof">
+                                    <div class="col-3">
+                                        <span class="text-dark fs-4">Isenção IOF</span>
+                                        <input class="form-control form-control-solid" type="text" name="isencaoIof">
+                                    </div>
                                 </div>
                             </div>
 

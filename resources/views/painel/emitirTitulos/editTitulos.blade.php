@@ -25,12 +25,7 @@
                         <div class="form-row p-3">
                             <div class="row">
                                 <div class="col-sm">
-                                    <span class="text-dark fs-4">Id Externo do Título</span>
-                                    <input type="hidden" name="titulo_id" value="{{$titulo->idExterno}}">
-                                    <input class="form-control form-control-solid" type="text" name="idExterno" value="{{$titulo->idExterno}}">
-                                </div>
-                                <div class="col-sm">
-                                    <span class="text-dark fs-4">Nome do Título</span>
+                                    <span class="text-dark fs-4">Título</span>
                                     <input type="hidden" name="titulo_id" value="{{$titulo->id}}">
                                     <input class="form-control form-control-solid" type="text" name="nome" value="{{$dados->nome}}">
                                 </div>
@@ -38,13 +33,13 @@
                                     <span class="text-dark fs-4">Data de Vencimento</span>
                                     <input class="form-control form-control-solid" type="date" name="dataVencimento" value="{{$dados->dataVencimento}}">
                                 </div>
-                                
-                            </div>
-                            <div class="row">
                                 <div class="col-sm">
                                     <span class="text-dark fs-4">Rentabilidade Anual</span>
                                     <input class="form-control form-control-solid" type="text" name="rentabilidadeAnual" value="{{$dados->rentabilidadeAnual}}">
                                 </div>
+                                
+                            </div>
+                            <div class="row">
                                 <div class="col-sm">
                                     <span class="text-dark fs-4">Valor Nominal</span>
                                     <input class="form-control form-control-solid" type="text" name="valorNominal" value="{{$dados->valorNominal}}">
@@ -53,13 +48,9 @@
                                     <span class="text-dark fs-4">Alíquota IR</span>
                                     <input class="form-control form-control-solid" type="text" name="aliquotaIR" value="{{$dados->aliquotaIR}}">
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-sm">
-                                    <div class="col-3">
-                                        <span class="text-dark fs-4">Isenção IOF</span>
-                                        <input class="form-control form-control-solid" type="text" name="isencaoIof" value="{{$dados->isentoIOF}}">
-                                    </div>
+                                    <span class="text-dark fs-4">Isenção IOF</span>
+                                    <input class="form-control form-control-solid" type="text" name="isencaoIof" value="{{$dados->isentoIOF}}">
                                 </div>
                             </div>
 
