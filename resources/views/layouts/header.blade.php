@@ -20,7 +20,7 @@
 
 <nav class="navbar navbar-expand-xxl navbar-dark bg-dark" aria-label="Seventh navbar example">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{route('tituloa.index')}}">Tesouro Nacional Hackthon</a>
+        <a class="navbar-brand" href="{{route('titulos.index')}}">Tesouro Nacional Hackthon</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleXxl" aria-controls="navbarsExampleXxl" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarsExampleXxl">
             <ul class="navbar-nav me-auto mb-2 mb-xl-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    <a class="nav-link active" aria-current="page" href="{{route('login.cliente')}}">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>

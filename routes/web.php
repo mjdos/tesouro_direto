@@ -6,22 +6,25 @@ use App\Http\Controllers\{
     TesouroDiretoController,
     MarketPlaceController,
     TitulosController,
-    LoginController
+    LoginController,
+    AuthController
 };
 
-Route::get('/login', function () {
-    return view('painel.vendas.index');
+
+Route::get('/welcome', function () {
+    return view('welcome');
 });
+
+Route::any('/loginCliente', [AuthController::class, 'index'])->name('login.cliente');
 
 Route::middleware('guest')->group(function () {
 
     Route::get('login', [LoginController::class, 'index'])->name('login');
     Route::post('login', [LoginController::class, 'store']);
-
 });
 
-Route::get('/', function () {
-    return view('welcome');});
+
+
 Route::get('/teste', function () {
     return view('painel.vendas.index');
 });
@@ -38,15 +41,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/Titulo/edit/{id}', [TitulosController::class, 'editIndex'])->name('editTitulo.edit');
     Route::post('/Titulo/update', [TitulosController::class, 'update'])->name('updateTitulo.update');
 
+    
 });
-Route::get('/tesouro_direto', [TesouroDiretoController::class, 'index'])->name('tesouro_direto.index');
-Route::get('/titulosLista', [TitulosController::class, 'index'])->name('tituloa.index');
-Route::get('/titulosDetalhes/{id}', [TitulosController::class, 'show'])->name('tituloa.show');
 
-Route::get('/', [TitulosController::class, 'index'])->name('tituloa.index');
-Route::get('/titulosDetalhes/{id}', [TitulosController::class, 'show'])->name('tituloa.show');
-Route::get('/titulosLista', [TitulosController::class, 'index'])->name('tituloa.index');
-Route::get('/titulosComprar', [TitulosController::class, 'comprar'])->name('tituloa.comprar');
+
+Route::get('/tesouro_direto', [TesouroDiretoController::class, 'index'])->name('tesouro_direto.index');
+Route::get('/titulosLista', [TitulosController::class, 'index'])->name('titulos.index');
+Route::get('/titulosDetalhes/{id}', [TitulosController::class, 'show'])->name('titulos.show');
+
+Route::get('/', [TitulosController::class, 'index'])->name('titulos.index');
+Route::get('/titulosDetalhes/{id}', [TitulosController::class, 'show'])->name('titulos.show');
+Route::get('/titulosLista', [TitulosController::class, 'index'])->name('titulos.index');
+Route::get('/titulosComprar', [TitulosController::class, 'comprar'])->name('titulos.comprar');
 //Route::get('/tesouro_direto', [TesouroDiretoController::class, 'index'])->name('tesouro_direto.index');
 
 Route::get('/mp', [MarketPlaceController::class, 'index'])->name('mp.index');
