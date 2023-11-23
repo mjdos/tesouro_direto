@@ -243,8 +243,7 @@ contract TesouroDireto is ERC20, Ownable {
     event TituloTransferido(address indexed detentorOrigem, address indexed detentorDestino, uint256 idTitulo, uint256 quantidade);
 }
     
-*/
-    
+
 
     /******************************************/
     /********* RESGATAR TÍTULO **************/
