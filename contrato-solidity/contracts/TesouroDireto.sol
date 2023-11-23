@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.23;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -124,14 +124,14 @@ contract TesouroDireto is ERC20, Ownable {
     // Função para obter todas as carteiras autorizadas
     function getEnderecosAutorizados() public view returns (address[] memory) {
 
-        uint256 length = carteirasAutorizadasList.length;
-        address[] memory enderecosAutorizados = new address[](length);
+      uint256 length = carteirasAutorizadasList.length;
+      address[] memory enderecosAutorizados = new address[](length);
 
-        for (uint256 i = 0; i < length; i++) {
-            enderecosAutorizados[i] = carteirasAutorizadasList[i].carteira;
-        }
+      for (uint256 i = 0; i < length; i++) {
+        enderecosAutorizados[i] = carteirasAutorizadasList[i].carteira;
+      }
 
-        return enderecosAutorizados;
+      return enderecosAutorizados;
 
     }
 
@@ -153,18 +153,18 @@ contract TesouroDireto is ERC20, Ownable {
         uint256 quantidade
     ) public onlyAuthorized {
 
-        require(detalhesTitulos[idTitulo].idExterno != 0, "Titulo nao existe.");
-        require(quantidade > 0, "Quantidade deve ser maior que 0.");
-        require(carteirasAutorizadas[msg.sender], "Carteira nao autorizada a emitir titulos.");
+      require(detalhesTitulos[idTitulo].idExterno != 0, "Titulo nao existe.");
+      require(quantidade > 0, "Quantidade deve ser maior que 0.");
+      require(carteirasAutorizadas[msg.sender], "Carteira nao autorizada a emitir titulos.");
 
-        // Adiciona a quantidade de títulos ao registro do detentor
-        // Isso pode ser um novo mapeamento que associa o detentor e o ID do título à quantidade detida
-        titulosDetentor[detentor][idTitulo] += quantidade;
+      // Adiciona a quantidade de títulos ao registro do detentor
+      // Isso pode ser um novo mapeamento que associa o detentor e o ID do título à quantidade detida
+      titulosDetentor[detentor][idTitulo] += quantidade;
 
-        //Enviar a quantidade para o detentor
-        _mint(detentor, quantidade);
+      //Enviar a quantidade para o detentor
+      _mint(detentor, quantidade);
 
-        emit TituloEmitido(detentor, idTitulo, quantidade);
+      emit TituloEmitido(detentor, idTitulo, quantidade);
 
     }
     
@@ -188,17 +188,20 @@ contract TesouroDireto is ERC20, Ownable {
     // Mapeamento para rastrear depósitos de BNB
     mapping(address => uint256) public depositos;
 
-    // Função para o detentor de destino depositar BNB
+    // Função para o detentor de destino depositar BNB no Contrato
     function depositarParaCompra() public payable {
-        require(msg.value > 0, "Nenhum valor de BNB enviado.");
-        depositos[msg.sender] += msg.value;
+      require(msg.value > 0, "Nenhum valor de BNB enviado.");
+      depositos[msg.sender] += msg.value;
+
+      emit DepositoEfetuado(msg.sender, msg.value);
     }
+
+    event DepositoEfetuado(address indexed detentorDestino, uint256 valor);
 
 
     /******************************************/
     /********* TRANSFERIR TÍTULO **************/
     /******************************************/
-    
 
     function compraSecundaria(
     address detentorOrigem,
@@ -238,29 +241,7 @@ contract TesouroDireto is ERC20, Ownable {
 
     // Evento para registrar a transferência de títulos
     event TituloTransferido(address indexed detentorOrigem, address indexed detentorDestino, uint256 idTitulo, uint256 quantidade);
-
-
-
-    /*
-    function transferirTitulo(
-    address detentorOrigem,
-    address detentorDestino,
-    uint256 idTitulo,
-    uint256 quantidade
-    ) public {
-        
-        require(msg.sender == detentorOrigem || msg.sender == owner(), "Remetente nao tem permissao para transferir o titulo.");
-
-        ///Colocar API para checar CPF.
-        titulosDetentor[detentorOrigem][idTitulo] -= quantidade;
-        titulosDetentor[detentorDestino][idTitulo] += quantidade;
-
-        // Emitir evento de transferência (opcional, mas recomendado)
-        emit TituloTransferido(detentorOrigem, detentorDestino, idTitulo, quantidade);
-    }
-
-    // Evento para registrar a transferência de títulos
-    event TituloTransferido(address indexed detentorOrigem, address indexed detentorDestino, uint256 idTitulo, uint256 quantidade);
+}
     
 */
     
