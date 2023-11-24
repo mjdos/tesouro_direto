@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Titulo;
+use App\Models\TituloEmitidos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
 
 class TitulosController extends Controller
 {
@@ -41,6 +43,8 @@ class TitulosController extends Controller
     {
         return view('painel.vendas.index');
     }
+
+    // Criação de Titulos
     public function indexCriar()
     {
         $titulos = Titulo::all();
@@ -55,6 +59,7 @@ class TitulosController extends Controller
 
     public function store(Request $request)
     {
+        
         $descricao = [
             'nome' => $request->nome,
             'dataVencimento' => date('d/m/Y', strtotime($request->dataVencimento)),
@@ -63,7 +68,7 @@ class TitulosController extends Controller
             'aliquotaIR' => $request->aliquotaIR,
             'isentoIOF' => $request->isencaoIof
         ];
-        Titulo::create(['dados'=>json_encode($descricao)]);
+        Titulo::create(['idExterno' => $request->idExterno, 'dados'=>json_encode($descricao)]);
         $titulos = Titulo::all();
 
         return redirect()->route('criarTitulos.index',compact('titulos'));
@@ -86,10 +91,38 @@ class TitulosController extends Controller
             'aliquotaIR' => $request->aliquotaIR,
             'isentoIOF' => $request->isencaoIof
         ];
-        $titulo->update(['dados'=>json_encode($descricao)]);
+        $titulo->update(['idExterno' => $request->idExterno, 'dados'=>json_encode($descricao)]);
         $titulos = Titulo::all();
 
         return redirect()->route('criarTitulos.index',compact('titulos'));
+    }
+
+    // Emissão de Titulos
+    public function indexEmitir()
+    {
+        $titulos = Titulo::all();
+        return view('painel.emitirTitulos.index',compact('titulos'));
+    }
+
+    public function createEmitir()
+    {
+        return view('painel.emitirTitulos.emitirtitulos');
+    }
+
+    public function storeEmitir(Request $request)
+    {
+        $usuario = Session::get('usuario');
+
+        $descricao = [
+            'idExterno' => $request->idExterno,
+            'carteira_destino' => $request->carteira_destino,
+            'quantidade' => $request->quantidade,
+            'carteira_remetente' => $usuario['carteira'],
+        ];
+        TituloEmitidos::create($descricao);
+        $titulos = Titulo::all();
+
+        return redirect()->route('emitirTitulos.index',compact('titulos'));
     }
     
 }

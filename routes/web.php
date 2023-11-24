@@ -29,6 +29,10 @@ Route::get('/teste', function () {
     return view('painel.vendas.index');
 });
 
+Route::get('/site', function () {
+    return view('site.index');
+});
+
 Route::middleware('auth')->group(function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home.index');
@@ -42,6 +46,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/Titulo/update', [TitulosController::class, 'update'])->name('updateTitulo.update');
 
     
+    Route::get('/EmitirTitulos', [TitulosController::class, 'indexEmitir'])->name('emitirTitulos.index');
+    Route::get('/EmitirTitulo', [TitulosController::class, 'createEmitir'])->name('emitirTitulo.index');
+    Route::post('/EmitirTitulo', [TitulosController::class, 'storeEmitir'])->name('emitirTitulos.store');
+    // Route::get('/Titulo/edit/{id}', [TitulosController::class, 'editIndex'])->name('editTitulo.edit');
+    // Route::post('/Titulo/update', [TitulosController::class, 'update'])->name('updateTitulo.update');
+
 });
 
 

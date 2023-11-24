@@ -40,7 +40,7 @@
 										Acesse os detalhes da Emissão.
 									</p>
 									<br>
-									<a href="" class="btn btn-primary w-100 py-3">Emissão</a>
+									<a href="{{route('emitirTitulos.index')}}" class="btn btn-primary w-100 py-3">Emissão</a>
 								</div>
 							</div>
 						</div>

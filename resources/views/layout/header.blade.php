@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta charset="utf-8" />
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-		<link href="https://www.mutua.com.br/wp-content/themes/mutua/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<!-- <link href="https://www.mutua.com.br/wp-content/themes/mutua/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon" /> -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<link href="{{ url('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<link href="{{ url('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />

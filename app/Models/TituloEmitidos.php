@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Titulo extends Model
+class TituloEmitidos extends Model
 {
     use HasFactory;
 
-    protected $table = 'tbl_titulo';
+    protected $table = 'tbl_titulos_emitidos';
 
     protected $fillable = [
         'idExterno',
-        'dados',
+        'carteira_destino',
+        'quantidade',
+        'carteira_remetente',
     ];
-
 }
