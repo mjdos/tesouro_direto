@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Compra;
+use App\Models\Mercado;
 use App\Models\Titulo;
 use App\Models\TituloEmitidos;
 use Illuminate\Http\Request;
@@ -39,27 +41,71 @@ class TitulosController extends Controller
         return view('painel.titulos.show', compact('titulos', 'minutes', 'prices', 'names'));
     }
 
-    public function comprar()
+    public function comprar($id)
     {
-        return view('painel.vendas.index');
+        $titulo = Titulo::find($id);
+        $compra = new Compra();
+        $compra->titulo_id = $titulo->id;
+        $compra->status = 'Iniciado'; 
+        $compra->save();
+        return view('painel.vendas.index', compact('titulo','compra'));
+    }
+
+    public function cancelar($id)
+    {
+        $venda = Compra::find($id);
+
+        if ($venda) {
+            $venda->status = 'Cancelado';
+            $venda->save();
+            return redirect()->route('titulos.index')->with('error', 'Compra cancelada com sucesso!');
+        } else {
+            return redirect()->route('titulos.index')->with('error', 'Não foi possível encontrar a venda.');
+        }
+    }
+
+    public function finalizar($id, Request $request)
+    {
+        $venda = Compra::find($id);
+        
+
+        if ($venda) {
+            
+            Mercado::create([
+                'titulo_id' => $venda->titulo_id,
+                'carteira_vendedora' => 1,
+                'carteira_compradora' => 1,
+                'data_hora' => now()->toDateString(),
+                'valor_unitario' =>$request->valor,
+                'quantidade' => $request->quantidade,
+                'valor_operacao' => $request->input('quantidade') * $request->input('valor'),
+            ]);
+    
+            // Atualiza o status da venda
+            $venda->status = 'Finalizado';
+            $venda->save();
+            return redirect()->route('titulos.index')->with('success', 'Compra finalizada com sucesso!');
+        } else {
+            return redirect()->route('titulos.index')->with('error', 'Não foi possível encontrar a venda.');
+        }
     }
 
     // Criação de Titulos
     public function indexCriar()
     {
         $titulos = Titulo::all();
-        return view('painel.criarTitulos.index',compact('titulos'));
+        return view('painel.criarTitulos.index', compact('titulos'));
     }
 
     public function createIndex()
     {
         $titulos = Titulo::all();
-        return view('painel.criarTitulos.criarTitulos',compact('titulos'));
+        return view('painel.criarTitulos.criarTitulos', compact('titulos'));
     }
 
     public function store(Request $request)
     {
-        
+
         $descricao = [
             'nome' => $request->nome,
             'dataVencimento' => date('d/m/Y', strtotime($request->dataVencimento)),
@@ -68,16 +114,16 @@ class TitulosController extends Controller
             'aliquotaIR' => $request->aliquotaIR,
             'isentoIOF' => $request->isencaoIof
         ];
-        Titulo::create(['idExterno' => $request->idExterno, 'dados'=>json_encode($descricao)]);
+        Titulo::create(['idExterno' => $request->idExterno, 'dados' => json_encode($descricao)]);
         $titulos = Titulo::all();
 
-        return redirect()->route('criarTitulos.index',compact('titulos'));
+        return redirect()->route('criarTitulos.index', compact('titulos'));
     }
 
     public function editIndex($id)
     {
         $titulo = Titulo::find($id);
-        return view('painel.criarTitulos.editTitulos',compact('titulo'));
+        return view('painel.criarTitulos.editTitulos', compact('titulo'));
     }
 
     public function update(Request $request)
@@ -91,17 +137,17 @@ class TitulosController extends Controller
             'aliquotaIR' => $request->aliquotaIR,
             'isentoIOF' => $request->isencaoIof
         ];
-        $titulo->update(['idExterno' => $request->idExterno, 'dados'=>json_encode($descricao)]);
+        $titulo->update(['idExterno' => $request->idExterno, 'dados' => json_encode($descricao)]);
         $titulos = Titulo::all();
 
-        return redirect()->route('criarTitulos.index',compact('titulos'));
+        return redirect()->route('criarTitulos.index', compact('titulos'));
     }
 
     // Emissão de Titulos
     public function indexEmitir()
     {
         $titulos = Titulo::all();
-        return view('painel.emitirTitulos.index',compact('titulos'));
+        return view('painel.emitirTitulos.index', compact('titulos'));
     }
 
     public function createEmitir()
@@ -122,7 +168,6 @@ class TitulosController extends Controller
         TituloEmitidos::create($descricao);
         $titulos = Titulo::all();
 
-        return redirect()->route('emitirTitulos.index',compact('titulos'));
+        return redirect()->route('emitirTitulos.index', compact('titulos'));
     }
-    
 }

@@ -14,13 +14,13 @@ use App\Http\Controllers\{
 Route::get('/welcome', function () {
     return view('welcome');
 });
-
-Route::any('/loginCliente', [AuthController::class, 'index'])->name('login.cliente');
-
 Route::middleware('guest')->group(function () {
 
     Route::get('login', [LoginController::class, 'index'])->name('login');
     Route::post('login', [LoginController::class, 'store']);
+    Route::get('/loginCliente', [AuthController::class, 'index'])->name('login.cliente');
+    Route::post('/loginCliente', [AuthController::class, 'store']);
+
 });
 
 
@@ -45,7 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/Titulo/edit/{id}', [TitulosController::class, 'editIndex'])->name('editTitulo.edit');
     Route::post('/Titulo/update', [TitulosController::class, 'update'])->name('updateTitulo.update');
 
-    
+
     Route::get('/EmitirTitulos', [TitulosController::class, 'indexEmitir'])->name('emitirTitulos.index');
     Route::get('/EmitirTitulo', [TitulosController::class, 'createEmitir'])->name('emitirTitulo.index');
     Route::post('/EmitirTitulo', [TitulosController::class, 'storeEmitir'])->name('emitirTitulos.store');
@@ -62,7 +62,9 @@ Route::get('/titulosDetalhes/{id}', [TitulosController::class, 'show'])->name('t
 Route::get('/', [TitulosController::class, 'index'])->name('titulos.index');
 Route::get('/titulosDetalhes/{id}', [TitulosController::class, 'show'])->name('titulos.show');
 Route::get('/titulosLista', [TitulosController::class, 'index'])->name('titulos.index');
-Route::get('/titulosComprar', [TitulosController::class, 'comprar'])->name('titulos.comprar');
+Route::get('/titulosComprar/{id}', [TitulosController::class, 'comprar'])->name('titulos.comprar');
+Route::any('/titulos/cancelar/{id}', [TitulosController::class, 'cancelar'])->name('titulos.cancelar');
+Route::any('/titulos/finalizar/{id}', [TitulosController::class, 'finalizar'])->name('titulos.finalizar');
 //Route::get('/tesouro_direto', [TesouroDiretoController::class, 'index'])->name('tesouro_direto.index');
 
 Route::get('/mp', [MarketPlaceController::class, 'index'])->name('mp.index');
