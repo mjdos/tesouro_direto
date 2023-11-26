@@ -47,8 +47,8 @@
                             <!--end::Date=-->
                             <!--begin::Action=-->
                             <td class="text-end">
-                                <a class="btn btn-primary btn-sm" href="{{route('tituloa.show',$titulo->id)}}" role="button">Visualizar</a>
-                                <a class="btn btn-success btn-sm" href="{{route('tituloa.comprar')}}" role="button">Comprar</a>
+                                <a class="btn btn-primary btn-sm" href="{{route('titulos.show',$titulo->id)}}" role="button">Visualizar</a>
+                                <a class="btn btn-success btn-sm" href="{{route('titulos.comprar')}}" role="button">Comprar</a>
                             </td>
                             <!--end::Action=-->
                         </tr>
