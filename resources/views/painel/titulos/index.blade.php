@@ -1,6 +1,17 @@
 @include('../layouts.header')
 
 <div id="kt_content_container" class="container-xxl">
+    @if(Session::has('success'))
+    <div class="alert alert-success">
+        {{ Session::get('success') }}
+    </div>
+    @endif
+
+    @if(Session::has('error'))
+    <div class="alert alert-danger">
+        {{ Session::get('error') }}
+    </div>
+    @endif
     <!--begin::Card-->
     <div class="card">
         <!--begin::Card header-->
@@ -47,8 +58,8 @@
                             <!--end::Date=-->
                             <!--begin::Action=-->
                             <td class="text-end">
-                                <a class="btn btn-primary btn-sm" href="{{route('tituloa.show',$titulo->id)}}" role="button">Visualizar</a>
-                                <a class="btn btn-success btn-sm" href="{{route('tituloa.comprar')}}" role="button">Comprar</a>
+                                <a class="btn btn-primary btn-sm" href="{{route('titulos.show',$titulo->id)}}" role="button">Visualizar</a>
+                                <a class="btn btn-success btn-sm" href="{{route('titulos.comprar',$titulo->id)}}" role="button">Comprar</a>
                             </td>
                             <!--end::Action=-->
                         </tr>

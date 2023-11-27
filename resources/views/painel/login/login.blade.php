@@ -11,7 +11,8 @@
             <!--begin::Content-->
             <div class="w-md-400px">
                 <!--begin::Form-->
-                <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="../../demo1/dist/index.html" action="#">
+                <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" method="post" action="#">
+                    @csrf
                     <!--begin::Heading-->
                     <div class="text-center mb-11">
                         <!--begin::Title-->
@@ -49,6 +50,13 @@
                     </div>
                     <!--end::Submit button-->
                     <!--begin::Sign up-->
+
+                    @if(isset($erro) )
+                    <div class="alert alert-danger" role="alert">
+                        {{ $erro }}
+                    </div>
+                    @endif
+
                     <div class="text-gray-500 text-center fw-semibold fs-6">Não é membro?
                         <a href="../../demo1/dist/authentication/layouts/overlay/sign-up.html" class="link-primary">Cadastre-se</a>
                     </div>
