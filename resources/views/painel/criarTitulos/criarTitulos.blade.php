@@ -22,7 +22,7 @@
                         <div class="form-row p-3">
                             <div class="row pb-3">
                                 <div class="col-sm">
-                                    <span class="text-dark fs-4">id Externo do Título</span>
+                                    <span class="text-dark fs-4">Id Externo do Título</span>
                                     <input class="form-control form-control-solid" type="text" name="idExterno" >
                                 </div>
                                 <div class="col-sm">
@@ -51,10 +51,12 @@
                             </div>
                             <div class="row pt-3">
                                 <div class="col-sm">
-                                    <div class="col-3">
-                                        <span class="text-dark fs-4">Isenção IOF</span>
-                                        <input class="form-control form-control-solid" type="text" name="isencaoIof">
-                                    </div>
+                                    <span class="text-dark fs-4">Taxa B3</span>
+                                    <input class="form-control form-control-solid" type="text" name="taxa_b3">
+                                </div>
+                                <div class="col-sm">
+                                    <span class="text-dark fs-4">Isenção IOF</span>
+                                    <input class="form-control form-control-solid" type="text" name="isencaoIof">
                                 </div>
                             </div>
 

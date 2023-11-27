@@ -35,6 +35,7 @@
                                     <th class="min-w-125px">Rentabilidade Anual</th>
                                     <th class="min-w-125px">Valor Nominal</th>
                                     <th class="min-w-125px">Alíquota IR</th>
+                                    <th class="min-w-125px">Taxa B3</th>
                                     <th class="min-w-125px">Isenção IOF</th>
                                     <th class="min-w-125px rounded-end"></th>
                                 </tr>
@@ -43,16 +44,14 @@
                             <tbody>
                                 @if (count($titulos)>0)
                                 @foreach ($titulos as $titulo)
-                                    @php
-                                        $dados = json_decode($titulo->dados);
-                                    @endphp
                                     <tr>
-                                        <td>{{$dados->nome}}</td>
-                                        <td>{{$dados->dataVencimento}}</td>
-                                        <td>{{$dados->rentabilidadeAnual}}%</td>
-                                        <td>{{$dados->valorNominal}}</td>
-                                        <td>{{$dados->aliquotaIR}}%</td>
-                                        <td>{{$dados->isentoIOF}}%</td>
+                                        <td>{{$titulo->nome}}</td>
+                                        <td>{{$titulo->dataVencimento}}</td>
+                                        <td>{{$titulo->rentabilidadeAnual}}%</td>
+                                        <td>{{$titulo->valorNominal}}</td>
+                                        <td>{{$titulo->aliquotaIR}}%</td>
+                                        <td>{{$titulo->taxa_b3}}%</td>
+                                        <td>{{$titulo->isentoIOF}}%</td>
                                         <td>
                                             <div>
                                                 <a href="{{route('editTitulo.edit', $titulo->id)}}" class="btn btn-sm btn-light-warning">

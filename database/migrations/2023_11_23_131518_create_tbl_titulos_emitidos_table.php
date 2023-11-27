@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('tbl_titulos_emitidos', function (Blueprint $table){
             $table->increments('id');
             $table->string('idExterno');
+            $table->string('carteira_remetente');
             $table->string('carteira_destino');
-            $table->integer('quantidade');
-            $table->integer('carteira_remetente');
+            $table->decimal('quantidade');
+            $table->decimal('valor');
             $table->timestamps();
         });
     }

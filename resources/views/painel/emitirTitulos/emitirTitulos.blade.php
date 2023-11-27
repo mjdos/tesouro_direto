@@ -39,8 +39,16 @@
                             <div class="row pt-3">
                                 <div class="col-sm">
                                     <div class="col-4">
-                                        <span class="text-dark fs-4">quatidade</span>
+                                        <span class="text-dark fs-4">Quantidade</span>
                                         <input class="form-control form-control-solid" type="text" name="quantidade">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col-sm">
+                                    <div class="col-4">
+                                        <span class="text-dark fs-4">Valor</span>
+                                        <input class="form-control form-control-solid" type="text" name="valor">
                                     </div>
                                 </div>
                             </div>

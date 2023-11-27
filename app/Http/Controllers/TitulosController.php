@@ -61,14 +61,19 @@ class TitulosController extends Controller
     {
         
         $descricao = [
+            'idExterno' => $request->idExterno,
             'nome' => $request->nome,
             'dataVencimento' => date('d/m/Y', strtotime($request->dataVencimento)),
             'rentabilidadeAnual' => $request->rentabilidadeAnual,
             'valorNominal' => $request->valorNominal,
             'aliquotaIR' => $request->aliquotaIR,
+            'taxa_b3' => $request->taxa_b3,
             'isentoIOF' => $request->isencaoIof
         ];
-        Titulo::create(['idExterno' => $request->idExterno, 'dados'=>json_encode($descricao)]);
+
+        Titulo::create($descricao);
+        $novo_titulo = json_encode($descricao);
+
         $titulos = Titulo::all();
 
         return redirect()->route('criarTitulos.index',compact('titulos'));
@@ -115,9 +120,10 @@ class TitulosController extends Controller
 
         $descricao = [
             'idExterno' => $request->idExterno,
+            'carteira_remetente' => $usuario['carteira'],
             'carteira_destino' => $request->carteira_destino,
             'quantidade' => $request->quantidade,
-            'carteira_remetente' => $usuario['carteira'],
+            'valor' => $request->valor,
         ];
         TituloEmitidos::create($descricao);
         $titulos = Titulo::all();

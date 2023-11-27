@@ -13,7 +13,13 @@ class Titulo extends Model
 
     protected $fillable = [
         'idExterno',
-        'dados',
+        'nome',
+        'dataVencimento',
+        'rentabilidadeAnual',
+        'valorNominal',
+        'aliquotaIR',
+        'taxa_b3',
+        'isentoIOF'
     ];
 
 }
