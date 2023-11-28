@@ -10,7 +10,7 @@
 							<div class="card-header border-0 py-3">
 								<h3 class="card-title align-items-start flex-column">
 									<span class="card-label fw-bolder fs-3 mb-1">Criar Títulos</span>
-									<span class="text-muted fw-bold fs-7">Tela para Criação de Títulos</span>
+									<span class="text-muted fw-bold fs-7">Tela para criação de títulos</span>
 								</h3>
 							</div>
 							<div class="card-body d-flex flex-column">
@@ -30,7 +30,7 @@
 							<div class="card-header border-0 py-3">
 								<h3 class="card-title align-items-start flex-column">
 									<span class="card-label fw-bolder fs-3 mb-1">Emitir Títulos</span>
-									<span class="text-muted fw-bold fs-7">####</span>
+									<span class="text-muted fw-bold fs-7">Tela para emissão de títulos</span>
 								</h3>
 							</div>
 							<div class="card-body d-flex flex-column">
