@@ -68,3 +68,4 @@ Route::any('/titulos/finalizar/{id}', [TitulosController::class, 'finalizar'])->
 //Route::get('/tesouro_direto', [TesouroDiretoController::class, 'index'])->name('tesouro_direto.index');
 
 Route::get('/mp', [MarketPlaceController::class, 'index'])->name('mp.index');
+Route::get('/exchange', [MarketPlaceController::class, 'exchange'])->name('exchange.index');

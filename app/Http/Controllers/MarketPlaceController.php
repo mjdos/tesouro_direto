@@ -10,4 +10,10 @@ class MarketPlaceController extends Controller
     {
         return view('mp.index');
     }
+
+    public function exchange()
+    {
+        return view('mp.exchange');
+    }
+
 }
