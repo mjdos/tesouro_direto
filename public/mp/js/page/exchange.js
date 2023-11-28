@@ -9,13 +9,13 @@
 if (typeof jQuery === "undefined") {
     throw new Error("jQuery plugins need to be before this file");
 }
-$(function() {
+$(function () {
     "use strict";
     // top sparklines
     chartLoad(localStorage.getItem('theme'));
     const setTheme = (theme) => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme); //add this
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme); //add this
         chartLoad(theme)
     };
 
@@ -30,10 +30,15 @@ $(function() {
     }
     function chartLoad(chartTheme) {
         //chart
+        // var customSymbol = "MYCOIN"; 
+        var customSymbol = "TDT";
+        
+
         new TradingView.widget(
             {
                 "autosize": true,
-                "symbol": "BITSTAMP:BTCUSD",
+                "symbol": "CRYPTO:ETHUSD",
+                //"symbol": "CRYPTO:" + customSymbol + "R$",
                 "interval": "D",
                 "timezone": "Etc/UTC",
                 "theme": chartTheme,
@@ -44,98 +49,98 @@ $(function() {
                 "withdateranges": true,
                 "hide_side_toolbar": false,
                 "allow_symbol_change": true,
-                "details": true,
-                "hotlist": true,
-                "calendar": true,
+                "details": false,
+                "hotlist": false,
+                "calendar": false,
                 "container_id": "tradingview_e05b7"
             }
         );
     }
     // project data table
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#priceTableup')
-        .addClass( 'nowrap' )
-        .dataTable( {
-            responsive: true,
-            columnDefs: [
-                { targets: [-1, -3], className: 'dt-body-right' }
-            ]
-        });
+            .addClass('nowrap')
+            .dataTable({
+                responsive: true,
+                columnDefs: [
+                    { targets: [-1, -3], className: 'dt-body-right' }
+                ]
+            });
 
         $('#priceTabledown')
-        .addClass( 'nowrap' )
-        .dataTable( {
-            responsive: true,
-            columnDefs: [
-                { targets: [-1, -3], className: 'dt-body-right' }
-            ]
-        });
+            .addClass('nowrap')
+            .dataTable({
+                responsive: true,
+                columnDefs: [
+                    { targets: [-1, -3], className: 'dt-body-right' }
+                ]
+            });
 
         $('#priceTableuponly')
-        .addClass( 'nowrap' )
-        .dataTable( {
-            responsive: true,
-            columnDefs: [
-                { targets: [-1, -3], className: 'dt-body-right' }
-            ]
-        });
-      
+            .addClass('nowrap')
+            .dataTable({
+                responsive: true,
+                columnDefs: [
+                    { targets: [-1, -3], className: 'dt-body-right' }
+                ]
+            });
+
         $('#priceTabledownonly')
-        .addClass( 'nowrap' )
-        .dataTable( {
-            responsive: true,
-            columnDefs: [
-                { targets: [-1, -3], className: 'dt-body-right' }
-            ]
-        });
+            .addClass('nowrap')
+            .dataTable({
+                responsive: true,
+                columnDefs: [
+                    { targets: [-1, -3], className: 'dt-body-right' }
+                ]
+            });
 
         $('#ordertabone')
-        .addClass( 'nowrap' )
-        .dataTable( {
-            responsive: true,
-            columnDefs: [
-                { targets: [-1, -3], className: 'dt-body-right' }
-            ]
-        });
+            .addClass('nowrap')
+            .dataTable({
+                responsive: true,
+                columnDefs: [
+                    { targets: [-1, -3], className: 'dt-body-right' }
+                ]
+            });
 
         $('#ordertabtwo')
-        .addClass( 'nowrap' )
-        .dataTable( {
-            responsive: true,
-            columnDefs: [
-                { targets: [-1, -3], className: 'dt-body-right' }
-            ]
-        });
+            .addClass('nowrap')
+            .dataTable({
+                responsive: true,
+                columnDefs: [
+                    { targets: [-1, -3], className: 'dt-body-right' }
+                ]
+            });
 
         $('#ordertabthree')
-        .addClass( 'nowrap' )
-        .dataTable( {
-            responsive: true,
-            columnDefs: [
-                { targets: [-1, -3], className: 'dt-body-right' }
-            ]
-        });
+            .addClass('nowrap')
+            .dataTable({
+                responsive: true,
+                columnDefs: [
+                    { targets: [-1, -3], className: 'dt-body-right' }
+                ]
+            });
 
         $('#ordertabfour')
-        .addClass( 'nowrap' )
-        .dataTable( {
-            responsive: true,
-            columnDefs: [
-                { targets: [-1, -3], className: 'dt-body-right' }
-            ]
-        });
+            .addClass('nowrap')
+            .dataTable({
+                responsive: true,
+                columnDefs: [
+                    { targets: [-1, -3], className: 'dt-body-right' }
+                ]
+            });
 
         //Data Table//
-        
-        $('#priceTableup','#priceTabledown','#priceTableuponly','#priceTabledownonly','#ordertabone','#ordertabtwo','#ordertabthree','#ordertabfour').DataTable({
+
+        $('#priceTableup', '#priceTabledown', '#priceTableuponly', '#priceTabledownonly', '#ordertabone', '#ordertabtwo', '#ordertabthree', '#ordertabfour').DataTable({
             responsive: true
         });
 
         $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
             $($.fn.dataTable.tables(true)).DataTable()
-            .columns.adjust()
-            .responsive.recalc();
-        });    
+                .columns.adjust()
+                .responsive.recalc();
+        });
     });
 
 });
