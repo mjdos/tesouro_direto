@@ -206,9 +206,10 @@ contract TesouroDireto is ERC20, Ownable {
     mapping(address => uint256) public depositos;
 
     // Função para o detentor de destino depositar BNB no Contrato
-    function depositarParaCompra() public payable {
-      require(msg.value > 0, "Nenhum valor de BNB enviado.");
-      depositos[msg.sender] += msg.value;
+    function depositarParaCompra(uint256 valor) public payable {
+      require(valor > 0, "Nenhum valor de BNB enviado.");
+      require(msg.value >= valor, "Valor enviado insuficiente.");
+      depositos[msg.sender] += valor;
 
       emit DepositoEfetuado(msg.sender, msg.value);
     }
@@ -219,7 +220,6 @@ contract TesouroDireto is ERC20, Ownable {
     /******************************************/
     /********* TRANSFERIR TÍTULO **************/
     /******************************************/
-
     function compraSecundaria(
     address detentorOrigem,
     address detentorDestino,
@@ -228,18 +228,23 @@ contract TesouroDireto is ERC20, Ownable {
     uint256 valor
     ) public payable {
         
+        // Verificar se o detentor de destino tem CPF no gov.br
+        // API CHECAR GOV.BR
+
         // Verifica se o remetente da mensagem é o proprietário do contrato
         require(msg.sender == detentorDestino, "Somente o detentor de destino pode comprar.");
 
         // Verifica se o detentor de origem possui quantidade suficiente do título
         require(titulosDetentor[detentorOrigem][idTitulo] >= quantidade, "Detentor de origem nao possui quantidade suficiente do titulo.");
 
+        //Depositar BNB no contrato
+        depositarParaCompra(valor);
+
         // Verifica se o detentor de destino depositou BNB suficiente
         require(depositos[detentorDestino] >= valor, "Saldo de deposito insuficiente.");
 
         // Atualiza o saldo de depósito do detentor de destino
         depositos[detentorDestino] -= valor;
-
 
         // Calcula a taxa de Liquidez 2%
         uint256 taxa = valor * 2 / 100;
@@ -253,14 +258,15 @@ contract TesouroDireto is ERC20, Ownable {
         // Transferir BNB para o detentor de origem já com desconto de 2%
         payable(detentorOrigem).transfer(valorTransferencia);
 
-        // Verificar se o detentor de destino tem CPF no gov.br
-        // API CHECAR GOV.BR
-
-        // Liquidez, como resolver?
-
         // Atualiza o saldo de títulos dos detentores
         titulosDetentor[detentorOrigem][idTitulo] -= quantidade;
         titulosDetentor[detentorDestino][idTitulo] += quantidade;
+
+        // Deduza os tokens do detentor de origem
+        transferFrom(detentorOrigem, address(this), quantidade);
+        
+        // Adicione os tokens ao detentor de destino
+        transfer(detentorDestino, quantidade);
 
         // Emitir evento de transferência
         emit TituloTransferido(detentorOrigem, detentorDestino, idTitulo, quantidade);
