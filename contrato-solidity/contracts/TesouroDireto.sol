@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.23;
+pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -19,8 +19,25 @@ contract TesouroDireto is ERC20, Ownable {
     }
 
 /*****************************************************************************************************/
-/********* PARTE 1 - CHAINLINK
+/********* PARTE 1 - LIQUIDEZ
 
+    /*************************************************************/
+    /********* RESGATAR BNB DA CARTEIRA DE LIQUIDEZ **************/
+    /*************************************************************/
+
+    // Variável para rastrear o saldo da carteira de liquidez
+    uint256 public saldoCarteiraLiquidez;
+
+    function moverBNBsDaLiquidez(address destino, uint256 valor) public onlyAuthorized {
+        require(saldoCarteiraLiquidez >= valor, "Saldo insuficiente na carteira de liquidez");
+        saldoCarteiraLiquidez -= valor;
+        payable(destino).transfer(valor);
+    }
+
+    ///Vê o saldo de BNB do contrato
+    function getSaldoTotal() public view returns (uint256) {
+        return address(this).balance;
+    }
 
 /*****************************************************************************************************/
 /********* PARTE 2 - TÍTULO
@@ -212,7 +229,7 @@ contract TesouroDireto is ERC20, Ownable {
     ) public payable {
         
         // Verifica se o remetente da mensagem é o proprietário do contrato
-        require(msg.sender == owner(), "Remetente nao tem permissao executar transacoes no titulo.");
+        require(msg.sender == detentorDestino, "Somente o detentor de destino pode comprar.");
 
         // Verifica se o detentor de origem possui quantidade suficiente do título
         require(titulosDetentor[detentorOrigem][idTitulo] >= quantidade, "Detentor de origem nao possui quantidade suficiente do titulo.");
@@ -223,8 +240,18 @@ contract TesouroDireto is ERC20, Ownable {
         // Atualiza o saldo de depósito do detentor de destino
         depositos[detentorDestino] -= valor;
 
-        // Transferir BNB para o detentor de origem
-        payable(detentorOrigem).transfer(valor);
+
+        // Calcula a taxa de Liquidez 2%
+        uint256 taxa = valor * 2 / 100;
+
+        ///Enviando Saldo para a carteira de liquidez
+        saldoCarteiraLiquidez += taxa;
+
+        // Valor a ser transferido para o detentor de origem (valor menos a taxa)
+        uint256 valorTransferencia = valor - taxa;
+
+        // Transferir BNB para o detentor de origem já com desconto de 2%
+        payable(detentorOrigem).transfer(valorTransferencia);
 
         // Verificar se o detentor de destino tem CPF no gov.br
         // API CHECAR GOV.BR
@@ -241,8 +268,12 @@ contract TesouroDireto is ERC20, Ownable {
 
     // Evento para registrar a transferência de títulos
     event TituloTransferido(address indexed detentorOrigem, address indexed detentorDestino, uint256 idTitulo, uint256 quantidade);
+
 }
     
+
+
+
 
 
     /******************************************/
@@ -281,4 +312,3 @@ contract TesouroDireto is ERC20, Ownable {
     // Evento emitido quando um título é resgatado e o pagamento é feito
     event TituloResgatado(uint256 indexed idTitulo, address indexed detentor, uint256 quantidade, uint256 valorPago);
     */
-}
