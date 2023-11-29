@@ -46,9 +46,9 @@ class TitulosController extends Controller
         $titulo = Titulo::find($id);
         $compra = new Compra();
         $compra->titulo_id = $titulo->id;
-        $compra->status = 'Iniciado'; 
+        $compra->status = 'Iniciado';
         $compra->save();
-        return view('painel.vendas.index', compact('titulo','compra'));
+        return view('painel.vendas.index', compact('titulo', 'compra'));
     }
 
     public function cancelar($id)
@@ -67,20 +67,20 @@ class TitulosController extends Controller
     public function finalizar($id, Request $request)
     {
         $venda = Compra::find($id);
-        
+
 
         if ($venda) {
-            
+
             Mercado::create([
                 'titulo_id' => $venda->titulo_id,
                 'carteira_vendedora' => 1,
                 'carteira_compradora' => 1,
                 'data_hora' => now()->toDateString(),
-                'valor_unitario' =>$request->valor,
+                'valor_unitario' => $request->valor,
                 'quantidade' => $request->quantidade,
                 'valor_operacao' => $request->input('quantidade') * $request->input('valor'),
             ]);
-    
+
             // Atualiza o status da venda
             $venda->status = 'Finalizado';
             $venda->save();
@@ -175,5 +175,10 @@ class TitulosController extends Controller
         $titulos = Titulo::all();
 
         return redirect()->route('emitirTitulos.index', compact('titulos'));
+    }
+
+    public function teste()
+    {
+        return view('teste.teste');
     }
 }

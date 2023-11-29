@@ -40,3 +40,5 @@ Route::put('/mercado/atualizar/{id}', [MercadoApiController::class, 'update'])->
 Route::delete('/mercado/excluir/{id}', [MercadoApiController::class, 'delete'])->name('deleteOperacao');
 Route::get('/grafico-mercados/{id}', [MercadoApiController::class, 'graficoMercados'])->name('graficoMercados');
 
+Route::get('/grafico-teste', [MercadoApiController::class, 'graficoTeste'])->name('graficoTeste');
+

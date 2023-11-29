@@ -69,3 +69,6 @@ Route::any('/titulos/finalizar/{id}', [TitulosController::class, 'finalizar'])->
 
 Route::get('/mp', [MarketPlaceController::class, 'index'])->name('mp.index');
 Route::get('/exchange', [MarketPlaceController::class, 'exchange'])->name('exchange.index');
+
+
+Route::get('/rotaTeste', [TitulosController::class, 'teste'])->name('teste.meu');
