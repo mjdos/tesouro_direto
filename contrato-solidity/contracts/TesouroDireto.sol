@@ -220,63 +220,6 @@ contract TesouroDireto is ERC20, Ownable {
     /******************************************/
     /********* TRANSFERIR TÍTULO **************/
     /******************************************/
-    function compraSecundaria(
-    address detentorOrigem,
-    address detentorDestino,
-    uint256 idTitulo,
-    uint256 quantidade,
-    uint256 valor
-    ) public payable {
-        
-        // Verificar se o detentor de destino tem CPF no gov.br
-        // API CHECAR GOV.BR
-
-        // Verifica se o remetente da mensagem é o proprietário do contrato
-        require(msg.sender == detentorDestino, "Somente o detentor de destino pode comprar.");
-
-        // Verifica se o detentor de origem possui quantidade suficiente do título
-        require(titulosDetentor[detentorOrigem][idTitulo] >= quantidade, "Detentor de origem nao possui quantidade suficiente do titulo.");
-
-        //Depositar BNB no contrato
-        depositarParaCompra(valor);
-
-        // Verifica se o detentor de destino depositou BNB suficiente
-        require(depositos[detentorDestino] >= valor, "Saldo de deposito insuficiente.");
-
-        // Atualiza o saldo de depósito do detentor de destino
-        depositos[detentorDestino] -= valor;
-
-        // Calcula a taxa de Liquidez 2%
-        uint256 taxa = valor * 2 / 100;
-
-        ///Enviando Saldo para a carteira de liquidez
-        saldoCarteiraLiquidez += taxa;
-
-        // Valor a ser transferido para o detentor de origem (valor menos a taxa)
-        uint256 valorTransferencia = valor - taxa;
-
-        // Transferir BNB para o detentor de origem já com desconto de 2%
-        payable(detentorOrigem).transfer(valorTransferencia);
-
-        // Atualiza o saldo de títulos dos detentores
-        titulosDetentor[detentorOrigem][idTitulo] -= quantidade;
-        titulosDetentor[detentorDestino][idTitulo] += quantidade;
-
-        // Deduza os tokens do detentor de origem e Adicione os tokens ao detentor de destino
-        _transfer(detentorOrigem, detentorDestino, quantidade);
-
-        // Emitir evento de transferência
-        emit TituloTransferido(detentorOrigem, detentorDestino, idTitulo, quantidade);
-    }
-
-    // Evento para registrar a transferência de títulos
-    event TituloTransferido(address indexed detentorOrigem, address indexed detentorDestino, uint256 idTitulo, uint256 quantidade);
-
-
-
-    /******************************************/
-    /********* TRANSFERIR TÍTULO **************/
-    /******************************************/
     function comprar(
     address detentorOrigem,
     address detentorDestino,
@@ -309,47 +252,4 @@ contract TesouroDireto is ERC20, Ownable {
 
     }
 
-
 }
-    
-
-
-
-
-
-    /******************************************/
-    /********* RESGATAR TÍTULO **************/
-    /******************************************/
-    /*
-    function resgatarTitulo(uint256 idTitulo) public {
-
-        DetalhesTitulo storage titulo = detalhesTitulos[idTitulo];
-
-        require(titulo.id != 0, "Titulo nao existe.");
-        //require(block.timestamp >= titulo.dataVencimento, "Titulo ainda nao venceu.");
-        
-        uint256 quantidadeDetentor = titulosDetentor[msg.sender][idTitulo];
-        require(quantidadeDetentor > 0, "Detentor nao possui titulos deste tipo.");
-
-        // Calcula o valor total a ser pago com base na rentabilidade anual e no valor nominal
-        uint256 valorTotalPago = (quantidadeDetentor * titulo.valorNominal * (10000 + titulo.rentabilidadeAnual)) / 10000;
-
-        // Recolhe os títulos da carteira do detentor
-        titulosDetentor[msg.sender][idTitulo] = 0;
-
-        // Envia BNB ao detentor (assumindo que o contrato tem saldo suficiente)
-        payable(msg.sender).transfer(valorTotalPago);
-
-        // Emitir evento de resgate do título
-        emit TituloResgatado(idTitulo, msg.sender, quantidadeDetentor, valorTotalPago);
-
-        // Remove o título da lista de títulos ativos se todos foram resgatados
-        if (getQuantidadeTitulos(msg.sender, idTitulo) == 0) {
-            delete detalhesTitulos[idTitulo];
-        }
-
-    }
-
-    // Evento emitido quando um título é resgatado e o pagamento é feito
-    event TituloResgatado(uint256 indexed idTitulo, address indexed detentor, uint256 quantidade, uint256 valorPago);
-    */
