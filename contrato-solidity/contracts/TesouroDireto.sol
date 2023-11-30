@@ -262,11 +262,8 @@ contract TesouroDireto is ERC20, Ownable {
         titulosDetentor[detentorOrigem][idTitulo] -= quantidade;
         titulosDetentor[detentorDestino][idTitulo] += quantidade;
 
-        // Deduza os tokens do detentor de origem
-        transferFrom(detentorOrigem, address(this), quantidade);
-        
-        // Adicione os tokens ao detentor de destino
-        transfer(detentorDestino, quantidade);
+        // Deduza os tokens do detentor de origem e Adicione os tokens ao detentor de destino
+        _transfer(detentorOrigem, detentorDestino, quantidade);
 
         // Emitir evento de transferência
         emit TituloTransferido(detentorOrigem, detentorDestino, idTitulo, quantidade);
@@ -274,6 +271,44 @@ contract TesouroDireto is ERC20, Ownable {
 
     // Evento para registrar a transferência de títulos
     event TituloTransferido(address indexed detentorOrigem, address indexed detentorDestino, uint256 idTitulo, uint256 quantidade);
+
+
+
+    /******************************************/
+    /********* TRANSFERIR TÍTULO **************/
+    /******************************************/
+    function comprar(
+    address detentorOrigem,
+    address detentorDestino,
+    uint256 idTitulo,
+    uint256 quantidade,
+    uint256 valor
+    ) public payable {
+
+        // Verifica se o remetente da mensagem é o proprietário do contrato
+        require(msg.sender == detentorDestino, "Somente o detentor de destino pode comprar.");
+
+        // Verifica se o detentor de origem possui quantidade suficiente do título
+        require(titulosDetentor[detentorOrigem][idTitulo] >= quantidade, "Detentor de origem nao possui quantidade suficiente do titulo.");
+
+        //Depositar BNB no contrato
+        depositarParaCompra(valor);
+
+        // Verifica se o detentor de destino depositou BNB suficiente
+        require(depositos[detentorDestino] >= valor, "Saldo de deposito insuficiente.");
+
+        // Atualiza o saldo de títulos dos detentores //OK
+        titulosDetentor[detentorOrigem][idTitulo] -= quantidade;
+        titulosDetentor[detentorDestino][idTitulo] += quantidade;
+
+        // Deduza os tokens do detentor de origem e Adicione os tokens ao detentor de destino
+        _transfer(detentorOrigem, detentorDestino, quantidade);
+
+        // Transferir BNB para o detentor de origem já com desconto de 2%
+        payable(detentorOrigem).transfer(valor);
+
+    }
+
 
 }
     
