@@ -3,8 +3,9 @@ pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract TesouroDireto is ERC20, Ownable {
+contract TesouroDireto is ERC20, Ownable, ReentrancyGuard {
 
     
     constructor(
@@ -28,7 +29,7 @@ contract TesouroDireto is ERC20, Ownable {
     // Variável para rastrear o saldo da carteira de liquidez
     uint256 public saldoCarteiraLiquidez;
 
-    function moverBNBsDaLiquidez(address destino, uint256 valor) public onlyAuthorized {
+    function moverBNBsDaLiquidez(address destino, uint256 valor) public onlyAuthorized nonReentrant {
         require(saldoCarteiraLiquidez >= valor, "Saldo insuficiente na carteira de liquidez");
         saldoCarteiraLiquidez -= valor;
         payable(destino).transfer(valor);
@@ -226,7 +227,7 @@ contract TesouroDireto is ERC20, Ownable {
     uint256 idTitulo,
     uint256 quantidade,
     uint256 valor
-    ) public payable {
+    ) public payable nonReentrant {
 
         // Verifica se o remetente da mensagem é o proprietário do contrato
         require(msg.sender == detentorDestino, "Somente o detentor de destino pode comprar.");
@@ -247,8 +248,24 @@ contract TesouroDireto is ERC20, Ownable {
         // Deduza os tokens do detentor de origem e Adicione os tokens ao detentor de destino
         _transfer(detentorOrigem, detentorDestino, quantidade);
 
+        /********* LIQUIDEZ **************/
+
+        // Calcula a taxa de Liquidez 2%
+        uint256 taxa = valor * 2 / 100;
+
+        ///Enviando Saldo para a carteira de liquidez
+        saldoCarteiraLiquidez += taxa;
+
+        // Valor a ser transferido para o detentor de origem (valor menos a taxa)
+        uint256 valorTransferencia = valor - taxa;
+
+        /********* PAGAMENTO AO DETENTOR DE ORIGEM **************/
+
         // Transferir BNB para o detentor de origem já com desconto de 2%
-        payable(detentorOrigem).transfer(valor);
+        payable(detentorOrigem).transfer(valorTransferencia);
+
+        // Atualiza o saldo de depósito do detentor de destino
+        depositos[detentorDestino] -= valor;
 
     }
 
