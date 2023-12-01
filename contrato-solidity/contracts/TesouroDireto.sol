@@ -218,9 +218,9 @@ contract TesouroDireto is ERC20, Ownable, ReentrancyGuard {
     event DepositoEfetuado(address indexed detentorDestino, uint256 valor);
 
 
-    /******************************************/
-    /********* TRANSFERIR TÍTULO **************/
-    /******************************************/
+    /***************************************************************/
+    /********* COMPRA DE TÍTULO NO MERCADO SECUNDÁRIO **************/
+    /***************************************************************/
     function comprar(
     address detentorOrigem,
     address detentorDestino,
@@ -268,5 +268,51 @@ contract TesouroDireto is ERC20, Ownable, ReentrancyGuard {
         depositos[detentorDestino] -= valor;
 
     }
+
+
+/*****************************************************************************************************/
+/********* PARTE 5 - RESGATE DO TÍTULO
+
+    /******************************************/
+    /********* RESGATAR TÍTULO ****************/
+    /******************************************/
+
+    function resgatar(
+        uint256 idTitulo,
+        address detentor,
+        uint256 valor
+    ) public payable nonReentrant onlyAuthorized {
+
+        require(detalhesTitulos[idTitulo].idExterno != 0, "Titulo nao existe.");
+        require(carteirasAutorizadas[msg.sender], "Carteira nao autorizada a emitir titulos.");
+        require(address(this).balance >= valor, "Valor de BNB constante no contrato insuficiente para pagamento do titulo ao detentor.");
+
+        ///Verifica a quantidade de titulos do detentor
+        uint256 quantidade = titulosDetentor[detentor][idTitulo];
+        require(quantidade > 0, "Quantidade de titulos insuficiente para resgate.");
+
+        // Queima os tokens do detentor
+        _burn(detentor, quantidade);
+
+        // Recolhe os títulos da carteira do detentor
+        titulosDetentor[detentor][idTitulo] = 0;
+        
+        //Pagamento do título em BNB
+        payable(detentor).transfer(valor);
+
+    }
+
+    ////Função para Adicionar BNB no contrato
+    // Evento para registrar a recepção de BNB
+    event DepositoNoContrato(address sender, uint256 amount);
+
+    // Função para receber BNB e adicionar ao saldo do contrato
+    function depositarNoContrato() public payable {
+        require(msg.value > 0, "Nenhum valor de BNB enviado.");
+        
+        // Emitir evento indicando que o depósito foi recebido
+        emit DepositoNoContrato(msg.sender, msg.value);
+    }
+
 
 }
