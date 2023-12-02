@@ -58,9 +58,13 @@ Abaixo as ferramentas e tecnologias que foram utilizadas no nosso projeto.
 </p>
 <br>
 
-## ⚙️ Contrato Inteligente
-O contrato em Solidity está na pasta "contrato-solidity".
+## ⚙️ Contrato Inteligente 
+O código contrato em Solidity está na pasta "contrato-solidity".<br>
+Endereço do Contrato na BSC Testnet 0x4252947557f38cD7A9D5a52a0eB38C7AA3Bc3440.
 <br><br>
+
+## Token
+
 
 ## 📝 Licença
 
