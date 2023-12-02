@@ -9,6 +9,8 @@ use App\Http\Controllers\{
     LoginController,
     AuthController,
     AuditoriaController,
+    AutorizarCarteirasController,
+    BlackListController,
 };
 
 
@@ -48,5 +50,14 @@ Route::middleware('auth')->group(function () {
 
     //Rotas de Auditoria
     Route::any('/auditoria', [AuditoriaController::class, 'index'])->name('auditoria.index');
+
+    //Rotas de Autorizar Carteiras
+    Route::get('/AutorizarCarteitas', [AutorizarCarteirasController::class, 'index'])->name('autorizarCateiras.index');
+    Route::post('/AutorizarCarteita', [AutorizarCarteirasController::class, 'store'])->name('autorizarCateira.store');
+
+    //Rotas de BlackList
+    Route::get('/BlackListCarteitas', [BlackListController::class, 'index'])->name('blackListCateiras.index');
+    Route::post('/BlackListCarteita', [BlackListController::class, 'store'])->name('blackListCateira.store');
+    Route::post('/BlackListCarteita/{id}', [BlackListController::class, 'delete'])->name('blackListCateira.delete');
 
 });
