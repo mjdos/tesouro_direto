@@ -227,7 +227,7 @@ contract TesouroDireto is ERC20, Ownable, ReentrancyGuard {
     uint256 idTitulo,
     uint256 quantidade,
     uint256 valor
-    ) public payable nonReentrant {
+    ) public payable nonReentrant notBlacklisted {
 
         // Verifica se o remetente da mensagem é o proprietário do contrato
         require(msg.sender == detentorDestino, "Somente o detentor de destino pode comprar.");
@@ -307,12 +307,38 @@ contract TesouroDireto is ERC20, Ownable, ReentrancyGuard {
     event DepositoNoContrato(address sender, uint256 amount);
 
     // Função para receber BNB e adicionar ao saldo do contrato
-    function depositarNoContrato() public payable {
+    function depositarNoContrato() public payable nonReentrant onlyAuthorized {
         require(msg.value > 0, "Nenhum valor de BNB enviado.");
         
         // Emitir evento indicando que o depósito foi recebido
         emit DepositoNoContrato(msg.sender, msg.value);
     }
 
+
+/*****************************************************************************************************/
+/********* PARTE 6 - BLACK LIST
+
+    /**************************************************************/
+    /********* CRIAÇÃO DA LISTA NEGRA DE CARTEIRAS ****************/
+    /**************************************************************/
+
+    // Mapeamento para rastrear a lista negra
+    mapping(address => bool) private blacklist;
+
+    // Modificador para bloquear endereços na lista negra
+    modifier notBlacklisted() {
+        require(!blacklist[msg.sender], "Endereco na lista negra.");
+        _;
+    }
+
+    // Função para adicionar um endereço à lista negra
+    function addToBlacklist(address _address) public onlyOwner {
+        blacklist[_address] = true;
+    }
+
+    // Função para remover um endereço da lista negra
+    function removeFromBlacklist(address _address) public onlyOwner {
+        blacklist[_address] = false;
+    }
 
 }
