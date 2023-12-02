@@ -22,17 +22,17 @@ Com um diferencial marcante em tecnologia blockchain avançada e interfaces de u
 > de crescer, inovar e compartilhar ideias<br>
 > com mentes tão brilhantes.<br>
 > Equipe "Code Creators"
-
+<br>
 ## Desafio das Redes
 
 Conforme item  10.15 do edital segue abaixo as 2 postagens para o "Desafio das Redes", segue comprovante para que seja computada para minha equipe os 0,5 ponto.
 <br><br>
 https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125452858631630849-sKz_<br>
 https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125450332972736512-cNKB
-
+<br><br>
 ## Link do MVP
 https://codecreators.com.br/
-
+<br><br>
 ## Vídeos do MVP
 
 Preparamos uma série de vídeos para demonstrar a solução funcionando com nosso MVP.
@@ -42,19 +42,19 @@ Preparamos uma série de vídeos para demonstrar a solução funcionando com nos
 | Dropbox | [plugins/dropbox/README.md][PlDb] |
 | GitHub | [plugins/github/README.md][PlGh] |
 
-
+<br><br>
 ## Tecnologias Utilizadas
 
 #Laravel <br>
 #PHP<br>
 #Web3.js <br>
 #Solidity <br>
-
+<br>
 
 ## Contrato Inteligente
 O contrato em Solidity está na pasta "contrato-solidity".
-
+<br><br>
 ## Licença
 
-MIT<br>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 **Free Software, Hell Yeah!**
