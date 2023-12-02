@@ -30,16 +30,31 @@ Conforme item  10.15 do edital segue abaixo as 2 postagens para o "Desafio das R
 https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125452858631630849-sKz_<br>
 https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125450332972736512-cNKB
 
+## Link do MVP
+https://codecreators.com.br/
+
+## Vídeos do MVP
+
+Preparamos uma série de vídeos para demonstrar a solução funcionando com nosso MVP.
+
+| Descrição | Vídeo |
+| ------ | ------ |
+| Dropbox | [plugins/dropbox/README.md][PlDb] |
+| GitHub | [plugins/github/README.md][PlGh] |
+
 
 ## Tecnologias Utilizadas
 
-#Laravel
-#Web3.js
-#Solidity
+#Laravel <br>
+#PHP<br>
+#Web3.js <br>
+#Solidity <br>
+
 
 ## Contrato Inteligente
 O contrato em Solidity está na pasta "contrato-solidity".
 
 ## Licença
 
- O framework Laravel é open-sourced e licenciado com [MIT license](https://opensource.org/licenses/MIT).
+MIT<br>
+**Free Software, Hell Yeah!**
