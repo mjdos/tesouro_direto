@@ -167,10 +167,9 @@ class TitulosController extends Controller
         $descricao = [
             'idExterno' => $request->idExterno,
             'user_id' => $usuario['id'],
-            'carteira_remetente' =>$request->walletAddress,
+            'carteira_origem' =>$request->walletAddress,
             'carteira_destino' => $request->carteiraDestino,
-            'quantidade' => $request->quantidade,
-            'valor' => bcmul($request->valor, bcpow("10", "18")),
+            'quantidade' => bcmul($request->quantidade, bcpow("10", "18")),
         ];
         TituloEmitidos::create($descricao);
         $titulos = Titulo::all();

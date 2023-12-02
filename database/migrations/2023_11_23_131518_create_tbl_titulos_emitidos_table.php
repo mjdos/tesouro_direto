@@ -18,7 +18,7 @@ return new class extends Migration
                 ->references('id')
                 ->on('users');
             $table->string('idExterno');
-            $table->string('carteira_remetente');
+            $table->string('carteira_origem');
             $table->string('carteira_destino');
             $table->decimal('quantidade');
             $table->float('valor');
