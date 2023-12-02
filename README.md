@@ -34,7 +34,7 @@ https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activ
 ## ⚡ Link do MVP ⚡
 https://codecreators.com.br/
 <br><br>
-## ⚡ Vídeos do MVP ⚡ 
+## ⚡ Vídeos do MVP 
 
 Preparamos uma série de vídeos para demonstrar a solução funcionando com nosso MVP.
 
@@ -54,7 +54,7 @@ Abaixo as ferramentas e tecnologias que foram utilizadas no nosso projeto.
   </a>
 </p>
 
-## Contrato Inteligente
+## 📝 Contrato Inteligente 📝
 O contrato em Solidity está na pasta "contrato-solidity".
 <br><br>
 ## Licença
