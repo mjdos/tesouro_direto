@@ -24,7 +24,7 @@ Com um diferencial marcante em tecnologia blockchain avançada e interfaces de u
 > Equipe "Code Creators"
 <br>
 
-## ⚡ Desafio das Redes 
+## 🎯 Desafio das Redes 
 
 Conforme item  10.15 do edital segue abaixo as 2 postagens para o "Desafio das Redes", segue comprovante para que seja computada para minha equipe os 0,5 ponto.
 <br><br>
@@ -32,7 +32,7 @@ https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activ
 https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125450332972736512-cNKB
 <br><br>
 
-## ⚡ Link do MVP
+## 💻 Link do MVP
 https://codecreators.com.br/
 <br><br>
 
@@ -45,7 +45,8 @@ Preparamos uma série de vídeos para demonstrar a solução funcionando com nos
 | Dropbox | [plugins/dropbox/README.md][PlDb] |
 | GitHub | [plugins/github/README.md][PlGh] |
 
-<br><br>
+<br>
+
 ## 🚀 Tecnologias Utilizadas
 
 Abaixo as ferramentas e tecnologias que foram utilizadas no nosso projeto.
@@ -55,7 +56,7 @@ Abaixo as ferramentas e tecnologias que foram utilizadas no nosso projeto.
     <img src="https://skillicons.dev/icons?i=git,github,php,laravel,vscode,linux,nodejs,js,html,jquery,mysql" />
   </a>
 </p>
-<br><br>
+<br>
 
 ## ⚙️ Contrato Inteligente
 O contrato em Solidity está na pasta "contrato-solidity".
