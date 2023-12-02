@@ -1,11 +1,11 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/topo_home.png" width="800" alt="CodeCreators"></a></p>
+<p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/topo_home.png" width="800" alt="CodeCreators"></p>
 
 <p align="center">
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-
-## ⚡ Introdução ao Projeto de Tokenização do Tesouro Nacional ⚡
+<br><br>
+## 📚 Introdução ao Projeto de Tokenização do Tesouro Nacional
 
 Neste mundo dinâmico e em constante evolução dos investimentos e tecnologias financeiras, temos o prazer de apresentar um projeto pioneiro que redefine o paradigma do investimento em títulos públicos: a "Solução para Tokenização do Tesouro Nacional". Esta proposta inovadora visa integrar a segurança e a estabilidade dos títulos públicos com a eficiência e a transparência da tecnologia blockchain.
 <br><br>
@@ -24,16 +24,18 @@ Com um diferencial marcante em tecnologia blockchain avançada e interfaces de u
 > Equipe "Code Creators"
 <br>
 
-## ⚡ Desafio das Redes ⚡
+## 🎯 Desafio das Redes 
 
 Conforme item  10.15 do edital segue abaixo as 2 postagens para o "Desafio das Redes", segue comprovante para que seja computada para minha equipe os 0,5 ponto.
 <br><br>
 https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125452858631630849-sKz_<br>
 https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125450332972736512-cNKB
 <br><br>
-## ⚡ Link do MVP
+
+## 🌐 Link do MVP
 https://codecreators.com.br/
 <br><br>
+
 ## 🎞 Vídeos do MVP 
 
 Preparamos uma série de vídeos para demonstrar a solução funcionando com nosso MVP.
@@ -43,8 +45,9 @@ Preparamos uma série de vídeos para demonstrar a solução funcionando com nos
 | Dropbox | [plugins/dropbox/README.md][PlDb] |
 | GitHub | [plugins/github/README.md][PlGh] |
 
-<br><br>
-## ⚡ Tecnologias Utilizadas
+<br>
+
+## 🚀 Tecnologias Utilizadas
 
 Abaixo as ferramentas e tecnologias que foram utilizadas no nosso projeto.
 
@@ -53,11 +56,19 @@ Abaixo as ferramentas e tecnologias que foram utilizadas no nosso projeto.
     <img src="https://skillicons.dev/icons?i=git,github,php,laravel,vscode,linux,nodejs,js,html,jquery,mysql" />
   </a>
 </p>
+<br>
+
+## ⚙️ Contrato Inteligente 
+O código contrato em Solidity está na pasta "contrato-solidity".<br>
+Endereço do Contrato na BSC Testnet 0x4252947557f38cD7A9D5a52a0eB38C7AA3Bc3440.
 <br><br>
-## 📝 Contrato Inteligente
-O contrato em Solidity está na pasta "contrato-solidity".
-<br><br>
-## Licença
+
+## 🏆 Token
+
+<p align="center"><a href="https://testnet.bscscan.com/token/0x4252947557f38cD7A9D5a52a0eB38C7AA3Bc3440" target="_blank" style="border: 1px solid black; display: inline-block;"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/token-ts26.bmp" width="1000" alt="Token Selic 2026"></a></p>
+
+
+## 📝 Licença
 
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a><br>
 **Free Software, Hell Yeah!**
