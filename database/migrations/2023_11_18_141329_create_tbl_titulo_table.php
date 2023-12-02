@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tbl_titulo', function (Blueprint $table) {
             $table->id();
             $table->integer('idExterno');
+            $table->string('sigla');
             $table->string('nome');
             $table->string('dataVencimento');
             $table->string('rentabilidadeAnual');

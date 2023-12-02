@@ -115,27 +115,27 @@ $('.app-chat .chat-user ').on('click', function(event) {
 });
 
 // Send Messages
-$('.message-type-box').on('keydown', function(event) {
-    if(event.key === 'Enter') {
-    	// Start getting time
-    	var now = new Date();
-		var hh = now.getHours();
-		var min = now.getMinutes();
+// $('.message-type-box').on('keydown', function(event) {
+//     if(event.key === 'Enter') {
+//     	// Start getting time
+//     	var now = new Date();
+// 		var hh = now.getHours();
+// 		var min = now.getMinutes();
 				
-		var ampm = (hh>=12)?'pm':'am';
-		hh = hh%12;
-		hh = hh?hh:12;
-		hh = hh<10?'0'+hh:hh;
-		min = min<10?'0'+min:min;
+// 		var ampm = (hh>=12)?'pm':'am';
+// 		hh = hh%12;
+// 		hh = hh?hh:12;
+// 		hh = hh<10?'0'+hh:hh;
+// 		min = min<10?'0'+min:min;
 				
-		var time = hh+" : "+min+" "+ampm;
-		// End
+// 		var time = hh+" : "+min+" "+ampm;
+// 		// End
 
-        var chatInput = $(this);
-        var chatMessageValue = chatInput.val();
-        if (chatMessageValue === '') { return; }
-        $messageHtml = '<li class="odd chat-item"> <div class="chat-content"> <div class="box bg-light-inverse">' + chatMessageValue + '<br> </div></div><div class="chat-time">' + time + '</div> </li>';
-        var appendMessage = $(this).parents('.chat-application').find('.active-chat').append($messageHtml);
-        var clearChatInput = chatInput.val('');
-    }
-})
+//         var chatInput = $(this);
+//         var chatMessageValue = chatInput.val();
+//         if (chatMessageValue === '') { return; }
+//         $messageHtml = '<li class="odd chat-item"> <div class="chat-content"> <div class="box bg-light-inverse">' + chatMessageValue + '<br> </div></div><div class="chat-time">' + time + '</div> </li>';
+//         var appendMessage = $(this).parents('.chat-application').find('.active-chat').append($messageHtml);
+//         var clearChatInput = chatInput.val('');
+//     }
+// })
