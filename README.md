@@ -32,7 +32,7 @@ https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activ
 https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125450332972736512-cNKB
 <br><br>
 
-## 💻 Link do MVP
+## 🌐 Link do MVP
 https://codecreators.com.br/
 <br><br>
 
@@ -63,7 +63,7 @@ O código contrato em Solidity está na pasta "contrato-solidity".<br>
 Endereço do Contrato na BSC Testnet 0x4252947557f38cD7A9D5a52a0eB38C7AA3Bc3440.
 <br><br>
 
-## Token
+## 🏆 Token
 
 
 ## 📝 Licença
