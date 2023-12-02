@@ -4,8 +4,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-
-## ⚡ Introdução ao Projeto de Tokenização do Tesouro Nacional
+<br><br>
+## 📚 Introdução ao Projeto de Tokenização do Tesouro Nacional
 
 Neste mundo dinâmico e em constante evolução dos investimentos e tecnologias financeiras, temos o prazer de apresentar um projeto pioneiro que redefine o paradigma do investimento em títulos públicos: a "Solução para Tokenização do Tesouro Nacional". Esta proposta inovadora visa integrar a segurança e a estabilidade dos títulos públicos com a eficiência e a transparência da tecnologia blockchain.
 <br><br>
@@ -46,7 +46,7 @@ Preparamos uma série de vídeos para demonstrar a solução funcionando com nos
 | GitHub | [plugins/github/README.md][PlGh] |
 
 <br><br>
-## ⚡ Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 
 Abaixo as ferramentas e tecnologias que foram utilizadas no nosso projeto.
 
@@ -57,11 +57,11 @@ Abaixo as ferramentas e tecnologias que foram utilizadas no nosso projeto.
 </p>
 <br><br>
 
-## 📝 Contrato Inteligente
+## ⚙️ Contrato Inteligente
 O contrato em Solidity está na pasta "contrato-solidity".
 <br><br>
 
-## Licença
+## 📝 Licença
 
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a><br>
 **Free Software, Hell Yeah!**
