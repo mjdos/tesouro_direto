@@ -31,10 +31,10 @@ Conforme item  10.15 do edital segue abaixo as 2 postagens para o "Desafio das R
 https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125452858631630849-sKz_<br>
 https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125450332972736512-cNKB
 <br><br>
-##⚡ Link do MVP ⚡
+## ⚡ Link do MVP ⚡
 https://codecreators.com.br/
 <br><br>
-## Vídeos do MVP
+## ⚡ Vídeos do MVP ⚡ 
 
 Preparamos uma série de vídeos para demonstrar a solução funcionando com nosso MVP.
 
@@ -50,16 +50,9 @@ Abaixo as ferramentas e tecnologias que foram utilizadas no nosso projeto.
 
 <p align="left">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=git,github,php,laravel,vscode,linux,nodejs,js,html,jquery" />
+    <img src="https://skillicons.dev/icons?i=git,github,php,laravel,vscode,linux,nodejs,js,html,jquery,mysql" />
   </a>
 </p>
-
-
-#Laravel <br>
-#PHP<br>
-#Web3.js <br>
-#Solidity <br>
-<br>
 
 ## Contrato Inteligente
 O contrato em Solidity está na pasta "contrato-solidity".
