@@ -7,7 +7,8 @@ use App\Http\Controllers\{
     MarketPlaceController,
     TitulosController,
     LoginController,
-    AuthController
+    AuthController,
+    AuditoriaController,
 };
 
 
@@ -72,3 +73,6 @@ Route::get('/exchange', [MarketPlaceController::class, 'exchange'])->name('excha
 
 
 Route::get('/rotaTeste', [TitulosController::class, 'teste'])->name('teste.meu');
+
+//Rotas de Auditoria
+Route::any('/auditoria', [AuditoriaController::class, 'index'])->name('auditoria.index');

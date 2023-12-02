@@ -13,8 +13,8 @@ class Mercado extends Model
 
     protected $fillable = [
         'titulo_id',
-        'carteira_vendedora',
-        'carteira_compradora',
+        'carteira_origem',
+        'carteira_destino',
         'data_hora',
         'valor_operacao',
         'quantidade',
