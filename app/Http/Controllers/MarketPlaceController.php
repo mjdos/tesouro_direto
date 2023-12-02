@@ -9,7 +9,7 @@ class MarketPlaceController extends Controller
 {
     public function index()
     {
-        $titulos = Titulo::all();
+        $titulos = Titulo::orderBy('id', 'desc')->get();
         return view('mp.index', compact('titulos'));
     }
 

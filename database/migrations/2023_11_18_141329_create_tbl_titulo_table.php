@@ -13,15 +13,21 @@ return new class extends Migration
     {
         Schema::create('tbl_titulo', function (Blueprint $table) {
             $table->id();
-            $table->integer('idExterno');
-            $table->string('sigla');
-            $table->string('nome');
-            $table->string('dataVencimento');
-            $table->string('rentabilidadeAnual');
-            $table->string('valorNominal');
-            $table->string('aliquotaIR');
-            $table->string('taxa_b3');
-            $table->string('isentoIOF');
+            $table->integer('idExterno')->nullable();
+            $table->string('sigla')->nullable();
+            $table->string('nome')->nullable();
+            $table->string('dataVencimento')->nullable();
+            $table->string('rentabilidadeAnual')->nullable();
+            $table->string('valorNominal')->nullable();
+            $table->string('aliquotaIR')->nullable();
+            $table->string('taxa_b3')->nullable();
+            $table->string('isentoIOF')->nullable();
+            $table->string('hora')->nullable();
+            $table->string('hora_status')->nullable();
+            $table->string('dia')->nullable();
+            $table->string('dia_status')->nullable();
+            $table->string('semana')->nullable();
+            $table->string('semana_status')->nullable();
             $table->timestamps();
         });
     }

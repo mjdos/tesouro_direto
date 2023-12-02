@@ -20,7 +20,13 @@ class Titulo extends Model
         'valorNominal',
         'aliquotaIR',
         'taxa_b3',
-        'isentoIOF'
+        'isentoIOF',
+        'hora',
+        'hora_status',
+        'dia',
+        'dia_status',
+        'semana',
+        'semana_status',
     ];
 
 }

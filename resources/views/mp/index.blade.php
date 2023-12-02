@@ -64,15 +64,14 @@
                             <div class="card">
                                 <div class="card-body d-flex align-items-center">
                                     <div class="flex-fill text-truncate">
-                                        <span class="text-muted small text-uppercase">Top gainer (24h)</span>
-                                        <span class="h6 mt-3 mb-1 fw-bold d-block">DF/USDT</span>
+                                        <span class="text-muted small text-uppercase">Maiores ganhos em 24h</span>
+                                        <span class="h6 mt-3 mb-1 fw-bold d-block">TS26 - <span class="text-muted"> Tesouro Selic 2026</span></span>
                                         <div class="d-flex justify-content-between">
                                             <div class="price-block">
-                                                <span class="fs-6 fw-bold color-price-up">0.3165</span>
-                                                <span class="small text-muted px-2">$0</span>
+                                                <span class="fs-6 fw-bold color-price-up">R$ 1.4141,55</span>
                                             </div>
                                             <div class="price-report">
-                                                <span class="small text-success">+59.10% <i class="fa fa-level-up"></i></span>
+                                                <span class="badge bg-success">+9,10% <i class="fa fa-level-up"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -83,15 +82,14 @@
                             <div class="card">
                                 <div class="card-body d-flex align-items-center">
                                     <div class="flex-fill text-truncate">
-                                        <span class="text-muted small text-uppercase">Top loser (24h)</span>
-                                        <span class="h6 mt-3 mb-1 fw-bold d-block">XTZDOWN/USDT</span>
+                                        <span class="text-muted small text-uppercase">Maiores perdas em 24h </span>
+                                        <span class="h6 mt-3 mb-1 fw-bold d-block">TE29 - <span class="text-muted"> Tesouro Educa+ 2029</span></span>
                                         <div class="d-flex justify-content-between">
                                             <div class="price-block">
-                                                <span class="fs-6 fw-bold color-price-down">2.831</span>
-                                                <span class="small text-muted px-2">$3</span>
+                                                <span class="fs-6 fw-bold color-price-down">R$ 3.112,29</span>
                                             </div>
                                             <div class="price-report">
-                                                <span class="small text-danger">-40.87% <i class="fa fa-level-down"></i></span>
+                                                <span class="badge bg-danger">-0,87% <i class="fa fa-level-down"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -102,15 +100,14 @@
                             <div class="card">
                                 <div class="card-body d-flex align-items-center">
                                     <div class="flex-fill text-truncate">
-                                        <span class="text-muted small text-uppercase">Highlight</span>
-                                        <span class="h6 mt-3 mb-1 fw-bold d-block">USDT/BIDR</span>
+                                        <span class="text-muted small text-uppercase">Destaques</span>
+                                        <span class="h6 mt-3 mb-1 fw-bold d-block">TP33 - <span class="text-muted"> Tesouro Pré-Fixado 2033 </span></span>
                                         <div class="d-flex justify-content-between">
                                             <div class="price-block">
-                                                <span class="fs-6 fw-bold">14,339</span>
-                                                <span class="small text-muted px-2">$1</span>
+                                                <span class="fs-6 fw-bold">R$ 1.000,00</span>
                                             </div>
                                             <div class="price-report">
-                                                <span class="small text-danger">-0.44% <i class="fa fa-level-down"></i></span>
+                                                <span class="badge bg-danger">-0,44% <i class="fa fa-level-down"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -121,15 +118,14 @@
                             <div class="card">
                                 <div class="card-body d-flex align-items-center">
                                     <div class="flex-fill text-truncate">
-                                        <span class="text-muted small text-uppercase">GRT/USDT</span>
-                                        <span class="h6 mt-3 mb-1 fw-bold d-block">DOT/USDT</span>
+                                        <span class="text-muted small text-uppercase">Título Recomendado</span>
+                                        <span class="h6 mt-3 mb-1 fw-bold d-block">TE26 -<span class="text-muted"> Tesouro Educa+ 2026 </span> </span>
                                         <div class="d-flex justify-content-between">
                                             <div class="price-block">
-                                                <span class="fs-6 fw-bold color-price-up">30.90</span>
-                                                <span class="small text-muted px-2">$31</span>
+                                                <span class="fs-6 fw-bold color-price-up">R$ 2.200,00</span>
                                             </div>
                                             <div class="price-report">
-                                                <span class="small text-success">+3.66% <i class="fa fa-level-up"></i></span>
+                                                <span class="badge bg-success">+3,66% <i class="fa fa-level-up"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -149,27 +145,42 @@
                                             <table class="myProjectTable table table-hover custom-table align-middle mb-0" style="width:100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>Titulo</th>
+                                                        <th>Título</th>
                                                         <th>Data de Vencimento</th>
-                                                        <th>Valor Nominal</th>
-                                                        <th>Rentabilidade Anual</th>
-                                                        <th>Alicota IR</th>
-                                                        <th>Taxa B3</th>
-                                                        <th>IOF</th>
+                                                        <th>Preço</th>
+                                                        <th> 1h %</th>
+                                                        <th> 24h %</th>
+                                                        <th> 7d %</th>
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     @foreach($titulos as $titulo)
                                                     <tr>
-                                                        <td><i class="fa fa-star px-2 fa-lg text-warning" aria-hidden="true"></i> <img src="assets/images/coin/DASH.png" alt="" class="img-fluid avatar mx-1"> {{$titulo->sigla}} &nbsp;<span class="text-muted">{{$titulo->nome}} </span></td>
+                                                        <td>
+                                                            <img src="assets/images/coin/DASH.png" alt="" class="img-fluid avatar mx-1">
+                                                            <strong>{{$titulo->sigla}}</strong> &nbsp;<span class="text-muted">{{$titulo->nome}} </span>
+                                                        </td>
                                                         <td><span>{{date('d/m/Y', strtotime($titulo->dataVencimento))}}</span> </td>
-                                                        <td>R$ {{$titulo->vaulorNominal}}</td>
-                                                        <td><span class="color-price-up">{{$titulo->rentabilidadeAnual}}%</span></td>
-                                                        <td><span class="color-price-up">{{$titulo->aliquotaIR}}%</span></td>
-                                                        <td><span class="color-price-down">{{$titulo->taxa_b3}}%</span></td>
-                                                        <td><span class="text-muted">{{$titulo->isentoIOF}}%</span></td>
-                                                        <td><a href="#" title="" class="text-secondary">Trade</a></td>
+                                                        <td>R$ &nbsp;{{number_format($titulo->valorNominal, 2, ",", ".") }}</td>
+                                                        <td>
+                                                            <span @if($titulo->hora_status == 'P') class="color-price-up" @elseif($titulo->hora_status == 'N') class="color-price-down" @else class="text-muted" @endif>
+                                                                {{$titulo->hora ?? '0.00'}}%
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <span @if($titulo->dia_status == 'P') class="color-price-up" @elseif($titulo->dia_status == 'N') class="color-price-down" @else class="text-muted" @endif>
+                                                                {{$titulo->dia ?? '0.00'}}%
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <span @if($titulo->semana_status == 'P') class="color-price-up" @elseif($titulo->semana_status == 'N') class="color-price-down" @else class="text-muted" @endif>
+                                                                {{$titulo->semana ?? '0.00'}}%
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#" title="" class="btn btn-primary">Trade</a>
+                                                        </td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
