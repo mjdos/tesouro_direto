@@ -4,6 +4,17 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+
+## Introdução
+
+
+> Participar deste hackathon foi uma jornada
+> incrível de aprendizado e colaboração.
+> Agradecemos imensamente pela oportunidade
+> de crescer, inovar e compartilhar ideias
+> com mentes tão brilhantes.
+> Equipe "Code Creators"
+
 ## Desafio das Redes
 
 Conforme item  10.15 do edital segue abaixo as 2 postagens para o "Desafio das Redes", segue comprovante para que seja computada para minha equipe os 0,5 ponto.
