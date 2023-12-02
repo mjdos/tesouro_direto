@@ -94,7 +94,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                         <div class="col">
                             <div class="card">
@@ -160,9 +160,9 @@
                                                         <td>
                                                             <img src="assets/images/coin/DASH.png" alt="" class="img-fluid avatar mx-1">
                                                             <strong>{{$titulo->sigla}}</strong> &nbsp;<span class="text-muted">{{$titulo->nome}} </span>
-                                                        </td>
+                                                        </td> 
                                                         <td><span>{{date('d/m/Y', strtotime($titulo->dataVencimento))}}</span> </td>
-                                                        <td>R$ &nbsp;{{number_format($titulo->valorNominal, 2, ",", ".") }}</td>
+                                                        <td>R$ &nbsp;{{number_format($titulo->valorNominal, 2, ",", ".") }}</td> 
                                                         <td>
                                                             <span @if($titulo->hora_status == 'P') class="color-price-up" @elseif($titulo->hora_status == 'N') class="color-price-down" @else class="text-muted" @endif>
                                                                 {{$titulo->hora ?? '0.00'}}%
@@ -171,8 +171,8 @@
                                                         <td>
                                                             <span @if($titulo->dia_status == 'P') class="color-price-up" @elseif($titulo->dia_status == 'N') class="color-price-down" @else class="text-muted" @endif>
                                                                 {{$titulo->dia ?? '0.00'}}%
-                                                            </span>
-                                                        </td>
+                                                            </span> 
+                                                        </td> 
                                                         <td>
                                                             <span @if($titulo->semana_status == 'P') class="color-price-up" @elseif($titulo->semana_status == 'N') class="color-price-down" @else class="text-muted" @endif>
                                                                 {{$titulo->semana ?? '0.00'}}%
@@ -181,7 +181,7 @@
                                                         <td>
                                                             <a href="#" title="" class="btn btn-primary">Trade</a>
                                                         </td>
-                                                    </tr>
+                                                    </tr> 
                                                     @endforeach
                                                 </tbody>
                                             </table>
