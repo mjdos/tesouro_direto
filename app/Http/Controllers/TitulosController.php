@@ -163,17 +163,18 @@ class TitulosController extends Controller
     public function storeEmitir(Request $request)
     {
         $usuario = Session::get('usuario');
-
+        
         $descricao = [
             'idExterno' => $request->idExterno,
-            'carteira_remetente' => $usuario['carteira'],
-            'carteira_destino' => $request->carteira_destino,
+            'user_id' => $usuario['id'],
+            'carteira_remetente' =>$request->walletAddress,
+            'carteira_destino' => $request->carteiraDestino,
             'quantidade' => $request->quantidade,
-            'valor' => $request->valor,
+            'valor' => bcmul($request->valor, bcpow("10", "18")),
         ];
         TituloEmitidos::create($descricao);
         $titulos = Titulo::all();
-
+        
         return redirect()->route('emitirTitulos.index', compact('titulos'));
     }
 

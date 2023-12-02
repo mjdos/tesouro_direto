@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('idExterno');
             $table->string('nome');
-            $table->string('dataVencimento');
+            $table->date('dataVencimento');
             $table->string('rentabilidadeAnual');
             $table->string('valorNominal');
             $table->string('aliquotaIR');

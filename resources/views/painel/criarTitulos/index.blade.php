@@ -30,7 +30,7 @@
 
                             <thead>
                                 <tr class="fw-bolder text-muted bg-secondary">
-                                    <th class="min-w-125px ps-2 rounded-start">nome</th>
+                                    <th class="min-w-125px ps-2 rounded-start">Nome</th>
                                     <th class="min-w-125px">Data de Vencimento</th>
                                     <th class="min-w-125px">Rentabilidade Anual</th>
                                     <th class="min-w-125px">Valor Nominal</th>
@@ -49,17 +49,17 @@
                                         <td>{{$titulo->dataVencimento}}</td>
                                         <td>{{$titulo->rentabilidadeAnual}}%</td>
                                         <td>{{$titulo->valorNominal}}</td>
-                                        <td>{{$titulo->aliquotaIR}}%</td>
-                                        <td>{{$titulo->taxa_b3}}%</td>
-                                        <td>{{$titulo->isentoIOF}}%</td>
-                                        <td>
+                                        <td>{{$titulo->aliquotaIR}}</td>
+                                        <td>{{$titulo->taxa_b3}}</td>
+                                        <td>{{$titulo->isentoIOF}}</td>
+                                        <!-- <td>
                                             <div>
                                                 <a href="{{route('editTitulo.edit', $titulo->id)}}" class="btn btn-sm btn-light-warning">
                                                     <i class="fas fa-solid fa-pen"></i>
                                                     Editar
                                                 </a>
                                             </div>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                 @endforeach
 
