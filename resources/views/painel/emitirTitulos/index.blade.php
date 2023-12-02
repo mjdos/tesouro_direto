@@ -43,9 +43,9 @@
                                         <td>{{$titulo->dataVencimento}}</td>
                                         <td>{{$titulo->rentabilidadeAnual}}%</td>
                                         <td>{{$titulo->valorNominal}}</td>
-                                        <td>{{$titulo->aliquotaIR}}%</td>
-                                        <td>{{$titulo->taxa_b3}}%</td>
-                                        <td>{{$titulo->isentoIOF}}%</td>
+                                        <td>{{$titulo->aliquotaIR}}</td>
+                                        <td>{{$titulo->taxa_b3}}</td>
+                                        <td>{{$titulo->isentoIOF}}</td>
                                         <td class="text-end">
                                             <a href="{{route('emitirTitulo.index')}}"  class="btn btn-sm btn-success">
                                             <i class="fas fa-solid fa-file-contract fs-3"></i>

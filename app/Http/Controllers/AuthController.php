@@ -36,7 +36,6 @@ class AuthController extends Controller
                 'id'            => $user->id,
                 'nome'          => $user->name,
                 'email'         => $user->email,
-                'carteira'      => $user->carteira,
             ];
 
             Session::put(['usuario' => $usuario_logado]);

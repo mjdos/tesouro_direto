@@ -1,16 +1,26 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/topo_home.png" width="800" alt="CodeCreators"></a></p>
 
 <p align="center">
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+
+
+## Introdução
+
+
+> Participar deste hackathon foi uma jornada
+> incrível de aprendizado e colaboração.
+> Agradecemos imensamente pela oportunidade
+> de crescer, inovar e compartilhar ideias
+> com mentes tão brilhantes.
+> Equipe "Code Creators"
 
 ## Desafio das Redes
 
 Conforme item  10.15 do edital segue abaixo as 2 postagens para o "Desafio das Redes", segue comprovante para que seja computada para minha equipe os 0,5 ponto.
-Endereço do feed:
-https://www.linkedin.com/in/marcelo-jos%C3%A9-b20b8949/recent-activity/all/
-<img src="http://codecreators.com.br/assets/imagens/desafio_redes.png" alt="Desafio das Redes">
+<br><br>
+https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125452858631630849-sKz_<br>
+https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125450332972736512-cNKB
 
 
 ## Tecnologias Utilizadas

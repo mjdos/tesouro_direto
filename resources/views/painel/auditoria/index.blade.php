@@ -63,7 +63,7 @@
                             <tr>
                                 <!--begin::Name=-->
                                 <td>
-                                    {{$mercado->titulo->titulo}}
+                                    {{$mercado->titulo->nome}}
                                 </td>
                                 <!--end::Name=-->
                                 <!--begin::Email=-->

@@ -13,6 +13,7 @@ class Titulo extends Model
 
     protected $fillable = [
         'idExterno',
+        'sigla',
         'nome',
         'dataVencimento',
         'rentabilidadeAnual',
