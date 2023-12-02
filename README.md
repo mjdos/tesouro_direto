@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/topo_home.png" width="800" alt="CodeCreators"></a></p>
+<p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/topo_home.png" width="800" alt="CodeCreators"></p>
 
 <p align="center">
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
@@ -65,7 +65,7 @@ Endereço do Contrato na BSC Testnet 0x4252947557f38cD7A9D5a52a0eB38C7AA3Bc3440.
 
 ## 🏆 Token
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/token-ts26.bmp" border=1 width="800" alt="Token Selic 2026"></a></p>
+<p align="center"><a href="https://testnet.bscscan.com/token/0x4252947557f38cD7A9D5a52a0eB38C7AA3Bc3440" target="_blank"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/token-ts26.bmp" width="1000" alt="Token Selic 2026"> style="border: 1px solid black;"></a></p>
 
 
 ## 📝 Licença
