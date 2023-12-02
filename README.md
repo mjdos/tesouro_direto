@@ -31,14 +31,11 @@ Conforme item  10.15 do edital segue abaixo as 2 postagens para o "Desafio das R
 https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125452858631630849-sKz_<br>
 https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125450332972736512-cNKB
 <br><br>
+
 ## ⚡ Link do MVP
 https://codecreators.com.br/
-
-<div align="center" dir="auto">
-<p dir="auto"><a href="https://codecreators.com.br/" title="Ir para o site"><img src="https://camo.githubusercontent.com/010b2a46e16e0cc735a73a36daf9e724fe118c918560614affedcdfc1f34e7f0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f766965772d446f63756d656e746174696f6e2d626c75653f7374796c653d666f722d7468652d6261646765" alt="Abrir - Site" data-canonical-src="https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge" style="max-width: 100%;"></a></p>
-</div>
-
 <br><br>
+
 ## 🎞 Vídeos do MVP 
 
 Preparamos uma série de vídeos para demonstrar a solução funcionando com nosso MVP.
