@@ -23,6 +23,7 @@ Com um diferencial marcante em tecnologia blockchain avançada e interfaces de u
 > com mentes tão brilhantes.<br>
 > Equipe "Code Creators"
 <br>
+
 ## Desafio das Redes
 
 Conforme item  10.15 do edital segue abaixo as 2 postagens para o "Desafio das Redes", segue comprovante para que seja computada para minha equipe os 0,5 ponto.
@@ -56,5 +57,5 @@ O contrato em Solidity está na pasta "contrato-solidity".
 <br><br>
 ## Licença
 
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a><br>
 **Free Software, Hell Yeah!**
