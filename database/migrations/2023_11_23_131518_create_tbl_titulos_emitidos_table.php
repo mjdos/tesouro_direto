@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('tbl_titulos_emitidos', function (Blueprint $table){
             $table->increments('id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
             $table->string('idExterno');
-            $table->string('carteira_remetente');
+            $table->string('carteira_origem');
             $table->string('carteira_destino');
             $table->decimal('quantidade');
-            $table->decimal('valor');
+            $table->float('valor');
             $table->timestamps();
         });
     }

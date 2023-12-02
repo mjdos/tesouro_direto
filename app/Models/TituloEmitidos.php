@@ -13,7 +13,8 @@ class TituloEmitidos extends Model
 
     protected $fillable = [
         'idExterno',
-        'carteira_remetente',
+        'user_id',
+        'carteira_origem',
         'carteira_destino',
         'quantidade',
         'valor',

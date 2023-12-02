@@ -86,6 +86,46 @@
 							</div>
 						</div>
 					</div>
+					<div class="col-xl-3">
+						<div class="card card-xl-stretch mb-xl-5">
+							<div class="card-header border-0 py-3">
+								<h3 class="card-title align-items-start flex-column">
+									<span class="card-label fw-bolder fs-3 mb-1">Autorizar Carteiras</span>
+									<span class="text-muted fw-bold fs-7">###########</span>
+								</h3>
+							</div>
+							<div class="card-body d-flex flex-column">
+								<div class="pt-0" align="center">
+									<img src="{{ url('assets/imagens/chat.png') }}" class="h-70px mb-2">
+									<p class="text-center fs-6 pb-5 mb-2">
+									###########
+									</p>
+									<br>
+									<a href="{{route('autorizarCateiras.index')}}" class="btn btn-primary w-100 py-3">Acessar</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3">
+						<div class="card card-xl-stretch mb-xl-5">
+							<div class="card-header border-0 py-3">
+								<h3 class="card-title align-items-start flex-column">
+									<span class="card-label fw-bolder fs-3 mb-1">BlackList</span>
+									<span class="text-muted fw-bold fs-7">###########</span>
+								</h3>
+							</div>
+							<div class="card-body d-flex flex-column">
+								<div class="pt-0" align="center">
+									<img src="{{ url('assets/imagens/chat.png') }}" class="h-70px mb-2">
+									<p class="text-center fs-6 pb-5 mb-2">
+									###########
+									</p>
+									<br>
+									<a href="{{route('blackListCateiras.index')}}" class="btn btn-primary w-100 py-3">Acessar</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				@php
 					$a = 0;
 				@endphp
