@@ -20,8 +20,7 @@ return new class extends Migration
             $table->string('idExterno');
             $table->string('carteira_origem');
             $table->string('carteira_destino');
-            $table->decimal('quantidade');
-            $table->float('valor');
+            $table->string('quantidade');
             $table->timestamps();
         });
     }

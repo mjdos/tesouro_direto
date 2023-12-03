@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blacklist', function (Blueprint $table) {
+        Schema::create('blocklist', function (Blueprint $table) {
             $table->increments('id');
             $table->string('carteira');
             $table->timestamps();
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('blacklist');
+        Schema::dropIfExists('blocklist');
     }
 };

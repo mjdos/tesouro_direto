@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BlackList extends Model
+class BlockList extends Model
 {
     use HasFactory;
 
-    protected $table = 'blacklist';
+    protected $table = 'blocklist';
 
     protected $fillable = [
         'id',

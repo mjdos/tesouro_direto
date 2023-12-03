@@ -109,6 +109,7 @@ class TitulosController extends Controller
         $descricao = [
             'idExterno' => $request->idExterno,
             'nome' => $request->nome,
+            'sigla' => $request->sigla,
             'dataVencimento' => date('d/m/Y', strtotime($request->dataVencimento)),
             'rentabilidadeAnual' => $request->rentabilidadeAnual,
             'valorNominal' => $request->valorNominal,
@@ -118,7 +119,7 @@ class TitulosController extends Controller
         ];
 
         Titulo::create($descricao);
-        $novo_titulo = json_encode($descricao);
+        // $novo_titulo = json_encode($descricao);
 
         $titulos = Titulo::all();
 

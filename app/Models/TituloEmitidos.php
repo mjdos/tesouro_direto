@@ -17,6 +17,5 @@ class TituloEmitidos extends Model
         'carteira_origem',
         'carteira_destino',
         'quantidade',
-        'valor',
     ];
 }

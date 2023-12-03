@@ -10,7 +10,7 @@ use App\Http\Controllers\{
     AuthController,
     AuditoriaController,
     AutorizarCarteirasController,
-    BlackListController,
+    BlockListController,
 };
 
 
@@ -52,12 +52,12 @@ Route::middleware('auth')->group(function () {
     Route::any('/auditoria', [AuditoriaController::class, 'index'])->name('auditoria.index');
 
     //Rotas de Autorizar Carteiras
-    Route::get('/AutorizarCarteitas', [AutorizarCarteirasController::class, 'index'])->name('autorizarCateiras.index');
-    Route::post('/AutorizarCarteita', [AutorizarCarteirasController::class, 'store'])->name('autorizarCateira.store');
+    Route::get('/AutorizarCarteiras', [AutorizarCarteirasController::class, 'index'])->name('autorizarCateiras.index');
+    Route::post('/AutorizarCarteira', [AutorizarCarteirasController::class, 'store'])->name('autorizarCateira.store');
 
     //Rotas de BlackList
-    Route::get('/BlackListCarteitas', [BlackListController::class, 'index'])->name('blackListCateiras.index');
-    Route::post('/BlackListCarteita', [BlackListController::class, 'store'])->name('blackListCateira.store');
-    Route::post('/BlackListCarteita/{id}', [BlackListController::class, 'delete'])->name('blackListCateira.delete');
+    Route::get('/BlockListCarteiras', [BlockListController::class, 'index'])->name('blockListCateiras.index');
+    Route::post('/BlockListCarteira', [BlockListController::class, 'store'])->name('blockListCateira.store');
+    Route::any('/BlockListCarteira/{id}', [BlockListController::class, 'delete'])->name('blockListCateira.delete');
 
 });

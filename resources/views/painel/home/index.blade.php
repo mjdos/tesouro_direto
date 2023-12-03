@@ -110,7 +110,7 @@
 						<div class="card card-xl-stretch mb-xl-5">
 							<div class="card-header border-0 py-3">
 								<h3 class="card-title align-items-start flex-column">
-									<span class="card-label fw-bolder fs-3 mb-1">BlackList</span>
+									<span class="card-label fw-bolder fs-3 mb-1">BlockList</span>
 									<span class="text-muted fw-bold fs-7">###########</span>
 								</h3>
 							</div>
@@ -121,12 +121,12 @@
 									###########
 									</p>
 									<br>
-									<a href="{{route('blackListCateiras.index')}}" class="btn btn-primary w-100 py-3">Acessar</a>
+									<a href="{{route('blockListCateiras.index')}}" class="btn btn-primary w-100 py-3">Acessar</a>
 								</div>
 							</div>
 						</div>
 					</div>
-				@php
+				<!-- @php
 					$a = 0;
 				@endphp
 				@if ($a > 1)
@@ -171,9 +171,9 @@
 							</div>
 						</div>
 					</div>
-				@endif
+				@endif -->
 			</div>
-			@if ($a > 1)
+			<!-- @if ($a > 1)
 			<div class="row g-5 g-xl-8" style="padding-top: 0px important!;">
 
 				<div class="col-xl-3">
@@ -243,7 +243,7 @@
 
 
 			</div>
-			@endif
+			@endif -->
 	</div>
 </div>
 
