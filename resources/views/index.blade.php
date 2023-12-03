@@ -46,7 +46,7 @@
 
                 <div class="mt-16">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+                        <a href="https://testnet.bscscan.com/token/0x4252947557f38cD7A9D5a52a0eB38C7AA3Bc3440" target="_blank" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
                             <div>
                                 <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
@@ -59,7 +59,7 @@
                                 <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Token</h2>
 
                                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Conheça o Token desenvolvido pela Equipe CodeCreators.
+                                O nosso contrato inteligente "Tesouro Direto" está implementado na rede BSC e possuí um sistema de emissão, gerenciamento e negociação de títulos digitais (tokens), com funcionalidades adicionais para gerenciar liquidez e transações seguras.
                                 </p>
                             </div>
 
@@ -68,7 +68,7 @@
                             </svg>
                         </a>
 
-                        <a href="{{ route('exchange.index') }}" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+                        <a href="{{ route('mp.index') }}" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
                             <div>
                                 <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
@@ -80,7 +80,7 @@
                                 <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Market Place / Mercado Secundário</h2>
 
                                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+                                Desenvolvemos uma ferramenta de "Marketplace" para a compra e venda de títulos do Tesouro Direto representa uma revolução no acesso e gerenciamento de investimentos em títulos governamentais. Projetada para ser intuitiva e amigável, esta plataforma oferece uma série de recursos avançados e úteis para investidores de todos os níveis.
                                 </p>
                             </div>
 
@@ -102,7 +102,7 @@
                                 <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Painel de Administração do Token</h2>
 
                                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
+                                Em nosso MVP implementamos um inovador Painel Administrativo, uma solução completa para o gerenciamento de tokens. Este painel é uma peça central de nossa plataforma, oferecendo um conjunto robusto de ferramentas projetadas para otimizar e assegurar a gestão de tokens.
                                 </p>
                             </div>
 
@@ -122,7 +122,7 @@
                                 <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Auditoria</h2>
 
                                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
+                                Esta ferramenta é projetada especificamente para facilitar o rastreamento das movimentações de tokens entre carteiras de forma simplificada e eficiente. Com este recurso, os usuários podem agora ter uma visão clara e detalhada das transações de token, aumentando a transparência e a confiança no sistema.
                                 </p>
                             </div>
 
