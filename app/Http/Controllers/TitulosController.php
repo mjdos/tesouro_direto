@@ -182,4 +182,9 @@ class TitulosController extends Controller
     {
         return view('teste.teste');
     }
+
+    public function aVencerIndex()
+    {
+        return view('painel.titulosAvencer.index');
+    }
 }

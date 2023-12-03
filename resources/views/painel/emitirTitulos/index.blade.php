@@ -24,7 +24,7 @@
 
                             <thead>
                                 <tr class="fw-bolder text-muted bg-secondary">
-                                    <th class="min-w-125px ps-2 rounded-start">nome</th>
+                                    <th class="min-w-125px ps-2 rounded-start">Nome</th>
                                     <th class="min-w-125px">Data de Vencimento</th>
                                     <th class="min-w-125px">Rentabilidade Anual</th>
                                     <th class="min-w-125px">Valor Nominal</th>

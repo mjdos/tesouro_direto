@@ -60,4 +60,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/BlockListCarteira', [BlockListController::class, 'store'])->name('blockListCateira.store');
     Route::any('/BlockListCarteira/{id}', [BlockListController::class, 'delete'])->name('blockListCateira.delete');
 
+    Route::get('/TitulosAVencer', [TitulosController::class, 'aVencerIndex'])->name('titulosAVencer.index');
+
 });
