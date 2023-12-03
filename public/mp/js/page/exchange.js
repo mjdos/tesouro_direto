@@ -32,12 +32,12 @@ $(function () {
         //chart
         // var customSymbol = "MYCOIN"; 
         var customSymbol = "TDT";
-        
+
 
         new TradingView.widget(
             {
                 "autosize": true,
-                "symbol": "CRYPTO:ETHUSD",
+                //"symbol": "NASDAQ:AAPL",
                 //"symbol": "CRYPTO:" + customSymbol + "R$",
                 "interval": "D",
                 "timezone": "Etc/UTC",
@@ -46,13 +46,17 @@ $(function () {
                 "locale": "in",
                 "toolbar_bg": "#f1f3f6",
                 "enable_publishing": false,
-                "withdateranges": true,
+                "withdateranges": false,
                 "hide_side_toolbar": false,
-                "allow_symbol_change": true,
+                "allow_symbol_change": false,
                 "details": false,
                 "hotlist": false,
                 "calendar": false,
-                "container_id": "tradingview_e05b7"
+                "container_id": "tradingview_e05b7",
+                "hideideas": true,
+                
+
+
             }
         );
     }
