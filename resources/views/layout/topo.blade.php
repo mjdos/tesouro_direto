@@ -1,9 +1,7 @@
 	@php
-
 		$cadastro = Session::get('usuario');
-
 	@endphp
-
+	
 	<!--begin::Wrapper-->
 	<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
 		<!--begin::Header-->
@@ -27,7 +25,7 @@
 				<!--begin::Mobile logo-->
 				<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
 					<a href="{{ route('home.index') }}" class="d-lg-none">
-						TESTE
+						
 					</a>
 				</div>
 				<!--end::Mobile logo-->
@@ -35,7 +33,12 @@
 				<!--begin::Wrapper-->
 				<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
 					<!--begin::Navbar-->
-					<div class="d-flex align-items-stretch" id="kt_header_nav">						
+					<div class="d-flex align-items-stretch" id="kt_header_nav">
+					<td class="text-start">
+                            <button id="connectButton" class="btn btn-sm btn-primary">
+                                Conectar Carteira
+                            </button>
+                        </td>		
 					</div>
 					<!--end::Navbar-->
 					<!--begin::Topbar-->
@@ -159,3 +162,4 @@
 			<!--end::Container-->
 		</div>
 		<!--end::Toolbar-->
+		@include('layout.web3')

@@ -31,6 +31,7 @@
                             <thead>
                                 <tr class="fw-bolder text-muted bg-secondary">
                                     <th class="min-w-125px ps-2 rounded-start">Nome</th>
+                                    <th class="min-w-125px">Sigla</th>
                                     <th class="min-w-125px">Data de Vencimento</th>
                                     <th class="min-w-125px">Rentabilidade Anual</th>
                                     <th class="min-w-125px">Valor Nominal</th>
@@ -46,6 +47,7 @@
                                 @foreach ($titulos as $titulo)
                                     <tr>
                                         <td>{{$titulo->nome}}</td>
+                                        <td>{{$titulo->sigla}}</td>
                                         <td>{{$titulo->dataVencimento}}</td>
                                         <td>{{$titulo->rentabilidadeAnual}}%</td>
                                         <td>{{$titulo->valorNominal}}</td>
