@@ -62,17 +62,17 @@ Abaixo as ferramentas e tecnologias que foram utilizadas no nosso projeto.
 O código contrato em Solidity está na pasta "contrato-solidity".<br>
 Endereço do Contrato na BSC Testnet 0x4252947557f38cD7A9D5a52a0eB38C7AA3Bc3440.
 <p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/qrcode.png" width="270" alt="Token Selic 2026"></p>
-<br><br>
+<br>
 
 ## Marketplace
 
 Desenvolvemos uma ferramenta de "Marketplace" para a compra e venda de títulos do Tesouro Direto representa uma revolução no acesso e gerenciamento de investimentos em títulos governamentais. Projetada para ser intuitiva e amigável, esta plataforma oferece uma série de recursos avançados e úteis para investidores de todos os níveis. Aqui estão os principais destaques:
-2.1 - Interface Amigável e Intuitiva: A plataforma foi projetada com um layout simples e fácil de navegar, tornando-a acessível mesmo para investidores novatos. O design limpo e a organização lógica dos elementos garantem uma experiência de usuário sem esforço.
-2.2 - Painel de Negociação em Tempo Real: Um dos recursos mais poderosos é o painel que exibe compras e vendas de títulos em tempo real. Este painel permite que os usuários vejam a atividade do mercado à medida que acontece, fornecendo insights valiosos sobre tendências e movimentos do mercado.
-2.3 - Gráficos Dinâmicos para Acompanhamento do Mercado: A plataforma inclui gráficos detalhados e dinâmicos que oferecem uma análise visual do mercado de títulos. Estes gráficos são uma ferramenta crucial para investidores acompanharem o desempenho dos títulos, histórico de preços, volumes de negociação e outras métricas importantes.
-2.4 - Compra de Títulos de Outros Detentores: Além de investir em novos títulos, os usuários podem comprar títulos diretamente de outros detentores. Este recurso adiciona uma camada de flexibilidade e dinamismo ao mercado, permitindo transações diretas entre investidores.
-2.5 - Facilidade de Acesso e Segurança: A segurança é uma prioridade, e a plataforma emprega tecnologias avançadas para proteger as informações e transações dos usuários. O acesso é otimizado para ser rápido e seguro, garantindo que os investidores possam operar com confiança e tranquilidade.
-Em resumo, nossa ferramenta de "Marketplace" para títulos do Tesouro Direto é mais do que uma plataforma de negociação; é um segundo ecossistema completo projetado para empoderar investidores, fornecendo as ferramentas e informações necessárias para tomar decisões informadas e estratégicas no mercado de títulos.
+<br><br>2.1 - Interface Amigável e Intuitiva: A plataforma foi projetada com um layout simples e fácil de navegar, tornando-a acessível mesmo para investidores novatos. O design limpo e a organização lógica dos elementos garantem uma experiência de usuário sem esforço.
+<br><br>2.2 - Painel de Negociação em Tempo Real: Um dos recursos mais poderosos é o painel que exibe compras e vendas de títulos em tempo real. Este painel permite que os usuários vejam a atividade do mercado à medida que acontece, fornecendo insights valiosos sobre tendências e movimentos do mercado.
+<br><br>2.3 - Gráficos Dinâmicos para Acompanhamento do Mercado: A plataforma inclui gráficos detalhados e dinâmicos que oferecem uma análise visual do mercado de títulos. Estes gráficos são uma ferramenta crucial para investidores acompanharem o desempenho dos títulos, histórico de preços, volumes de negociação e outras métricas importantes.
+<br><br>2.4 - Compra de Títulos de Outros Detentores: Além de investir em novos títulos, os usuários podem comprar títulos diretamente de outros detentores. Este recurso adiciona uma camada de flexibilidade e dinamismo ao mercado, permitindo transações diretas entre investidores.
+<br><br>2.5 - Facilidade de Acesso e Segurança: A segurança é uma prioridade, e a plataforma emprega tecnologias avançadas para proteger as informações e transações dos usuários. O acesso é otimizado para ser rápido e seguro, garantindo que os investidores possam operar com confiança e tranquilidade.
+<br><br>Em resumo, nossa ferramenta de "Marketplace" para títulos do Tesouro Direto é mais do que uma plataforma de negociação; é um segundo ecossistema completo projetado para empoderar investidores, fornecendo as ferramentas e informações necessárias para tomar decisões informadas e estratégicas no mercado de títulos.
          
 <p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/mp1.png" width="900" alt="Marketplace"></p>
 <p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/mp2.png" width="900" alt="Marketplace"></p>
