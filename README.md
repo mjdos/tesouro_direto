@@ -95,7 +95,7 @@ Em nosso MVP implementamos um inovador Painel Administrativo, uma solução comp
 
 ## 🏆 Token
 
-<p align="center"><a href="https://testnet.bscscan.com/token/0x4252947557f38cD7A9D5a52a0eB38C7AA3Bc3440" target="_blank" style="border: 1px solid black; display: inline-block;"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/token-ts26.bmp" width="1000" alt="Token Selic 2026"></a></p>
+<p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/token2.png" width="900" alt="Painel Administrativo"></p>
 
 
 ## 📝 Licença
