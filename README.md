@@ -59,7 +59,7 @@ Abaixo as ferramentas e tecnologias que foram utilizadas no nosso projeto.
 <br>
 
 ## ⚙️ Contrato Inteligente 
-Contrato Inteligente para Criação e Gerenciamento do Token está na pasta "contrato-solidity".<br>
+O contrato inteligente para criação e gerenciamento do Token está na pasta "contrato-solidity" e está documentado.<br>
 O nosso contrato inteligente "Tesouro Direto" é baseado em blockchain, especificamente na rede BSC e utiliza a linguagem de programação Solidity. Este contrato implementa um sistema de emissão, gerenciamento e negociação de títulos digitais (tokens), com funcionalidades adicionais para gerenciar liquidez e transações seguras. Aqui está um resumo do seu funcionamento:
 <br><br>a. Criação e Gerenciamento de Títulos Digitais: O contrato permite a criação de títulos digitais, cada um identificado por um ID único e armazenado com detalhes específicos. Apenas o proprietário do contrato pode criar novos títulos. 
 <br><br>b. Liquidez e Transferência de Fundos: O contrato gerencia uma carteira de liquidez que deposita 2% de cada transação e permite transferências de fundos do contrato para a carteira do Owner e vice-versa. Há um mecanismo para verificar o saldo e movimentar fundos de forma segura, prevenindo reentrâncias.
