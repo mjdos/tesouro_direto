@@ -83,19 +83,19 @@ Esta ferramenta é projetada especificamente para facilitar o rastreamento das m
 <p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/auditoria.png" width="900" alt="Auditoria"></p>
 
 ## Painel Administrativo para gerenciamento do Token
-         Em nosso MVP implementamos um inovador Painel Administrativo, uma solução completa para o gerenciamento de tokens. Este painel é uma peça central de nossa plataforma, oferecendo um conjunto robusto de ferramentas projetadas para otimizar e assegurar a gestão de tokens.
-         4.1 Criação de Token: Uma interface intuitiva que permite a criação de tokens de maneira simplificada, sem a necessidade de conhecimentos profundos em programação ou contratos inteligentes.
-         4.2 Emissão de Token: Ferramentas eficientes para emitir tokens, proporcionando flexibilidade e controle total sobre a quantidade e a distribuição dos tokens.
-         4.3 Gerenciamento de Carteiras Autorizadas: Capacidade de adicionar e gerenciar carteiras autorizadas a interagir com o contrato inteligente. Isso oferece um controle mais rigoroso sobre quem pode gerenciar o token, aumentando a segurança e a eficiência operacional.
-         4.4 Ferramenta de Blacklist: Um mecanismo proativo para adicionar carteiras à blacklist, prevenindo spam e ataques maliciosos. Essa funcionalidade é crucial para manter a integridade da plataforma e a segurança dos usuários.
-         4.5 Ferramenta para depositar e sacar BNB: Ferramenta projetada para que o Owner e as carteiras autorizadas possam depositar ou sacar BNB do contrato.
-         
+Em nosso MVP implementamos um inovador Painel Administrativo, uma solução completa para o gerenciamento de tokens. Este painel é uma peça central de nossa plataforma, oferecendo um conjunto robusto de ferramentas projetadas para otimizar e assegurar a gestão de tokens.
+4.1 Criação de Token: Uma interface intuitiva que permite a criação de tokens de maneira simplificada, sem a necessidade de conhecimentos profundos em programação ou contratos inteligentes.
+4.2 Emissão de Token: Ferramentas eficientes para emitir tokens, proporcionando flexibilidade e controle total sobre a quantidade e a distribuição dos tokens.
+4.3 Gerenciamento de Carteiras Autorizadas: Capacidade de adicionar e gerenciar carteiras autorizadas a interagir com o contrato inteligente. Isso oferece um controle mais rigoroso sobre quem pode gerenciar o token, aumentando a segurança e a eficiência operacional.
+4.4 Ferramenta de Blacklist: Um mecanismo proativo para adicionar carteiras à blacklist, prevenindo spam e ataques maliciosos. Essa funcionalidade é crucial para manter a integridade da plataforma e a segurança dos usuários.
+4.5 Ferramenta para depositar e sacar BNB: Ferramenta projetada para que o Owner e as carteiras autorizadas possam depositar ou sacar BNB do contrato.
+
 <p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/painel.png" width="900" alt="Painel Administrativo"></p>
 
 
 ## 🏆 Token
 
-<p align="center"><a href="https://testnet.bscscan.com/token/0x4252947557f38cD7A9D5a52a0eB38C7AA3Bc3440" target="_blank" style="border: 1px solid black; display: inline-block;"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/token-ts26.bmp" width="1000" alt="Token Selic 2026"></a></p>
+<p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/token2.png" width="1000" alt="Token Selic 2026"></p>
 
 
 ## 📝 Licença
