@@ -2,10 +2,10 @@
 	<!--begin::Aside-->
 	<div id="kt_aside" class="aside pb-5 pt-5 pt-lg-0" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'80px', '300px': '100px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
 		<!--begin::Brand-->
-		<div class="aside-logo py-8" id="kt_aside_logo">
+		<div class="aside-logo py-8" id="kt_aside_logo"  style="background-color: white;">
 			<!--begin::Logo-->
 			<a href="{{ route('home.index') }}" class="d-flex align-items-center">
-			LOGOTIPO
+				<img alt="Logo" src="{{ url('assets/imagens/logo-pequeno.png') }}" class="h-100px logo" />
 			</a>
 			<!--end::Logo-->
 		</div>
@@ -18,7 +18,7 @@
 				<!--begin::Menu-->
 				<div class="menu menu-column menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold" id="#kt_aside_menu" data-kt-menu="true">
 					<div class="menu-item py-0">
-						<a class="menu-link active menu-center" href="{{route('home.index')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+						<a class="menu-link active menu-center" href="{{route('home.index')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" style="width: 155px;">
 							<span class="menu-icon me-0">
 								<i class="bi bi-house fs-2"></i>
 							</span>
@@ -27,50 +27,49 @@
 					</div>
 
 					<div class="menu-item py-0">
-						<a class="menu-link menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-							<span class="menu-icon me-0">
-								<i class="bi bi-file-text fs-2"></i>
-							</span>
-							<span class="menu-title">Benefícios</span>
+						<a class="menu-link menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" style="width: 155px; height:30px">
+							<span class="menu-title">Criar Título</span>
 						</a>
 					</div>
 
 					<div class="menu-item py-0">
-						<a class="menu-link menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-							<span class="menu-icon me-0">
-								<i class="bi bi-file-text fs-2"></i>
-							</span>
-							<span class="menu-title">Solicitações</span>
+						<a class="menu-link menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" style="width: 155px; height:30px">
+							<span class="menu-title">Emitir Título</span>
 						</a>
 					</div>
 
 					<div class="menu-item py-0">
-						<a class="menu-link menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-							<span class="menu-icon me-0">
-								<i class="bi bi-file-text fs-2"></i>
-							</span>
-							<span class="menu-title">Anuidade</span>
+						<a class="menu-link menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" style="width: 155px; height:30px">
+							<span class="menu-title">Auditoria</span>
 						</a>
 					</div>
 
 					<div class="menu-item py-0">
-						<a class="menu-link menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-							<span class="menu-icon me-0">
-								<i class="bi bi-chat-square-text fs-2"></i>
+						<a class="menu-link menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" style="width: 155px; height:30px">
+							<span class="menu-title">À Vencer</span>
 							</span>
-							<span class="menu-title">Chat</span>
+						</a>
+					</div>
+
+					<div class="menu-item py-0">
+						<a class="menu-link menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" style="width: 155px; height:30px">
+							<span class="menu-title">Autorizadas</span>
+							</span>
+						</a>
+					</div>
+
+					<div class="menu-item py-0">
+						<a class="menu-link menu-center" href="#" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" style="width: 155px; height:30px">
+							<span class="menu-title">BlackList</span>
 							</span>
 						</a>
 					</div>
 
 					<div class="menu-item py-0">
 						
-							<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+							<span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" style="width: 155px; height:30px">
 								<a href="{{ route('logout') }}" style="color: inherit; text-decoration: none;">	
 									<div align="center">
-										<span class="menu-icon me-0">
-											<i class="bi bi-door-open fs-2"></i>
-										</span>
 										<span class="menu-title">Sair</a></span>
 									</div>
 								</a>

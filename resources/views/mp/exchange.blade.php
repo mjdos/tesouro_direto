@@ -13,6 +13,33 @@
     
     <!-- project css file  -->
     <link rel="stylesheet" href="{{ url('mp/assets/css/cryptoon.style.min.css') }}">
+
+    <style>
+        #connectButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #connectButton.connected {
+            background-color: green;
+        }
+
+        #resgatarButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #255398;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+    </style>
+    
 </head>
 <body>
     <div id="cryptoon-layout" class="theme-indigo">
@@ -35,7 +62,10 @@
                         <div class="order-0 col-lg-4 col-md-4 col-sm-12 col-12 mb-3 mb-md-0 d-flex align-items-center">
                             <img src="{{ url('mp/assets/images/logo.png') }}" height="50">
                         </div>
-                        
+                        <div class="order-0 col-lg-4 col-md-4 col-sm-12 col-12 mb-3 mb-md-0 d-flex align-items-center flex-column">
+                            <button id="connectButton">Conectar na Carteira</button>
+                            <p id="balance">Saldo BNB: 0</p>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -60,6 +90,22 @@
                     <div class="row g-3 mb-3">
                         <div class="col-md-12">
                             <div class="card">
+                                <div class="card-body d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <img src="{{ url('assets/imagens/TE26.png') }}" height="50">
+                                        <span class="ml-2">&nbsp;&nbsp; <b><font size=4>TS26 - Tesouro Selic 2026 &nbsp;&nbsp;|&nbsp;&nbsp; Preço Atual: R$ 3.112,29  &nbsp;&nbsp;&nbsp;&nbsp;<span class="badge bg-danger">-0,78% <i class="fa fa-level-down"></i></span></font></b></span>
+                                    </div>
+                                    <div>
+                                        <button id="resgatarButton">Resgatar Título</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- Row End -->
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-12">
+                            <div class="card">
                                 <div class="card-body">
                                     <!-- TradingView Widget BEGIN -->
                                     <div class="tradingview-widget-container">
@@ -73,9 +119,48 @@
 
                     <div class="row g-3 mb-3">
                         <div class="col-xxl-5">
+
+                        <div class="card mb-3">
+                                <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
+                                    <h6 class="mb-0 fw-bold ">Ordens de Venda</h6> 
+                                </div>
+                                <div class="card-body">
+
+                                    <div class="tab-content">
+
+                                        <div class="tab-pane fade show active" id="Limit">
+                                            <div class="row g-3">
+                                                
+                                                <div class="col-lg-12">
+                                                    <div class="d-flex align-items-center justify-content-between my-3">
+                                                        <span class="small text-muted">Preço Atual de 1 TS26</span>
+                                                        <span class="">R$ 3.112,29</span>
+                                                    </div>
+                                                    <form>
+                                                        <div class="input-group mb-3">
+                                                            <span class="input-group-text">Preço</span>
+                                                            <input type="text" class="form-control">
+                                                            <span class="input-group-text">R$</span>
+                                                        </div>
+                                                        <div class="input-group mb-3">
+                                                            <span class="input-group-text">Qtd</span>
+                                                            <input type="text" class="form-control">
+                                                            <span class="input-group-text">TS26</span>
+                                                        </div>
+                                                        
+                                                        <button type="submit" class="btn flex-fill btn-light-danger py-2 fs-5 text-uppercase px-5 w-100">Vender Título</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="card">
                                 <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                    <h6 class="mb-0 fw-bold ">Livro de Ordens</h6> 
+                                    <h6 class="mb-0 fw-bold ">Últimas Compras/Vendas</h6> 
                                 </div>
                                 <div class="card-body">
                                     <ul class="nav nav-tabs tab-body-header rounded d-inline-flex" role="tablist">
@@ -95,27 +180,27 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td><span class="color-price-up">43978.43</span></td>
+                                                        <td><span class="color-price-up">31178.43</span></td>
                                                         <td>0.11228</td>
                                                         <td>6,938.88312</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><span class="color-price-up">43925.73</span></td>
+                                                        <td><span class="color-price-up">31125.73</span></td>
                                                         <td>0.08752</td>
                                                         <td>5,022.51319</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><span class="color-price-up">43928.23</span></td>
+                                                        <td><span class="color-price-up">31128.23</span></td>
                                                         <td>0.08881</td>
                                                         <td>1,677.76807</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><span class="color-price-up">43978.90</span></td>
+                                                        <td><span class="color-price-up">31178.90</span></td>
                                                         <td>0.00062</td>
                                                         <td>1,151.15971</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><span class="color-price-up">43979.43</span></td>
+                                                        <td><span class="color-price-up">31179.43</span></td>
                                                         <td>0.03855</td>
                                                         <td>10,978.37750</td>
                                                     </tr>
@@ -146,7 +231,6 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                            
                                             <table id="priceTabledown" class="priceTable table table-hover custom-table-2 table-bordered align-middle mb-0" style="width:100%">
                                                 <thead>
                                                     <tr>
@@ -157,27 +241,27 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td><span class="color-price-down">43978.43</span></td>
+                                                        <td><span class="color-price-down">31178.43</span></td>
                                                         <td>0.11228</td>
                                                         <td>6,938.88312</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><span class="color-price-down">43925.73</span></td>
+                                                        <td><span class="color-price-down">31125.73</span></td>
                                                         <td>0.08752</td>
                                                         <td>5,022.51319</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><span class="color-price-down">43928.23</span></td>
+                                                        <td><span class="color-price-down">31128.23</span></td>
                                                         <td>0.08881</td>
                                                         <td>1,677.76807</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><span class="color-price-down">43978.90</span></td>
+                                                        <td><span class="color-price-down">31178.90</span></td>
                                                         <td>0.00062</td>
                                                         <td>1,151.15971</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><span class="color-price-down">43979.43</span></td>
+                                                        <td><span class="color-price-down">31179.43</span></td>
                                                         <td>0.03855</td>
                                                         <td>10,978.37750</td>
                                                     </tr>
@@ -209,388 +293,12 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="tab-pane fade" id="Long">
-                                           
-                                            <table id="priceTableuponly" class="priceTable table table-hover custom-table-2 table-bordered align-middle mb-0" style="width:100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Price(USDT)</th>
-                                                        <th>Amount(BTC)</th>
-                                                        <th>Total</th> 
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><span class="color-price-up">43978.43</span></td>
-                                                        <td>0.11228</td>
-                                                        <td>6,938.88312</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-up">43925.73</span></td>
-                                                        <td>0.08752</td>
-                                                        <td>5,022.51319</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-up">43928.23</span></td>
-                                                        <td>0.08881</td>
-                                                        <td>1,677.76807</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-up">43978.90</span></td>
-                                                        <td>0.00062</td>
-                                                        <td>1,151.15971</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-up">43979.43</span></td>
-                                                        <td>0.03855</td>
-                                                        <td>10,978.37750</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-up">44279.20</span></td>
-                                                        <td>0.17214</td>
-                                                        <td>76,053.29043</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-up">42978.43</span></td>
-                                                        <td>0.11228</td>
-                                                        <td>6,938.88312</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-up">42825.73</span></td>
-                                                        <td>0.08752</td>
-                                                        <td>5,022.51319</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-up">42628.23</span></td>
-                                                        <td>0.08881</td>
-                                                        <td>1,677.76807</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-up">42978.70</span></td>
-                                                        <td>0.00062</td>
-                                                        <td>1,151.15971</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="Short">
-                                            
-                                            <table id="priceTabledownonly" class="priceTable table table-hover custom-table-2 table-bordered align-middle mb-0" style="width:100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Price(USDT)</th>
-                                                        <th>Amount(BTC)</th>
-                                                        <th>Total</th> 
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><span class="color-price-down">43978.43</span></td>
-                                                        <td>0.11228</td>
-                                                        <td>6,938.88312</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-down">43925.73</span></td>
-                                                        <td>0.08752</td>
-                                                        <td>5,022.51319</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-down">43928.23</span></td>
-                                                        <td>0.08881</td>
-                                                        <td>1,677.76807</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-down">43978.90</span></td>
-                                                        <td>0.00062</td>
-                                                        <td>1,151.15971</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-down">43979.43</span></td>
-                                                        <td>0.03855</td>
-                                                        <td>10,978.37750</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-down">44279.20</span></td>
-                                                        <td>0.17214</td>
-                                                        <td>76,053.29043</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-down">42978.43</span></td>
-                                                        <td>0.11228</td>
-                                                        <td>6,938.88312</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-down">42825.73</span></td>
-                                                        <td>0.08752</td>
-                                                        <td>5,022.51319</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-down">42628.23</span></td>
-                                                        <td>0.08881</td>
-                                                        <td>1,677.76807</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="color-price-down">42978.70</span></td>
-                                                        <td>0.00062</td>
-                                                        <td>1,151.15971</td>
-                                                    </tr>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xxl-7">
-                            <div class="card mb-3">
-                                <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                    <h6 class="mb-0 fw-bold ">Spot</h6> 
-                                </div>
-                                <div class="card-body">
-                                    <ul class="nav nav-tabs tab-body-header rounded d-inline-flex" role="tablist">
-                                        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#Limit" role="tab">Limit</a></li>
-                                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#Market" role="tab">Market</a></li>
-                                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#Stoplimit" role="tab">Stop Limit</a></li>
-                                    </ul>
-                                    <div class="tab-content">
-
-                                        <div class="tab-pane fade show active" id="Limit">
-                                            <div class="row g-3">
-                                                <div class="col-lg-6">
-                                                    <div class="d-flex align-items-center justify-content-between my-3">
-                                                        <span class="small text-muted">Avbl</span>
-                                                        <span class="">310.800000 USDT</span>
-                                                    </div>
-                                                    <form>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Price</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">USDT</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Amount</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">BTC</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <div class="mb-2 d-flex justify-content-between align-items-center w-100">
-                                                                <span class="text-muted">0%</span>
-                                                                <span class="text-muted px-2">25%</span>
-                                                                <span class="text-muted px-1">50%</span>
-                                                                <span class="text-muted px-1">75%</span>
-                                                                <span class="text-muted">100%</span>
-                                                            </div>
-                                                            <input type="range" class="form-range" min='1' max='5' value='1' step='1'>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Total</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">USDT</span>
-                                                        </div>
-                                                        <button type="submit" class="btn flex-fill btn-light-success py-2 fs-5 text-uppercase px-5 w-100">Comprar Título</button>
-                                                    </form>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="d-flex align-items-center justify-content-between my-3">
-                                                        <span class="small text-muted">Avbl</span>
-                                                        <span class="">0.0000000 BTC</span>
-                                                    </div>
-                                                    <form>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Price</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">USDT</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Amount</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">BTC</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <div class="mb-2 d-flex justify-content-between align-items-center w-100">
-                                                                <span class="text-muted">0%</span>
-                                                                <span class="text-muted px-2">25%</span>
-                                                                <span class="text-muted px-1">50%</span>
-                                                                <span class="text-muted px-1">75%</span>
-                                                                <span class="text-muted">100%</span>
-                                                            </div>
-                                                            <input type="range" class="form-range" min='1' max='5' value='1' step='1'>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Total</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">USDT</span>
-                                                        </div>
-                                                        <button type="submit" class="btn flex-fill btn-light-danger py-2 fs-5 text-uppercase px-5 w-100">Vender Título</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div><!-- Limit Tab End -->
-
-                                        <div class="tab-pane fade" id="Market">
-                                            <div class="row g-3">
-                                                <div class="col-lg-6">
-                                                    <div class="d-flex align-items-center justify-content-between my-3">
-                                                        <span class="small text-muted">Avbl</span>
-                                                        <span class="">310.800000 USDT</span>
-                                                    </div>
-                                                    <form>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Price</span>
-                                                            <input type="text" class="form-control"  placeholder="Market">
-                                                            <span class="input-group-text">USDT</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <button type="button" class="btn btn-outline-secondary">Amount</button>
-                                                            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                                              <span class="visually-hidden">Toggle Dropdown</span>
-                                                            </button>
-                                                            <ul class="dropdown-menu">
-                                                              <li><a class="dropdown-item" href="#">Amount</a></li>
-                                                              <li><a class="dropdown-item" href="#">Total</a></li>
-                                                            </ul>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">BTC</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <div class="mb-2 d-flex justify-content-between align-items-center w-100">
-                                                                <span class="text-muted">0%</span>
-                                                                <span class="text-muted px-2">25%</span>
-                                                                <span class="text-muted px-1">50%</span>
-                                                                <span class="text-muted px-1">75%</span>
-                                                                <span class="text-muted">100%</span>
-                                                            </div>
-                                                            <input type="range" class="form-range" min='1' max='5' value='1' step='1'>
-                                                        </div>
-                                                        <button type="submit" class="btn flex-fill btn-light-success py-2 fs-5 text-uppercase px-5 w-100">BUY BTC</button>
-                                                    </form>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="d-flex align-items-center justify-content-between my-3">
-                                                        <span class="small text-muted">Avbl</span>
-                                                        <span class="">0.0000000 BTC</span>
-                                                    </div>
-                                                    <form>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Price</span>
-                                                            <input type="text" class="form-control" placeholder="Market">
-                                                            <span class="input-group-text">USDT</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <button type="button" class="btn btn-outline-secondary">Amount</button>
-                                                            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                                              <span class="visually-hidden">Toggle Dropdown</span>
-                                                            </button>
-                                                            <ul class="dropdown-menu">
-                                                              <li><a class="dropdown-item" href="#">Amount</a></li>
-                                                              <li><a class="dropdown-item" href="#">Total</a></li>
-                                                            </ul>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">BTC</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <div class="mb-2 d-flex justify-content-between align-items-center w-100">
-                                                                <span class="text-muted">0%</span>
-                                                                <span class="text-muted px-2">25%</span>
-                                                                <span class="text-muted px-1">50%</span>
-                                                                <span class="text-muted px-1">75%</span>
-                                                                <span class="text-muted">100%</span>
-                                                            </div>
-                                                            <input type="range" class="form-range" min='1' max='5' value='1' step='1'>
-                                                        </div>
-                                                        <button type="submit" class="btn flex-fill btn-light-danger py-2 fs-5 text-uppercase px-5 w-100">SELL BTC</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div><!-- Market Tab End -->
-
-                                        <div class="tab-pane fade" id="Stoplimit">
-                                            <div class="row g-3">
-                                                <div class="col-lg-6">
-                                                    <div class="d-flex align-items-center justify-content-between my-3">
-                                                        <span class="small text-muted">Avbl</span>
-                                                        <span class="">310.800000 USDT</span>
-                                                    </div>
-                                                    <form>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Stop</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">USDT</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Limit</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">USDT</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Amount</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">BTC</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <div class="mb-2 d-flex justify-content-between align-items-center w-100">
-                                                                <span class="text-muted">0%</span>
-                                                                <span class="text-muted px-2">25%</span>
-                                                                <span class="text-muted px-1">50%</span>
-                                                                <span class="text-muted px-1">75%</span>
-                                                                <span class="text-muted">100%</span>
-                                                            </div>
-                                                            <input type="range" class="form-range" min='1' max='5' value='1' step='1'>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Total</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">USDT</span>
-                                                        </div>
-                                                        <button type="submit" class="btn flex-fill btn-light-success py-2 fs-5 text-uppercase px-5 w-100">BUY BTC</button>
-                                                    </form>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="d-flex align-items-center justify-content-between my-3">
-                                                        <span class="small text-muted">Avbl</span>
-                                                        <span class="">0.0000000 BTC</span>
-                                                    </div>
-                                                    <form>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Stop</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">USDT</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Limit</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">USDT</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Amount</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">BTC</span>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <div class="mb-2 d-flex justify-content-between align-items-center w-100">
-                                                                <span class="text-muted">0%</span>
-                                                                <span class="text-muted px-2">25%</span>
-                                                                <span class="text-muted px-1">50%</span>
-                                                                <span class="text-muted px-1">75%</span>
-                                                                <span class="text-muted">100%</span>
-                                                            </div>
-                                                            <input type="range" class="form-range" min='1' max='5' value='1' step='1'>
-                                                        </div>
-                                                        <div class="input-group mb-3">
-                                                            <span class="input-group-text">Total</span>
-                                                            <input type="text" class="form-control">
-                                                            <span class="input-group-text">USDT</span>
-                                                        </div>
-                                                        <button type="submit" class="btn flex-fill btn-light-danger py-2 fs-5 text-uppercase px-5 w-100">SELL BTC</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div><!-- Stoplimit Tab End -->
-
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="card">
                                 <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
                                     <h6 class="mb-0 fw-bold ">Livro de Ordens</h6> 
@@ -601,114 +309,81 @@
                                             <table id="ordertabone" class="priceTable table table-hover custom-table-2 table-bordered align-middle mb-0" style="width:100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>Date</th>
-                                                        <th>Pair</th>
-                                                        <th>Type</th> 
-                                                        <th>Side</th>
-                                                        <th>Price</th>
-                                                        <th>Amount</th>
-                                                        <th>Action</th>
+                                                        <th>Data</th>
+                                                        <th>Token</th>
+                                                        <th>Venda</th>
+                                                        <th>Preço (R$)</th>
+                                                        <th>Qtd</th>
+                                                        <th>Comprar</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>09-18 17:32:15</td>
-                                                        <td><img src="{{ url('mp/assets/images/coin/ETH.png') }}" alt="" class="img-fluid avatar mx-1">ETH/USDT</td>
-                                                        <td>Limit</td>
-                                                        <td><span class="color-price-up">Buy</span></td>
-                                                        <td>2774.00</td>
+                                                        <td>04/12 10:32:15</td>
+                                                        <td><img src="{{ url('assets/imagens/TE26.png') }}" alt="" class="img-fluid avatar mx-1">TS26</td>
+                                                        <td><span class="color-price-down">Venda</span></td>
+                                                        <td>3.111,10</td>
                                                         <td>0.000378</td>
                                                         <td>
                                                             <div class="btn-group" role="group">
-                                                                <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
+                                                                <button type="button" class="btn btn-success" style="color:white">Comprar</button>
                                                                 <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>09-20 18:38:15</td>
-                                                        <td><img src="{{ url('mp/assets/images/coin/SOL.png') }}" alt="" class="img-fluid avatar mx-1">SOL/USDT</td>
-                                                        <td>Limit</td>
-                                                        <td><span class="color-price-up">Buy</span></td>
-                                                        <td>125.00</td>
-                                                        <td>0.005378</td>
+                                                        <td>04/12 10:12:15</td>
+                                                        <td><img src="{{ url('assets/imagens/TE26.png') }}" alt="" class="img-fluid avatar mx-1">TS26</td>
+                                                        <td><span class="color-price-down">Venda</span></td>
+                                                        <td>3.111,25</td>
+                                                        <td>0.012</td>
                                                         <td>
                                                             <div class="btn-group" role="group">
-                                                                <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
+                                                                <button type="button" class="btn btn-success" style="color:white">Comprar</button>
                                                                 <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>09-18 17:32:15</td>
-                                                        <td><img src="{{ url('mp/assets/images/coin/DGD.png') }}" alt="" class="img-fluid avatar mx-1">DGD/USDT</td>
-                                                        <td>Limit</td>
-                                                        <td><span class="color-price-down">Sell</span></td>
-                                                        <td>35.00</td>
-                                                        <td>0.000005</td>
+                                                        <td>04/12 09:55:05</td>
+                                                        <td><img src="{{ url('assets/imagens/TE26.png') }}" alt="" class="img-fluid avatar mx-1">TS26</td>
+                                                        <td><span class="color-price-down">Venda</span></td>
+                                                        <td>3.109,05</td>
+                                                        <td>0.1</td>
                                                         <td>
                                                             <div class="btn-group" role="group">
-                                                                <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
+                                                                <button type="button" class="btn btn-success" style="color:white">Comprar</button>
                                                                 <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>09-21 13:32:15</td>
-                                                        <td><img src="{{ url('mp/assets/images/coin/ADA.png') }}" alt="" class="img-fluid avatar mx-1">ADA/USDT</td>
-                                                        <td>Limit</td>
-                                                        <td><span class="color-price-down">Sell</span></td>
-                                                        <td>3.500</td>
-                                                        <td>0.000001</td>
+                                                        <td>04/12 09:45:00</td>
+                                                        <td><img src="{{ url('assets/imagens/TE26.png') }}" alt="" class="img-fluid avatar mx-1">TS26</td>
+                                                        <td><span class="color-price-down">Venda</span></td>
+                                                        <td>3.110,02</td>
+                                                        <td>0.0445</td>
                                                         <td>
                                                             <div class="btn-group" role="group">
-                                                                <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
+                                                                <button type="button" class="btn btn-success" style="color:white">Comprar</button>
                                                                 <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>09-21 13:32:15</td>
-                                                        <td><img src="{{ url('mp/assets/images/coin/BNB.png') }}" alt="" class="img-fluid avatar mx-1">BNB/USDT</td>
-                                                        <td>Limit</td>
-                                                        <td><span class="color-price-down">Sell</span></td>
-                                                        <td>415.00</td>
-                                                        <td>0.000041</td>
+                                                        <td>04/12 08:48:39</td>
+                                                        <td><img src="{{ url('assets/imagens/TE26.png') }}" alt="" class="img-fluid avatar mx-1">TS26</td>
+                                                        <td><span class="color-price-down">Venda</span></td>
+                                                        <td>3.099,55</td>
+                                                        <td>1.8</td>
                                                         <td>
                                                             <div class="btn-group" role="group">
-                                                                <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
+                                                                <button type="button" class="btn btn-success" style="color:white">Comprar</button>
                                                                 <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>09-20 13:32:15</td>
-                                                        <td><img src="{{ url('mp/assets/images/coin/DOGE.png') }}" alt="" class="img-fluid avatar mx-1">DOGE/USDT</td>
-                                                        <td>Limit</td>
-                                                        <td><span class="color-price-down">Sell</span></td>
-                                                        <td>0.2040</td>
-                                                        <td>0.203900</td>
-                                                        <td>
-                                                            <div class="btn-group" role="group">
-                                                                <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
-                                                                <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>09-22 16:32:15</td>
-                                                        <td><img src="{{ url('mp/assets/images/coin/ADX.png') }}" alt="" class="img-fluid avatar mx-1">ADX/USDT</td>
-                                                        <td>Limit</td>
-                                                        <td><span class="color-price-up">Buy</span></td>
-                                                        <td>2.134</td>
-                                                        <td>2.13</td>
-                                                        <td>
-                                                            <div class="btn-group" role="group">
-                                                                <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
-                                                                <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
+                                                    
                                                 </tbody>
                                             </table>
                                         </div><!-- OpenOrdertab End -->
@@ -730,7 +405,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>09-18 17:32:15</td>
-                                                        <td><img src="{{ url('mp/assets/images/coin/ETH.png') }}" alt="" class="img-fluid avatar mx-1">ETH/USDT</td>
+                                                        <td><img src="{{ url('mp/assets/images/coin/ETH.png') }}" alt="" class="img-fluid avatar mx-1">TS26</td>
                                                         <td>Market</td>
                                                         <td><span class="color-price-down">Sell</span></td>
                                                         <td>3,487.50</td>
@@ -752,10 +427,10 @@
                                                     </tr>
                                                     <tr>
                                                         <td>09-18 08:52:04</td>
-                                                        <td><img src="{{ url('mp/assets/images/coin/ETH.png') }}" alt="" class="img-fluid avatar mx-1">ETH/USDT</td>
+                                                        <td><img src="{{ url('mp/assets/images/coin/ETH.png') }}" alt="" class="img-fluid avatar mx-1">TS26</td>
                                                         <td>Market</td>
                                                         <td><span class="color-price-up">Buy</span></td>
-                                                        <td>3,439.20</td>
+                                                        <td>3,311.20</td>
                                                         <td>Market</td>
                                                         <td>0.0111</td>
                                                         <td>0.0111</td>
@@ -791,7 +466,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>09-18 17:32:15</td>
-                                                        <td><img src="{{ url('mp/assets/images/coin/ETH.png') }}" alt="" class="img-fluid avatar mx-1">ETH/USDT</td>
+                                                        <td><img src="{{ url('mp/assets/images/coin/ETH.png') }}" alt="" class="img-fluid avatar mx-1">TS26</td>
                                                         <td><span class="color-price-down">Sell</span></td>
                                                         <td>3,487.50</td>
                                                         <td>0.0110</td>
@@ -809,9 +484,9 @@
                                                     </tr>
                                                     <tr>
                                                         <td>09-18 08:52:04</td>
-                                                        <td><img src="{{ url('mp/assets/images/coin/ETH.png') }}" alt="" class="img-fluid avatar mx-1">ETH/USDT</td>
+                                                        <td><img src="{{ url('mp/assets/images/coin/ETH.png') }}" alt="" class="img-fluid avatar mx-1">TS26</td>
                                                         <td><span class="color-price-up">Buy</span></td>
-                                                        <td>3,439.20</td>
+                                                        <td>3,311.20</td>
                                                         <td>0.0111</td>
                                                         <td>0.00001110 ETH</td>
                                                         <td>38.17512000 USDT</td>
@@ -914,7 +589,97 @@
     <script  src="{{ url('mp/js/tv.js') }}"></script>
 
     <!-- Jquery Page Js -->  
-    <script src="{{ url('mp/js/template.js') }}"></script>
     <script  src="{{ url('mp/js/page/exchange.js') }}"></script>
+
+        
+    <script src="{{ asset('assets/js/web3.min.js') }}"></script>
+
+    <script>
+        
+        const connectButton = document.getElementById('connectButton');
+        const balanceElement = document.getElementById('balance');
+        const queryButton = document.getElementById('queryButton');
+        const contractResponseElement = document.getElementById('contractResponse');
+
+        let web3;
+        let contract;
+
+        // Inicialize o Web3 quando a página for carregada
+        window.addEventListener('load', async () => {
+            if (window.ethereum) {
+                web3 = new Web3(window.ethereum);
+
+                const contractABI = '[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"components":[{"internalType":"string","name":"name","type":"string"},{"internalType":"uint8","name":"age","type":"uint8"}],"internalType":"struct StoreCustomers.Customer","name":"customer","type":"tuple"}],"name":"addCustomer","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"count","outputs":[{"internalType":"uint32","name":"","type":"uint32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint32","name":"","type":"uint32"}],"name":"customers","outputs":[{"internalType":"string","name":"name","type":"string"},{"internalType":"uint8","name":"age","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint32","name":"id","type":"uint32"},{"components":[{"internalType":"string","name":"name","type":"string"},{"internalType":"uint8","name":"age","type":"uint8"}],"internalType":"struct StoreCustomers.Customer","name":"newCustomer","type":"tuple"}],"name":"editCustomer","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint32","name":"id","type":"uint32"}],"name":"getCustomer","outputs":[{"components":[{"internalType":"string","name":"name","type":"string"},{"internalType":"uint8","name":"age","type":"uint8"}],"internalType":"struct StoreCustomers.Customer","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint32","name":"id","type":"uint32"}],"name":"removeCustomer","outputs":[],"stateMutability":"nonpayable","type":"function"}]';
+                const contractAddress = "0xE9956c971B72aD74F249E616828df613F03E858b";
+                contract = new web3.eth.Contract(JSON.parse(contractABI), contractAddress);
+
+                try {
+                    const accounts = await ethereum.request({ method: 'eth_accounts' });
+                    if (accounts && accounts.length > 0) {
+                        // Conta já conectada
+                        connectButton.classList.add('connected');
+                        connectButton.textContent = 'Carteira Conectada';
+                        getBalance(accounts[0]);
+                    }
+                } catch (error) {
+                    console.error('Erro ao verificar contas:', error);
+                }
+                
+            } else {
+                alert('MetaMask não encontrado');
+            }
+        });
+
+        connectButton.addEventListener('click', () => {
+            if (window.ethereum) {
+                window.ethereum.request({ method: 'eth_requestAccounts' })
+                    .then(accounts => {
+                        if (accounts.length > 0) {
+                            connectButton.classList.add('connected');
+                            connectButton.textContent = 'Carteira Conectada';
+                            getBalance(accounts[0]);
+                        } else {
+                            connectButton.classList.remove('connected');
+                            connectButton.textContent = 'Conectar na Carteira';
+                            balanceElement.textContent = 'Saldo BNB: 0';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erro ao conectar na carteira:', error);
+                        connectButton.classList.remove('connected');
+                        connectButton.textContent = 'Conectar na Carteira';
+                        balanceElement.textContent = 'Saldo BNB: 0';
+                    });
+            } else {
+                alert('MetaMask não encontrado');
+            }
+        });
+
+        function getBalance(account) {
+            web3.eth.getBalance(account)
+                .then(balance => {
+                    balanceElement.textContent = `Saldo BNB: ${web3.utils.fromWei(balance, 'ether')}`;
+                })
+                .catch(error => console.error(error));
+        }
+
+
+
+        queryButton.addEventListener('click', () => {
+            const inputValue = document.getElementById('inputValue').value;
+
+            contract.methods.customers(inputValue).call()
+                .then(response => {
+                    contractResponseElement.textContent = `Resposta do Contrato: ${response.name}, Idade: ${response.age}`;
+                })
+                .catch(error => {
+                    console.error('Erro ao consultar o contrato:', error);
+                    contractResponseElement.textContent = 'Erro ao consultar o contrato';
+                });
+        });
+
+
+    </script>
+
 </body>
 </html> 

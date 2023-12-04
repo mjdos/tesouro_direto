@@ -35,7 +35,7 @@
 					<!--begin::Navbar-->
 					<div class="d-flex align-items-stretch" id="kt_header_nav">
 					<td class="text-start">
-                            <button id="connectButton" class="btn btn-sm btn-primary">
+                            <button id="connectButton" class="btn btn-sm btn-primary mt-4" style="height:45px">
                                 Conectar Carteira
                             </button>
                         </td>		
