@@ -42,8 +42,8 @@ Preparamos uma série de vídeos para demonstrar a solução funcionando com nos
 
 | Descrição | Vídeo |
 | ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| GitHub | [plugins/github/README.md][PlGh] |
+| descrição | video |
+| descrição | video |
 
 <br>
 
@@ -73,7 +73,7 @@ Desenvolvemos uma ferramenta de "Marketplace" para a compra e venda de títulos 
 <br><br>2.4 - Compra de Títulos de Outros Detentores: Além de investir em novos títulos, os usuários podem comprar títulos diretamente de outros detentores. Este recurso adiciona uma camada de flexibilidade e dinamismo ao mercado, permitindo transações diretas entre investidores.
 <br><br>2.5 - Facilidade de Acesso e Segurança: A segurança é uma prioridade, e a plataforma emprega tecnologias avançadas para proteger as informações e transações dos usuários. O acesso é otimizado para ser rápido e seguro, garantindo que os investidores possam operar com confiança e tranquilidade.
 <br><br>Em resumo, nossa ferramenta de "Marketplace" para títulos do Tesouro Direto é mais do que uma plataforma de negociação; é um segundo ecossistema completo projetado para empoderar investidores, fornecendo as ferramentas e informações necessárias para tomar decisões informadas e estratégicas no mercado de títulos.
-         
+<p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/mp3.png" width="900" alt="Marketplace"></p>      
 <p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/mp1.png" width="900" alt="Marketplace"></p>
 <p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/mp2.png" width="900" alt="Marketplace"></p>
 
