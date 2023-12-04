@@ -41,57 +41,62 @@
                     <p><strong>Auditoria da Carteira de Destino:</strong> {{$carteira_destino}}</p>
                     @endisset
                     <!--begin::Table-->
-                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
-                        <!--begin::Table head-->
-                        <thead>
-                            <!--begin::Table row-->
-                            <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                <th class="min-w-125px">Título</th>
-                                <th class="min-w-125px">Data</th>
-                                <th class="min-w-125px">Carteira de Origem</th>
-                                <th class="min-w-125px">Carteira de Destino</th>
-                                <th class="min-w-125px">Transação</th>
-                                <th class="min-w-125px">Valor</th>
-                                <th class="text-end min-w-70px">Quantidade</th>
-                            </tr>
-                            <!--end::Table row-->
-                        </thead>
-                        <!--end::Table head-->
-                        <!--begin::Table body-->
-                        <tbody class="fw-bold text-gray-600">
-                            @foreach($mercados as $mercado)
-                            <tr>
-                                <!--begin::Name=-->
-                                <td>
-                                    {{$mercado->titulo->nome}}
-                                </td>
-                                <!--end::Name=-->
-                                <!--begin::Email=-->
-                                <td>
-                                    {{$mercado->data_hora}}
-                                </td>
-                                <!--end::Email=-->
-                                <!--begin::Company=-->
-                                <td> {{$mercado->carteira_origem}}
-                                </td>
-                                <!--end::Company=-->
-                                <!--begin::Date=-->
-                                <td> {{$mercado->carteira_destino}}</td>
-                                <!--end::Date=-->
-                                <!--begin::Date=-->
-                                <td>#</td>
-                                <!--end::Date=-->
-                                <!--begin::Date=-->
-                                <td> {{$mercado->valor_unitario}}</td>
-                                <!--end::Date=-->
-                                <!--begin::Date=-->
-                                <td> {{$mercado->quantidade}}</td>
-                                <!--end::Date=-->
-                            </tr>
-                            @endforeach
-                        </tbody>
-                        <!--end::Table body-->
-                    </table>
+                    
+                        <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
+                            <!--begin::Table head-->
+                            <thead>
+                                <!--begin::Table row-->
+                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                    <th class="min-w-55px">Título</th>
+                                    <th class="min-w-125px">Data</th>
+                                    <th class="min-w-125px">Carteira de Origem</th>
+                                    <th class="min-w-125px">Carteira de Destino</th>
+                                    <th class="min-w-125px">Valor</th>
+                                    <th class="text-end min-w-70px" align="center">Quantidade</th>
+                                    <th class="min-w-125px" align="right">Operação</th>
+                                </tr>
+                                <!--end::Table row-->
+                            </thead>
+                            <!--end::Table head-->
+                            <!--begin::Table body-->
+                            <tbody class="fw-bold text-gray-600">
+                                @foreach($mercados as $mercado)
+                                <tr>
+                                    <!--begin::Name=-->
+                                    <td>
+                                        TS26
+                                    </td>
+                                    <!--end::Name=-->
+                                    <!--begin::Email=-->
+                                    <td>
+                                    <font size=1>{{ date('d/m/Y H:i:s', strtotime($mercado->data_hora)) }}</font>
+                                    </td>
+                                    <!--end::Email=-->
+                                    <!--begin::Company=-->
+                                    <td> 
+                                    <font size=1>{{$mercado->carteira_origem}}</font>
+                                    </td>
+                                    <!--end::Company=-->
+                                    <!--begin::Date=-->
+                                    <td> 
+                                    <font size=1>{{$mercado->carteira_destino}}</font>
+                                    </td>
+                                    <!--end::Date=-->
+                                    <!--begin::Date=-->
+                                    <td> {{ number_format($mercado->valor_unitario, 2, ',', '.')}}</td>
+                                    <!--end::Date=-->
+                                    <!--begin::Date=-->
+                                    <td align="center">  {{ number_format($mercado->quantidade, 2, ',', '.')}}</td>
+                                    <td align="center"> 
+                                    <font size=1>{{$mercado->operacao}}</font>
+                                    </td>
+                                    <!--end::Date=-->
+                                </tr>
+                                @endforeach
+                            </tbody>
+                            <!--end::Table body-->
+                        </table>
+                    
                     <!--end::Table-->
                 </div>
                 <!--end::Card body-->
