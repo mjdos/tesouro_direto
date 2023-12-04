@@ -101,4 +101,3 @@ Em nosso MVP implementamos um inovador Painel Administrativo, uma solução comp
 ## 📝 Licença
 
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a><br>
-**Free Software, Hell Yeah!**
