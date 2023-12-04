@@ -61,7 +61,7 @@ Abaixo as ferramentas e tecnologias que foram utilizadas no nosso projeto.
 ## ⚙️ Contrato Inteligente 
 O código contrato em Solidity está na pasta "contrato-solidity".<br>
 Endereço do Contrato na BSC Testnet 0x4252947557f38cD7A9D5a52a0eB38C7AA3Bc3440.
-<p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/qrcode.png" width="1000" alt="Token Selic 2026"></p>
+<p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/qrcode.png" width="350" alt="Token Selic 2026"></p>
 <br><br>
 
 ## 🏆 Token
