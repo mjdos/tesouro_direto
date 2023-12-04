@@ -65,6 +65,7 @@
                         <div class="order-0 col-lg-4 col-md-4 col-sm-12 col-12 mb-3 mb-md-0 d-flex align-items-center flex-column">
                             <button id="connectButton">Conectar na Carteira</button>
                             <p id="balance">Saldo BNB: 0</p>
+                            <p id="tokens">Saldo Titulos: 0</p>
                         </div>
                     </div>
                 </nav>
@@ -600,6 +601,7 @@
         const balanceElement = document.getElementById('balance');
         const queryButton = document.getElementById('queryButton');
         const contractResponseElement = document.getElementById('contractResponse');
+        const tokensElement = document.getElementById('tokens');
 
         let web3;
         let contract;
@@ -661,6 +663,13 @@
                     balanceElement.textContent = `Saldo BNB: ${web3.utils.fromWei(balance, 'ether')}`;
                 })
                 .catch(error => console.error(error));
+
+                contract.methods.balanceOf(accounts[0]).call()
+                .then(response => {
+                    const quantidadeToken = BigInt(response) / BigInt(10 ** 18);
+                    tokensElement.textContent = `Saldo Titulos: ${quantidadeToken}`;
+                })
+                .catch(error => {console.error(error)});
         }
 
 
