@@ -38,9 +38,8 @@ https://codecreators.com.br/
 <br><br>
 
 ## 🌐 Link da Apresentação
-<p align="center"><a href="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/apresentacao-code-creators.pptx">Download da Apresentação em PowerPoint</a></p>
+<p align="left">[<a href="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/apresentacao-code-creators.pptx">Download da Apresentação em PowerPoint</a](https://www.youtube.com/watch?v=fGzYUPVvNkI)></p>
 <br><br>
-
 
 ## 🎞 Vídeos do MVP 
 
@@ -48,8 +47,7 @@ Preparamos uma série de vídeos para demonstrar a solução funcionando com nos
 
 | Descrição | Vídeo |
 | ------ | ------ |
-| descrição | video |
-| descrição | video |
+| Pitch CodeCreators | [video](https://www.youtube.com/watch?v=fGzYUPVvNkI) |
 
 <br>
 
