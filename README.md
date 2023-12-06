@@ -102,11 +102,11 @@ Esta ferramenta é projetada especificamente para facilitar o rastreamento das m
 
 ## Painel Administrativo para gerenciamento do Token
 Em nosso MVP implementamos um inovador Painel Administrativo, uma solução completa para o gerenciamento de tokens. Este painel é uma peça central de nossa plataforma, oferecendo um conjunto robusto de ferramentas projetadas para otimizar e assegurar a gestão de tokens.
-<br><br>4.1 Criação de Token: Uma interface intuitiva que permite a criação de tokens de maneira simplificada, sem a necessidade de conhecimentos profundos em programação ou contratos inteligentes.
-<br><br>4.2 Emissão de Token: Ferramentas eficientes para emitir tokens, proporcionando flexibilidade e controle total sobre a quantidade e a distribuição dos tokens.
-<br><br>4.3 Gerenciamento de Carteiras Autorizadas: Capacidade de adicionar e gerenciar carteiras autorizadas a interagir com o contrato inteligente. Isso oferece um controle mais rigoroso sobre quem pode gerenciar o token, aumentando a segurança e a eficiência operacional.
-<br><br>4.4 Ferramenta de Blacklist: Um mecanismo proativo para adicionar carteiras à blacklist, prevenindo spam e ataques maliciosos. Essa funcionalidade é crucial para manter a integridade da plataforma e a segurança dos usuários.
-<br><br>4.5 Ferramenta para depositar e sacar BNB: Ferramenta projetada para que o Owner e as carteiras autorizadas possam depositar ou sacar BNB do contrato.
+<br><br><b>4.1 Criação de Token:</b> Uma interface intuitiva que permite a criação de tokens de maneira simplificada, sem a necessidade de conhecimentos profundos em programação ou contratos inteligentes.
+<br><br><b>4.2 Emissão de Token:</b> Ferramentas eficientes para emitir tokens, proporcionando flexibilidade e controle total sobre a quantidade e a distribuição dos tokens.
+<br><br><b>4.3 Gerenciamento de Carteiras Autorizadas:</b> Capacidade de adicionar e gerenciar carteiras autorizadas a interagir com o contrato inteligente. Isso oferece um controle mais rigoroso sobre quem pode gerenciar o token, aumentando a segurança e a eficiência operacional.
+<br><br><b>4.4 Ferramenta de Blacklist:</b> Um mecanismo proativo para adicionar carteiras à blacklist, prevenindo spam e ataques maliciosos. Essa funcionalidade é crucial para manter a integridade da plataforma e a segurança dos usuários.
+<br><br><b>4.5 Ferramenta para depositar e sacar BNB:</b> Ferramenta projetada para que o Owner e as carteiras autorizadas possam depositar ou sacar BNB do contrato.
 
 <p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/painel.png" width="900" alt="Painel Administrativo"></p>
 
