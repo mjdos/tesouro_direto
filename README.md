@@ -101,10 +101,6 @@ Esta ferramenta é projetada especificamente para facilitar o rastreamento das m
 <p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/auditoria.png" width="900" alt="Auditoria"></p>
 
 ## 3 - Painel Administrativo para gerenciamento do Token
-<b><br>
-Acesso: https://codecreators.com.br/login<br>
-Usuário: admin@admin.com<br>
-Senha: 1234<br><br></b>
 Em nosso MVP implementamos um inovador Painel Administrativo, uma solução completa para o gerenciamento de tokens. Este painel é uma peça central de nossa plataforma, oferecendo um conjunto robusto de ferramentas projetadas para otimizar e assegurar a gestão de tokens.
 <br><br><b>3.1 Criação de Token:</b> Uma interface intuitiva que permite a criação de tokens de maneira simplificada, sem a necessidade de conhecimentos profundos em programação ou contratos inteligentes.
 <br><br><b>3.2 Emissão de Token:</b> Ferramentas eficientes para emitir tokens, proporcionando flexibilidade e controle total sobre a quantidade e a distribuição dos tokens.
