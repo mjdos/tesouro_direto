@@ -37,6 +37,11 @@ https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activ
 https://codecreators.com.br/
 <br><br>
 
+## 🌐 Link da Apresentação
+<p align="center"><a href="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/apresentacao-code-creators.pptx">Download da Apresentação em PowerPoint</a></p>
+<br><br>
+
+
 ## 🎞 Vídeos do MVP 
 
 Preparamos uma série de vídeos para demonstrar a solução funcionando com nosso MVP.
@@ -66,12 +71,12 @@ O contrato inteligente para criação e gerenciamento do Token está na pasta "c
 <br>
 
 O nosso contrato inteligente "Tesouro Direto" é baseado em blockchain, especificamente na rede BSC e utiliza a linguagem de programação Solidity. Este contrato implementa um sistema de emissão, gerenciamento e negociação de títulos digitais (tokens), com funcionalidades adicionais para gerenciar liquidez e transações seguras. Aqui está um resumo do seu funcionamento:
-<br><br>a. Criação e Gerenciamento de Títulos Digitais: O contrato permite a criação de títulos digitais, cada um identificado por um ID único e armazenado com detalhes específicos. Apenas o proprietário do contrato pode criar novos títulos. 
-<br><br>b. Liquidez e Transferência de Fundos: O contrato gerencia uma carteira de liquidez que deposita 2% de cada transação e permite transferências de fundos do contrato para a carteira do Owner e vice-versa. Há um mecanismo para verificar o saldo e movimentar fundos de forma segura, prevenindo reentrâncias.
-<br><br>c. Emissão de Títulos para Investidores: O contrato permite a emissão de títulos para detentores específicos. As carteiras autorizadas podem emitir títulos, e os detalhes de cada título são rastreados.
-<br><br>d. Compra e Venda no Mercado Secundário: O contrato facilita a compra e venda de títulos no mercado secundário. Os usuários podem depositar BNB para comprar títulos de outros detentores, com mecanismos para garantir transferências seguras e cobrança de taxas.
-<br><br>e. Resgate de Títulos: Os detentores de títulos podem resgatar seus títulos em troca de BNB. O contrato garante que o valor de resgate esteja disponível e gerencia a queima de tokens para concluir o resgate. 
-<br><br>f. Segurança e Gestão de Acesso: O contrato inclui recursos para adicionar ou remover carteiras de uma lista negra, prevenindo atividades mal-intencionadas e spam. Somente o proprietário do contrato e carteiras autorizadas podem realizar certas operações, garantindo controle e segurança.
+<br><br><b>a. Criação e Gerenciamento de Títulos Digitais:</b> O contrato permite a criação de títulos digitais, cada um identificado por um ID único e armazenado com detalhes específicos. Apenas o proprietário do contrato pode criar novos títulos. 
+<br><br><b>b. Liquidez e Transferência de Fundos:</b> O contrato gerencia uma carteira de liquidez que deposita 2% de cada transação e permite transferências de fundos do contrato para a carteira do Owner e vice-versa. Há um mecanismo para verificar o saldo e movimentar fundos de forma segura, prevenindo reentrâncias.
+<br><br><b>c. Emissão de Títulos para Investidores:</b> O contrato permite a emissão de títulos para detentores específicos. As carteiras autorizadas podem emitir títulos, e os detalhes de cada título são rastreados.
+<br><br><b>d. Compra e Venda no Mercado Secundário:</b> O contrato facilita a compra e venda de títulos no mercado secundário. Os usuários podem depositar BNB para comprar títulos de outros detentores, com mecanismos para garantir transferências seguras e cobrança de taxas.
+<br><br><b>e. Resgate de Títulos:</b> Os detentores de títulos podem resgatar seus títulos em troca de BNB. O contrato garante que o valor de resgate esteja disponível e gerencia a queima de tokens para concluir o resgate. 
+<br><br><b>f. Segurança e Gestão de Acesso:</b> O contrato inclui recursos para adicionar ou remover carteiras de uma lista negra, prevenindo atividades mal-intencionadas e spam. Somente o proprietário do contrato e carteiras autorizadas podem realizar certas operações, garantindo controle e segurança.
 <br><br>Em resumo, este contrato representa um ecossistema para a emissão, gerenciamento, compra, venda e resgate de títulos tokenizados, com mecanismos robustos para assegurar a liquidez, segurança e integridade das transações.
 <p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/codigo.png" width="900" alt="Painel Administrativo"></p>
 
