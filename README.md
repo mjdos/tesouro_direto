@@ -27,10 +27,7 @@ Com um diferencial marcante em tecnologia blockchain avançada e interfaces de u
 
 ## 🎯 Desafio das Redes 
 
-Conforme item  10.15 do edital segue abaixo as 2 postagens para o "Desafio das Redes", segue comprovante para que seja computada para minha equipe os 0,5 ponto.
-<br><br>
-https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125452858631630849-sKz_<br>
-https://www.linkedin.com/posts/marcelo-jos%C3%A9-b20b8949_hackathonweb3stn-activity-7125450332972736512-cNKB
+Conforme 
 <br><br>
 
 ## 🌐 Link do MVP
