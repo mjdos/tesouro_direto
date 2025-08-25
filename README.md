@@ -108,9 +108,14 @@ Em nosso MVP implementamos um inovador Painel Administrativo, uma solução comp
 <p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/painel.png" width="900" alt="Painel Administrativo"></p>
 
 
-## 🏆 Token
+## 4 - Token
 
 <p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/token2.png" width="1000" alt="Token Selic 2026"></p>
+
+## 🏆 Vitória
+
+<p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/trofeu.jpeg" width="1000" alt="Token Selic 2026"></p>
+
 
 ## 🙏 Agradecimentos
 
