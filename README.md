@@ -112,9 +112,13 @@ Em nosso MVP implementamos um inovador Painel Administrativo, uma solução comp
 
 <p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/token2.png" width="1000" alt="Token Selic 2026"></p>
 
-## 🏆 Vitória
+## 🏆 Conquistamos o 1º lugar no Hackathon
 
-<p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/trofeu.jpeg" width="1000" alt="Token Selic 2026"></p>
+Essa conquista representa não apenas um prêmio, mas o reconhecimento de muito trabalho em equipe, criatividade e dedicação.
+
+Seguimos firmes no propósito de usar a tecnologia para gerar impacto real! 🚀💡
+
+<p align="center"><img src="https://github.com/mjdos/tesouro_direto/blob/main/public/assets/imagens/github/trofeu.jpeg" width="600" alt="Token Selic 2026"></p>
 
 
 ## 🙏 Agradecimentos
